@@ -11,7 +11,7 @@ body{
                             "zona_main zona_main"      
                             "zona_footer zona_footer";  /*Para que el pie de página/footer ocupe toda las columnas de una fila*/
     margin: -0.1%;          /*Quitar los márgenes de fuera*/
-    background-color: white;
+    background-color: black;
 }
 
 header{  /*Cabecero*/
@@ -33,7 +33,6 @@ header{  /*Cabecero*/
 main, section{  /*Cuerpo*/
     grid-area:zona_main;  /*GRIP*/
     text-align: center;
-    font-family:'Estonia', cursive;  /*Usar la fuente Google Font - Estonia*/
     font-size: 30px;
     /*Para que cuadre en el marco del cuerpo y se vea todo sin muchos espacios de arriba y abajo*/
     margin-top: -60px;
@@ -43,9 +42,18 @@ main, section{  /*Cuerpo*/
 
 h1{
     margin-top: 0;
+    text-align: center;
 }
 
 @font-face{ /*Declaramos para usar la fuente descargada*/
     font-family: Pokemon;  /*Nombre puesto por mí*/
     src: url("./letterFont/Pokemon\ Hollow.ttf");
+}
+footer{
+    grid-area:zona_footer; 
+    width: 100%;
+    background-color: blue;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
 }
