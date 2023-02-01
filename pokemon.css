@@ -1,0 +1,51 @@
+/**********************************************************************************MENOS de 768px***********************************************************************/
+body{
+    display: grid;
+    /* Definimos las columnas y filas */
+    grid-template-columns: 100%;  /*Definimos el grosor de dos columnas porque solo tenemos un lateral*/
+    /* grid-template-rows: 70px 50px 580px 70px;  Definimos el grosor las filas, comenzando desde arriba hacia abajo, header,nav,footer */
+    grid-template-rows: 30% 20% 500px 10%;  /*Definimos el grosor las filas, comenzando desde arriba hacia abajo, header,nav,footer*/
+    /* Definimos las celdas*/
+    grid-template-areas:    "zona_header zona_header"  /*Para que el cabezado/header ocupe toda las columnas de una fila*/
+                            "zona_main zona_main"      /*Para que la barra de cuerpo/main ocupe toda las columnas de una fila*/
+                            "zona_main zona_main"      
+                            "zona_footer zona_footer";  /*Para que el pie de página/footer ocupe toda las columnas de una fila*/
+    margin: -0.1%;          /*Quitar los márgenes de fuera*/
+    background-color: white;
+}
+
+header{  /*Cabecero*/
+    /*Grid*/
+    grid-area:zona_header; /* Definimos el area de nuestro elemento*/
+    /*Caja*/
+    background-color: brown;   /*Fondo del encabezado*/
+    /*Fuente Descargada*/
+    font-family: "Pokemon";   /*Nombre de como hemos declarado la fuente descargada*/
+    /*Fuente*/
+    color: black;               /*Color de la letra*/
+    /*Posición de la cabecera*/
+    position: fixed;  /*Para que no se desplace*/
+    width: 100%;
+    top: 0;  /*Se coloque arriba del todo*/
+    height: 50px;
+}
+
+main, section{  /*Cuerpo*/
+    grid-area:zona_main;  /*GRIP*/
+    text-align: center;
+    font-family:'Estonia', cursive;  /*Usar la fuente Google Font - Estonia*/
+    font-size: 30px;
+    /*Para que cuadre en el marco del cuerpo y se vea todo sin muchos espacios de arriba y abajo*/
+    margin-top: -60px;
+    padding-bottom: 20%;
+    background-color: aqua;
+}
+
+h1{
+    margin-top: 0;
+}
+
+@font-face{ /*Declaramos para usar la fuente descargada*/
+    font-family: Pokemon;  /*Nombre puesto por mí*/
+    src: url("./letterFont/Pokemon\ Hollow.ttf");
+}

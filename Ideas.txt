@@ -1,0 +1,1 @@
+poner en pestaña de ventana un .ico cuando entremos en ver pokemon especificos
