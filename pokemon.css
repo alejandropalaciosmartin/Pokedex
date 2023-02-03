@@ -4,13 +4,12 @@ body{
     /* Definimos las columnas y filas */
     grid-template-columns: 100%;  /*Definimos el grosor de dos columnas porque solo tenemos un lateral*/
     /* grid-template-rows: 70px 50px 580px 70px;  Definimos el grosor las filas, comenzando desde arriba hacia abajo, header,nav,footer */
-    grid-template-rows: 30% 20% 500px 10%;  /*Definimos el grosor las filas, comenzando desde arriba hacia abajo, header,nav,footer*/
+    grid-template-rows: 30% 60% 10%;  /*Definimos el grosor las filas, comenzando desde arriba hacia abajo, header,nav,footer*/
     /* Definimos las celdas*/
     grid-template-areas:    "zona_header zona_header"  /*Para que el cabezado/header ocupe toda las columnas de una fila*/
-                            "zona_main zona_main"      /*Para que la barra de cuerpo/main ocupe toda las columnas de una fila*/
-                            "zona_main zona_main"      
+                            "zona_main zona_main"      /*Para que la barra de cuerpo/main ocupe toda las columnas de una fila*/     
                             "zona_footer zona_footer";  /*Para que el pie de página/footer ocupe toda las columnas de una fila*/
-    margin: -0.1%;          /*Quitar los márgenes de fuera*/
+    margin: 0;          /*Quitar los márgenes de fuera*/
     background-color: black;
 }
 
@@ -28,6 +27,7 @@ header{  /*Cabecero*/
     width: 100%;
     top: 0;  /*Se coloque arriba del todo*/
     height: 50px;
+    text-align: center;
 }
 
 main, section{  /*Cuerpo*/
@@ -41,8 +41,7 @@ main, section{  /*Cuerpo*/
 }
 
 h1{
-    margin-top: 0;
-    text-align: center;
+    margin-top: -3vh;
 }
 
 @font-face{ /*Declaramos para usar la fuente descargada*/
