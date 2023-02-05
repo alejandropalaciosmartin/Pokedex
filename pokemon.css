@@ -68,7 +68,7 @@ footer{
     z-index: -1;
     margin-top: 1vh;
     margin-left: 20vh;
-    /* opacity: 0.3; lo usamos en la imagen grande de abajo */
+    opacity: 0.8; 
 }
 
 
