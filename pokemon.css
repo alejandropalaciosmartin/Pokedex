@@ -28,7 +28,7 @@ header{  /*Cabecero*/
     color: rgb(230, 217, 210);
 }
 
-main, section, article{  /*Cuerpo*/
+main {  /*Cuerpo*/
     grid-area:zona_main;  /*GRIP*/
     text-align: center;
     font-size: 30px;
@@ -71,6 +71,10 @@ footer{
     opacity: 0.8; 
 }
 
+#imagenFondo{
+    opacity: 0.5; 
+    margin-top: 10vh;
+}
 
 /**********************************************************************************Más de 768px***********************************************************************/
 @media screen and (min-width:780px) {
@@ -84,6 +88,13 @@ footer{
         margin-left: 15vh;
     }
 
+    #imagenFondo{
+        opacity: 0.5; 
+        margin-top: -8vh;
+    }
 
+    #pokeFondo{
+        width: 80vh;
+    }
 
 }
