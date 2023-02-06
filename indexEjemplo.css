@@ -1,0 +1,126 @@
+/**********************************************************************************MENOS de 768px***********************************************************************/
+body{
+    display: grid; /* Definimos las columnas y filas */
+    grid-template-columns: 100%;  /*Definimos el grosor de dos columnas porque solo tenemos un lateral*/
+    /* grid-template-rows: 70px 50px 580px 70px;  Definimos el grosor las filas, comenzando desde arriba hacia abajo, header,nav,footer */
+    grid-template-rows: 33% 70vh 5vh;  /*Definimos el grosor las filas, comenzando desde arriba hacia abajo, header,nav,footer*/
+    /* Definimos las celdas*/
+    grid-template-areas:    "zona_header zona_header"  /*Para que el cabezado/header ocupe toda las columnas de una fila*/
+                            "zona_main zona_main"      /*Para que la barra de cuerpo/main ocupe toda las columnas de una fila*/     
+                            "zona_footer zona_footer";  /*Para que el pie de página/footer ocupe toda las columnas de una fila*/
+    margin: 0;          /*Quitar los márgenes de fuera*/
+    background: url(./img/pokeball.png) no-repeat;
+    background-size: 50vh;
+    background-position: 3vh 20vh;
+}
+
+header{  /*Cabecero*/
+    /*Grid*/
+    grid-area:zona_header; /* Definimos el area de nuestro elemento*/
+    /*Caja*/
+    background-color: brown;   /*Fondo del encabezado*/
+    /*Fuente Descargada*/
+    font-family: "Pokemon";   /*Nombre de como hemos declarado la fuente descargada*/
+    /*Fuente*/
+    /*Posición de la cabecera*/
+    position: fixed;  /*Para que no se desplace*/
+    width: 100%;
+    top: 0;  /*Se coloque arriba del todo*/
+    height: 8vh;
+    text-align: center;
+    color: rgb(230, 217, 210);
+}
+
+main {  /*Cuerpo*/
+    grid-area:zona_main;  /*GRIP*/
+    text-align: center;
+    font-size: 30px;
+    /*Para que cuadre en el marco del cuerpo y se vea todo sin muchos espacios de arriba y abajo*/
+    margin-top: -60px;
+    padding-bottom: 20%;
+}
+
+footer{
+    grid-area:zona_footer; 
+    width: 100%;
+    background-color: brown;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    color: white;
+}
+
+@font-face{ /*Declaramos para usar la fuente descargada*/
+    font-family: Pokemon;  /*Nombre puesto por mí*/
+    src: url("./letterFont/Pokemon\ Hollow.ttf");
+}
+
+#tituloHead{
+    margin-top: -4vh;
+    z-index: 10;
+}
+
+#cabeceraHead{
+    margin-top: -14vh;
+}
+
+#imagenHead{
+    position: relative;
+    align-items: center;
+    width: 5vh;
+    z-index: -1;
+    margin-top: 1vh;
+    margin-left: 20vh;
+    opacity: 0.8; 
+}
+
+.polaroid {
+    background-color:white;
+    padding: 2vh 1vw 5vh;
+    margin-top: -30vh;
+    margin-bottom: 40vh;
+    border:1vw solid #BFBFBF;
+    box-shadow: 5vh 5vh 5vh rgba(0, 0, 0, 1);
+    width: 20vh; 
+}
+
+.posicionPokemons{
+    margin-top: 48vh;
+}
+
+.textoPolaroid {
+    display:block;
+    margin-top: -45.5vh;
+    text-align:center;
+    font-size: 5vw;
+    color: #797979;
+}
+
+/**********************************************************************************Más de 768px***********************************************************************/
+@media screen and (min-width:780px) {
+
+    #tituloHead{
+        margin-top: -2vh;
+    }
+    
+    #imagenHead{
+        margin-top: 2vh;
+        margin-left: 17vh;
+    }
+
+    .textoPolaroid {
+        margin-top: -47vh;
+        margin-left: 4vh;
+        font-size: 1.5vw;
+    }
+    
+    body{
+        background-position: 62vh 10vh;
+        background-size: 80vh;
+    }
+    
+    .polaroid{
+        margin-left: 5vh;
+        width: 30vh;
+    }
+}
