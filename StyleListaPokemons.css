@@ -1,0 +1,90 @@
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header{  
+    grid-area:zona_header; 
+    background-color: brown;   
+    font-family: "Pokemon";   
+    position: fixed;  
+    width: 100%;
+    top: 0;  
+    height: 8vh;
+    text-align: center;
+    color: rgb(230, 217, 210);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pokemons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.pokemon-item {
+  background-color: #fff;
+  border: 1px solid #333;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 45%;
+}
+
+footer{
+    grid-area:zona_footer; 
+    width: 100%;
+    background-color: brown;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    color: white;
+}
+
+#tituloHead{
+    margin-top: -4vh;
+    z-index: 10;
+}
+
+@font-face{ 
+    font-family: Pokemon; 
+    src: url("./letterFont/Pokemon\ Hollow.ttf");
+}
+
+table {
+        width: 100%;
+        border-collapse: collapse;
+	margin-top: 80px;
+      }
+     
+td {
+        width: 50%;
+        padding: 8px;
+        text-align: center;
+      }
+      
+.nombre {
+        font-weight: bold;
+        color: blue;
+	margin-top: 30px;
+      }
+
+header form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
