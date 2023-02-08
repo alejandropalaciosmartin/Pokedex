@@ -50,9 +50,9 @@ footer{
     width: 100%;
     background-color: brown;
     bottom: 0;
-    position: fixed;
     text-align: center;
     color: white;
+    height: 8vh;
 }
 
 #tituloHead{
@@ -64,19 +64,7 @@ footer{
     font-family: Pokemon; 
     src: url("./letterFont/Pokemon\ Hollow.ttf");
 }
-
-table {
-        width: 100%;
-        border-collapse: collapse;
-	margin-top: 80px;
-      }
      
-td {
-        width: 50%;
-        padding: 8px;
-        text-align: center;
-      }
-      
 .nombre {
         font-weight: bold;
         color: blue;
@@ -87,4 +75,16 @@ header form {
   display: flex;
   justify-content: center;
   align-items: center;
+  
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;  
+  column-gap: 250px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);  
+  padding: 15px;
+  font-size: 30px;
+  text-align: center;
 }
