@@ -1,5 +1,5 @@
 /**********************************************************************************MENOS de 768px***********************************************************************/
-body{
+body{/*CAMBIAR A CONTAINER EL GRID, FOOTER Y HEAR FUERA////no anclar el footer. gradiente para la sombra con after y before*/
     display: grid; /* Definimos las columnas y filas */
     grid-template-columns: 100%;  /*Definimos el grosor de dos columnas porque solo tenemos un lateral*/
     /* grid-template-rows: 70px 50px 580px 70px;  Definimos el grosor las filas, comenzando desde arriba hacia abajo, header,nav,footer */
