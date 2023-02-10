@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./img/pokeball.png">
-    <!-- poner aqui el otro archivo css para dos formas de responsive -->
-    <link rel="stylesheet" href="./pokemon.css">
+    <link rel="icon" type="image/x-icon" href="./img/pokeball.png"><!--Icono de la pestaña-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Para que el navegador pueda controlar las dimensiones y la escala de la página -->
+    <link rel="stylesheet" href="./movil.css"><!--CSS formato movil-->
+    <link rel="stylesheet" media="(min-width: 768px)" href="./pc.css">CSS formato pc
     <title>Pokédex</title>
 </head>
 <body>
@@ -16,17 +16,28 @@
             <img src="./img/pokeball.png" id="imagenHead">
         </div>
     </header>
-    <!-- Cuerpo -->
-    <main>
-        <div class="posicionPokemons">
-            <img src="./img/noImagen.jpg" class="polaroid">
-            <span class="textoPolaroid">Nombre Pokemon</span>
-        </div>
-    </main>
-
+        <!-- Cuerpo -->
+        <main class="container">
+            <div class="containerPokemon">
+                <img src="./img/noImagen.jpg" class="efectoPolaroid">
+                <span class="textoPolaroid">Nombre Pokemon</span>
+            </div>
+            <div class="containerPokemon2">
+                <img src="./img/noImagen.jpg" class="efectoPolaroid">
+                <span class="textoPolaroid">Nombre Pokemon</span>
+            </div>
+            <div class="containerPokemon3">
+                <img src="./img/noImagen.jpg" class="efectoPolaroid">
+                <span class="textoPolaroid">Nombre Pokemon</span>
+            </div>
+            <div class="containerPokemon4">
+                <img src="./img/noImagen.jpg" class="efectoPolaroid">
+                <span class="textoPolaroid">Nombre Pokemon</span>
+            </div>
+        </main>
     <footer>
         <!-- Pie -->
-        <h4 class="pie">&copy;Adri &copy;Alex</h4>
+        <p class="pie">&copy;Adri &copy;Alex</p>
     </footer>
 </body>
 </html>
