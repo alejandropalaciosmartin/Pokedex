@@ -9,7 +9,7 @@
 .container{
     display: grid; 
     grid-template-columns: repeat(4, 1fr); 
-    grid-template-areas: "containerPokemon containerPokemon2 containerPokemon3 containerPokemon4"; 
+    /* grid-template-areas: "containerPokemon containerPokemon2 containerPokemon3 containerPokemon4";  */
 }
 
 .efectoPolaroid {

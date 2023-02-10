@@ -2,9 +2,6 @@
 :root{
     --marron: brown;
     --blanco: rgb(230, 217, 210);
-    --cien: 100%;
-    --cinco: 5vh;
-    --elementoAtras: -1;
 }
 /*Toda la página*/
 *{ /*Para quitar los márgenes*/
@@ -20,11 +17,13 @@
 
 /*Cabecera*/
 header{ 
+    /* --marron: yellow; *//*Si se usa en otra clase y se cambia el cotnenido a partir de ahí lo usa de este modo*/
     background-color: var(--marron); /*Fondo del encabezado*/
-    width: var(--cien); /*Ancho de la cabecera*/
+    width: 100%; /*Ancho de la cabecera*/
+    height: 100%;
     /*Posición de la cabecera*/
     top: 0;  /*Se coloque arriba del todo*/
-    left: 0; /*Para centrarlo, sino se va a la derecha y deja un espacio en blanco en la izquierda*/
+    /*left: 0; /*Para centrarlo, sino se va a la derecha y deja un espacio en blanco en la izquierda*/
     height: 8vh; /*Alto de la cabecera*/
     /*Texto*/
     font-family: "Pokemon";   /*Fuente Descargada: Ponemos aquí el nombre de como hemos declarado la fuente descargada, arriba se declara*/
@@ -43,8 +42,8 @@ header{
 #imagenHead{
     position: relative;
     align-items: center;
-    width: var(--cinco);
-    z-index: var(--elementoAtras); /*Poner bola atrás del título*/
+    width: 5vh;
+    z-index: -1; /*Poner bola atrás del título*/
     margin-left: 20vh;
     opacity: 0.8; 
 }
@@ -53,10 +52,10 @@ header{
     /*GRID*/
     display: grid; /*Para hacerlo responsive, dividimos por filas y columnas*/
     grid-template-columns: repeat(2, 35vh); /*Definimos el grosor de las columnas, ponemos para que sean 4 columnas con el mismo grosor(1fr)*/
-    grid-template-rows: repeat(2, 30vh); /*Ponemos dimensiones a la filas*/
+    /*grid-template-rows: repeat(2, 30vh); /*Ponemos dimensiones a la filas*/
+    /* grid-gap: 25vh; */ /*Separación entre elementos*/
     /* Definimos las celdas*/
-    grid-template-areas: "containerPokemon containerPokemon2"  /*Lugar donde va los pokemons*/  
-                         "containerPokemon3 containerPokemon4";
+
 }
 
 /*Cuerpo*/
@@ -65,12 +64,12 @@ main{
     height: 100%;
     /*Texto*/
     text-align: center;
-    font-size: var(--cinco);
+    font-size: 5vh;
 }
 
-.containerPokemon{
+/*.containerPokemon{
     grid-area:containerPokemon; /* Definimos el area de nuestro elemento*/
-}
+/*}*/
 
 .efectoPolaroid {
     background-color:white;
