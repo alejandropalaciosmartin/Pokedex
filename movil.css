@@ -19,12 +19,10 @@
 header{ 
     /* --marron: yellow; *//*Si se usa en otra clase y se cambia el cotnenido a partir de ahí lo usa de este modo*/
     background-color: var(--marron); /*Fondo del encabezado*/
-    width: 100%; /*Ancho de la cabecera*/
+    min-width: 100vh; /*Ancho de la cabecera*/
     height: 100%;
     /*Posición de la cabecera*/
     top: 0;  /*Se coloque arriba del todo*/
-    /*left: 0; /*Para centrarlo, sino se va a la derecha y deja un espacio en blanco en la izquierda*/
-    height: 8vh; /*Alto de la cabecera*/
     /*Texto*/
     font-family: "Pokemon";   /*Fuente Descargada: Ponemos aquí el nombre de como hemos declarado la fuente descargada, arriba se declara*/
     text-align: center;
@@ -33,6 +31,7 @@ header{
 
 #tituloHead{
     margin-top: -3vh; /*Título arriba*/
+    z-index: 5;
 }
 
 #cabeceraHead{
@@ -43,7 +42,7 @@ header{
     position: relative;
     align-items: center;
     width: 5vh;
-    z-index: -1; /*Poner bola atrás del título*/
+    z-index: 1; /*Poner bola atrás del título*/
     margin-left: 20vh;
     opacity: 0.8; 
 }
@@ -51,30 +50,23 @@ header{
 .container{
     /*GRID*/
     display: grid; /*Para hacerlo responsive, dividimos por filas y columnas*/
-    grid-template-columns: repeat(2, 35vh); /*Definimos el grosor de las columnas, ponemos para que sean 4 columnas con el mismo grosor(1fr)*/
-    /*grid-template-rows: repeat(2, 30vh); /*Ponemos dimensiones a la filas*/
-    /* grid-gap: 25vh; */ /*Separación entre elementos*/
-    /* Definimos las celdas*/
-
+    grid-template-columns: repeat(2, 1fr); /*Definimos el grosor de las columnas, ponemos para que sean 4 columnas con el mismo grosor(1fr)*/
+    grid-gap: 10vh;  /*Separación entre elementos*/
+    margin-left: 15vh;
+    /* align-items: center; */
 }
 
 /*Cuerpo*/
 main{
     margin: 0; /*Quitar los márgenes de fuera*/
-    height: 100%;
     /*Texto*/
     text-align: center;
     font-size: 5vh;
 }
 
-/*.containerPokemon{
-    grid-area:containerPokemon; /* Definimos el area de nuestro elemento*/
-/*}*/
-
 .efectoPolaroid {
     background-color:white;
     padding: 2vh 1vw 5vh;
-    /* margin-top: -30vh; */
     margin-bottom: -30vh; 
     border:1vw solid #BFBFBF;
     box-shadow: 3vh 5vh 5vh rgb(43, 42, 42);
@@ -85,18 +77,21 @@ main{
     display:block;
     margin-top: 24vh;
     text-align:center;
-    font-size: 5vw;
+    font-size: 2vw;
     color: #797979;
 }
 
 /*Pie de página*/
 footer{
     background-color: var(--marron);
-    min-width: 75vh; /*Para el ancho que se acortaba y de este modo se extiende en todas las dimensiones*/
-    /*Posicionar*/
-    bottom: 0;
-    left: 0;
+    min-width:100vh; /*Para el ancho que se acortaba y de este modo se extiende en todas las dimensiones*/
     height: 5vh;
+
+    /*PROVISIONAL*/
+    /* bottom: 0; */ /*SE PONE Y SE CAMBIA POR EL DE ABAJO CUANDO SE INTRODUZCAN TODOS LOS POKEMONS*/
+    margin-top: 50vh; /*SE QUITA CUANDO SE PONGAN TODOS LOS POKEMONS*/
+    /*PROVISIONAL*/
+
     /*Texto*/
     text-align: center;
     color: var(--blanco);

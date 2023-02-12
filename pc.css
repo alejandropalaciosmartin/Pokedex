@@ -10,6 +10,8 @@
     display: grid; 
     grid-template-columns: repeat(4, 1fr); 
     /* grid-template-areas: "containerPokemon containerPokemon2 containerPokemon3 containerPokemon4";  */
+    grid-gap: 1vh;  
+    margin-left: 0;
 }
 
 .efectoPolaroid {
@@ -23,3 +25,8 @@
 .textoPolaroid {
     font-size: 2vw;
 }
+
+footer{
+    margin-top: 53vh;
+}
+
