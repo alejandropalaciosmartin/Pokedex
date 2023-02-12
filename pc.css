@@ -2,9 +2,14 @@
     margin-top: -8vh;
 }
 
+#tituloHead{
+    margin-left: 1vh;
+}
+
 #imagenHead{
     margin-left: 18vh;
 }
+
 
 .container{
     display: grid; 
@@ -12,21 +17,39 @@
     /* grid-template-areas: "containerPokemon containerPokemon2 containerPokemon3 containerPokemon4";  */
     grid-gap: 1vh;  
     margin-left: 0;
+    margin-top: 2vh;
 }
 
 .efectoPolaroid {
-    padding: 2vh 1vw 5vh;
-    /* margin-top: -30vh; */
-    margin-bottom: -30vh; 
-    border:1vw solid #BFBFBF;
-    width: 20vh; 
+    width: 30vh; 
 }
 
 .textoPolaroid {
-    font-size: 2vw;
+    font-size: 1.5vw;
+    margin-top: 15vh;
+}
+
+.mismoEfecto{
+    font-size: 1.5vw;
+}
+
+.buscador{
+    margin-bottom: 5vh;
+}
+
+.buscarTexto{
+    width: 70vh;
+}
+
+.buscarBoton{
+    width: 20vh;
+}
+
+.modoOscuro{
+    margin-left: -8vh;
 }
 
 footer{
-    margin-top: 53vh;
+    margin-top: 40vh;
 }
 
