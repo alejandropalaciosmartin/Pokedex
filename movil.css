@@ -105,7 +105,7 @@ main{
 
 .mismoEfecto{
     display:block;
-    font-size: 2vw;
+    font-size: 4vw;
     color: #797979;
     margin-top: 1vh;
 }
@@ -119,6 +119,7 @@ main{
 .tipoPokemon li{
     display: inline-block;
     margin-left: 2vh;
+    font-size: 3vw;
 }
 
 .tipoPokemon{

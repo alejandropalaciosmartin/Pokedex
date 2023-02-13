@@ -26,10 +26,11 @@
 
 .textoPolaroid {
     font-size: 1.5vw;
-    margin-top: 15vh;
+    margin-top: 17vh;
+    margin-bottom: -4vh;
 }
 
-.mismoEfecto{
+.tipoPokemon li{
     font-size: 1.5vw;
 }
 
