@@ -10,45 +10,23 @@
     margin-left: 18vh;
 }
 
-
 .container{
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
-    /* grid-template-areas: "containerPokemon containerPokemon2 containerPokemon3 containerPokemon4";  */
-    grid-gap: 1vh;  
     margin-left: 0;
-    margin-top: 2vh;
+    font-size: 2vw;
 }
 
-.efectoPolaroid {
-    width: 30vh; 
+.efecto3D {
+    width: 40%; 
 }
 
-.textoPolaroid {
-    font-size: 1.5vw;
-    margin-top: 17vh;
-    margin-bottom: -4vh;
+.textoPokemon {
+    font-size: 4vw;
 }
 
-.tipoPokemon li{
-    font-size: 1.5vw;
-}
-
-.buscador{
-    margin-bottom: 5vh;
-}
-
-.buscarTexto{
-    width: 70vh;
-}
-
-.buscarBoton{
-    width: 20vh;
-}
-
-.modoOscuro{
-    margin-left: -8vh;
-}
+ .tipoPokemon, .numeroPokemon, .pesoPokemon, .alturaPokemon{
+    width: 30%;
+    margin: auto; 
+} 
 
 footer{
     margin-top: 40vh;

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="./img/pokeball.png"><!--Icono de la pestaña-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Para que el navegador pueda controlar las dimensiones y la escala de la página -->
-    <link rel="stylesheet" href="./movil.css"><!--CSS formato movil-->
-    <link rel="stylesheet" media="(min-width: 768px)" href="./pc.css"><!--CSS formato pc-->
+    <link rel="stylesheet" href="./formatoMovil.css"><!--CSS formato movil-->
+    <link rel="stylesheet" media="(min-width: 768px)" href="./formatoPc.css"><!--CSS formato pc-->
     <title>Pokédex</title>
 </head>
 <body>
@@ -18,13 +18,37 @@
     </header>
     <!-- Cuerpo -->
     <main class="container">
-        <div class="containerPokemon">
-            <img src="./img/noImagen.jpg" class="efectoPolaroid">
-            <span class="textoPolaroid mismoEfecto">Nombre Pokemon</span>
-            <ul class="tipoPokemon mismoEfecto">
-                <li>#001</li>
-                <li class="fondo">Tipo 1</li>
-            </ul>
+        <div class="imagenPosicion">
+            <img src="./img/noImagen.jpg" class="efecto3D">
+        </div>
+        <span class="textoPokemon">Nombre Pokemon</span>
+        <span class="numeroPokemon">#001</span>
+        <span class="tipoPokemon">Tipo 1</span>
+        <span class="pesoPokemon">x kg</span>
+        <span class="alturaPokemon">x m</span>
+        <div class="vida">
+            <label for="vida">Vida</label>
+            <input type="range" name="vida">
+        </div>
+        <div class="ataque">
+            <label for="vida">Ataque</label>
+            <input type="range" name="ataque">
+        </div>
+        <div class="defensa">
+            <label for="vida">Defensa</label>
+            <input type="range" name="defensa">
+        </div>
+        <div class="ataqueespecial">
+            <label for="vida">Ataque especial</label>
+            <input type="range" name="ataqueEspecial">
+        </div>
+        <div class="defensaEspecial">
+            <label for="vida">Defensa especial</label>
+            <input type="range" name="defensaEspecial">
+        </div>
+        <div class="velocidad">
+            <label for="vida">Velocidad</label>
+            <input type="range" name="velocidad">
         </div>
     </main>
     <footer>
