@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body, html { /*Necesario para poner pie abajo*/
+    height: 100%;
+}
+
+header.cabecera{ 
+    background-color: rgb(0, 0, 0);
+    height: 5vh;
+    display: flex;
+    align-items: center;
+}
+
+ul li{
+    display: inline;
+    color: white;
+    margin-left: 3vh;
+}
+
+.inicio{
+    margin-left: 7vh;
+
+}
+
+.container{ 
+    min-height: calc(100% - 9vh); /*Necesario para poner pie abajo, le restamosal alto el 100% del body/html la suma del head y del pie, 5vh + 4vh*/
+}
+
+.pie{
+    height: 4vh; 
+    background-color: #e2e2e2
+}
