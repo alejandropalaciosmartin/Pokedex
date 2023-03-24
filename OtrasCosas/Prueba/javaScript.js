@@ -30,7 +30,7 @@ async function takeAll(url){
                                                             //que aparece también en la API
                 pokemon = await res.json(); //Metemos todo lo anterior en un json y lo almacenamos en la variable pokemon
 
-                console.log(res,pokemon); //resp nos indica si ha sido correcto el coger el dato
+                //console.log(res,pokemon); //resp nos indica si ha sido correcto el coger el dato
                                           //pokemon nos APARECE TODA la INFORMACIÓN de CADA pokemon
             if(!res.ok) throw{status:res.status,statusText: statusText}
 

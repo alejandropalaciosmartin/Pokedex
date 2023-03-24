@@ -1,3 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*const pokemonContainer = document.querySelector('.pokemonContainer'); //Metemos en el Container del div creado en el html
 
 //Coge TODOS los pokemons que queremos
