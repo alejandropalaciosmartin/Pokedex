@@ -23,23 +23,6 @@ main {
   text-align: center;
 }
 
-.pokemons-container {
-  display: grid;
-  grid-template-columns: repeat(4,35vh) ;
-  width: 100%;
-}
-
-.pokemon-item { 
-  border: 1px solid #333;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  color: #333; 
-  align-items: center;
-  margin: 20px;
-  padding: 20px;
-  text-align: center;
-  width: 45%;
-}
-
 footer {
     width: 100%;
     background-color: brown;
@@ -67,8 +50,9 @@ footer {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto;  
-  column-gap: 250px;
+  grid-template-columns: repeat(3, 1fr); /* tres columnas iguales */
+  gap: 20px; /* espaciado entre las tarjetas */
+  justify-items: center; /* centrar las tarjetas horizontalmente */
 }
 
 .grid-item {
