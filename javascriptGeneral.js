@@ -1,6 +1,6 @@
 const urlPokeApi = "https://pokeapi.co/api/v2/pokemon/"; //Para tener la dirección en una variable
 // const urlPokeApi = "https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20"; //Coger los siguientes 20 pokemons
-const main = document.querySelector("div.grid-container");//Seleccionamos la etiqueta de destino
+const main = document.querySelector("main");//Seleccionamos la etiqueta de destino
 
 //Coge TODOS los pokemons que queremos NO HACE NADA...MEJORAR PARA MOSTRAR TODOS
 async function takeAll(url){ 
@@ -37,7 +37,7 @@ async function takeAll(url){
             //Vamos llenando el html con cada interacción
             template += ` 
             <div>
-                <img src="${pokemon.sprites.front_default}">
+                <imgsrc="${pokemon.sprites.front_default}></img>
                 <p>${pokemon.name}</p>
             </div>
             `; 
@@ -55,6 +55,7 @@ async function takeAll(url){
             }
         }
         main.innerHTML += template;
+        main.innerHTML += "xx";
     }
     catch(err){
         console.log(err);
