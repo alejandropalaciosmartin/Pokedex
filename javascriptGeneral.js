@@ -1,11 +1,5 @@
-// Se define una constante 'apiURL' que almacena la URL base de la API de Pokémon.
-const apiURL = "https://pokeapi.co/api/v2/";
-
-// Se define una constante 'pokemonURL' que almacena la URL de la API para obtener los datos de los primeros 151 Pokémon.
-const pokemonURL = apiURL + "pokemon?limit=151";
-
 // Se utiliza la función 'fetch' para obtener los datos de los Pokémon de la URL definida anteriormente.
-fetch(pokemonURL)
+fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
   // Cuando los datos han sido recibidos, se convierten a formato JSON.
   .then((response) => response.json())
   // Los datos JSON se pasan como argumento a la siguiente función de callback.
