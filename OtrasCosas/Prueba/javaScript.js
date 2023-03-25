@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded",e=>takeAll(urlPokeApi)); //Donde se
 
 
 
-/*
+
   // takeAll(150);
   takeAll(9);
 
@@ -97,4 +97,4 @@ function takePokemon(id){
 
 function getDato(pokemon){
     return "<h1>" + pokemon.name + "</h1>";
-}*/
+}
