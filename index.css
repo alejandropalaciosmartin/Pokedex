@@ -19,10 +19,6 @@ main {
   padding: 20px;
 }
 
-.buscar {
-  text-align: center;
-}
-
 footer {
     width: 100%;
     background-color: brown;
@@ -42,22 +38,45 @@ footer {
     src: url("./letterFont/Pokemon\ Hollow.ttf");
 }
      
-.nombre {
-      font-weight: bold;
-      color: blue;
-	    margin-top: 30px;
-}
-
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* tres columnas iguales */
-  gap: 20px; /* espaciado entre las tarjetas */
+  row-gap: 20px; /* espaciado entre las tarjetas */
   justify-items: center; /* centrar las tarjetas horizontalmente */
+  margin-top: 25px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);  
-  padding: 15px;
-  font-size: 30px;
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+label {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: #333;
+  width: 200px;
+  height: 40px;
   text-align: center;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }

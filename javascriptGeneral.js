@@ -7,74 +7,85 @@ fetch(pokemonURL)
     const pokemon = data.results;
     const container = document.querySelector(".grid-container");
     const searchInput = document.querySelector("#search-input");
-    
-    // Función que actualiza la lista de Pokémon en función del término de búsqueda
+
     const updatePokemonList = () => {
       const searchTerm = searchInput.value.toLowerCase();
-    
-    // Elimina los Pokémon actuales del contenedor
-    while (container.firstChild) {
-      container.removeChild(container.firstChild);
-    }
 
-    // Filtra los Pokémon que coinciden con el término de búsqueda y construye una tarjeta de Pokémon para cada uno
-        pokemon
-          .filter((p) => p.name.toLowerCase().includes(searchTerm))
-          .forEach((p) => {
-            const card = document.createElement("div");
-            card.classList.add("pokemon-card");
-            
-            const name = document.createElement("h2");
-            name.textContent = p.name;
-            card.appendChild(name);
+      while (container.firstChild) {
+        container.removeChild(container.firstChild);
+      }
 
-            const image = document.createElement("img");
-            fetch(p.url)
-              .then((response) => response.json())
-              .then((data) => {
-                image.src = data.sprites.front_default;
-              })
-              .catch((error) => {
-                console.error(error);
-              });
-            card.appendChild(image);
+      pokemon
+        .filter((p) => p.name.toLowerCase().includes(searchTerm))
+        .forEach((p) => {
+          const card = document.createElement("div");
+          card.classList.add("pokemon-card");
 
-            // Agregar estilos CSS para centrar la tarjeta
-            card.style.display = "flex";
-            card.style.flexDirection = "column";
-            card.style.justifyContent = "center";
-            card.style.width = "200px";
-            card.style.height = "250px";
-            card.style.border = "1px solid #ddd";
-            card.style.borderRadius = "10px";
-            card.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.2)";
-            card.style.textAlign = "center";
+          const name = document.createElement("span");
+          name.textContent = p.name;
+          name.style.marginTop = "10px"
 
-            container.appendChild(card);
-          });
-      };
+          // Se crea un elemento span para el número del Pokémon
+          const idSpan = document.createElement("span");
+          idSpan.textContent = `#${p.url.split("/")[6].padStart(3, "0")}`; // Se obtiene el número del Pokémon de la URL y se convierte a un formato #000
+          idSpan.style.fontWeight = "bold";
+          idSpan.style.display = "block";
+          idSpan.style.textAlign = "center";
 
-      // Actualiza la lista de Pokémon cuando se cambia el término de búsqueda
-      searchInput.addEventListener("input", updatePokemonList);
+          const image = document.createElement("img");
+          fetch(p.url)
+            .then((response) => response.json())
+            .then((data) => {
+              image.src = data.sprites.front_default;
+            })
+            .catch((error) => {
+              console.error(error);
+            });
 
-      // Construye la lista de Pokémon inicial
-      updatePokemonList();
+          card.appendChild(name);
+          card.appendChild(idSpan); // Se añade el span con el número del Pokémon
+          card.appendChild(image);
 
-    // Iterar sobre los datos de los Pokemon y construir una tarjeta de Pokemon para cada uno
+          card.style.display = "flex";
+          card.style.flexDirection = "column";
+          card.style.justifyContent = "center";
+          card.style.width = "225px";
+          card.style.height = "275px";
+          card.style.border = "1px solid #ddd";
+          card.style.borderRadius = "10px";
+          card.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.7)";
+          card.style.textAlign = "center";
+          card.style.backgroundColor = "#c24e4e";
+
+          container.appendChild(card);
+        });
+    };
+
+    searchInput.addEventListener("input", updatePokemonList);
+
+    updatePokemonList();
+
     pokemon.forEach((pokemon, index) => {
-        
       const card = document.createElement("div");
       card.classList.add("pokemon-card");
-      
+
       const image = document.createElement("img");
       const imageURL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`;
       image.src = imageURL;
       card.appendChild(image);
 
-      const name = document.createElement("h2");
+      const name = document.createElement("span");
       name.textContent = pokemon.name;
+
+      const idSpan = document.createElement("span");
+      idSpan.textContent = `#${index + 1}`; // Se muestra el número del Pokémon en formato #1, #2, etc.
+      idSpan.style.fontWeight = "bold";
+      idSpan.style.display = "block";
+      idSpan.style.textAlign = "center";
+
       card.appendChild(name);
-      
+      card.appendChild(idSpan);
+
       container.appendChild(card);
     });
   })
