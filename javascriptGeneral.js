@@ -50,7 +50,7 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
             // Los datos JSON se pasan como argumento a la siguiente función de callback.
             .then((data) => {
               // Se asigna la URL de la imagen al atributo 'src' del elemento img.
-              image.src = data.sprites.front_default;
+              image.src = data.sprites.other.home.front_default;
             })
             // Se utiliza el método catch para manejar cualquier error que pueda ocurrir durante el proceso de búsqueda y carga de los datos
             .catch((error) => {
