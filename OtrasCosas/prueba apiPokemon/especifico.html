@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="./img/pokeball.png"><!--Icono de la pestaña-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Para que el navegador pueda controlar las dimensiones y la escala de la página -->
+    <link rel="stylesheet" href="./formatoMovil.css"><!--CSS formato movil-->
+    <link rel="stylesheet" media="(min-width: 768px)" href="./formatoPc.css"><!--CSS formato pc-->
+
+    <script src="https://kit.fontawesome.com/e0f3b21040.js"crossorigin="anonymous"></script><!--FontAwesome-->
+    <title>Pokédex</title>
+</head>
+<body>
+    <!-- Cabezal -->
+    <header>
+        <h1 role="Título de la Pokédex" id="tituloHead">Pokédex</h1>
+        <div id="cabeceraHead">
+            <img src="./img/pokeball.png" id="imagenHead">
+        </div>
+    </header>
+    <!-- Cuerpo -->
+    <main class="container modoOscuro modoClaro" id="pokemon-details">
+        <!-- <button class="boton" id="darkMode" onclick="cambiarModo()">Modo Oscuro/Claro</button> -->
+        <div id="sol" class="sol">
+            <i class="fas fa-sun"></i>
+         </div>
+         <div id="luna" class="luna ">
+            <i class="fas fa-moon"></i>
+         </div>
+        <div class="imagenPosicion" >
+            <img src="./img/noImagen.jpg" class="efecto3D">
+        </div>
+        <div class="pokemonContainer"><p>Pokedex</p></div>
+        <span class="textoPokemon">Nombre Pokemon</span>
+        <span class="numeroPokemon">#001</span>
+        <span class="id">#001</span>
+        <span class="tipoPokemon">Tipo 1</span>
+        <span class="pesoPokemon">x kg</span>
+        <span class="alturaPokemon">x m</span>
+        <div class="vida">
+            <label for="vida">Vida</label>
+            <input type="range" name="vida" disabled>
+        </div>
+        <div class="ataque">
+            <label for="ataque">Ataque</label>
+            <input type="range" name="ataque" disabled>
+        </div>
+        <div class="defensa">
+            <label for="defensa">Defensa</label>
+            <input type="range" name="defensa" disabled>
+        </div>
+        <div class="ataqueespecial">
+            <label for="ataqueespecial">Ataque especial</label>
+            <input type="range" name="ataqueEspecial" disabled>
+        </div>
+        <div class="defensaEspecial">
+            <label for="defensaEspecial">Defensa especial</label>
+            <input type="range" name="defensaEspecial" disabled>
+        </div>
+        <div class="velocidad">
+            <label for="velocidad">Velocidad</label>
+            <input type="range" name="velocidad" disabled>
+        </div>
+        <!-- CUANDO ACABAE TODO ME COMPLICO CON ESTA PARTE, QUE ES CREAR LAS BARRAS CON DIV -->
+        <!-- <div class="barra vida">
+            <p>Vida</p>
+            <div id="vida"></div>
+        </div>
+        <div class="barra ataque">
+            <p>Ataque</p>
+            <div id="ataque"></div>
+        </div>
+        <div class="barra defensa">
+            <p>Defensa</p>
+            <div id="defensa"></div>
+        </div>
+        <div class="barra ataqueespecial">
+            <p>Ataque especial</p>
+            <div id="ataqueespecial"></div>
+        </div>
+        <div class="barra defensaEspecial">
+            <p>Defensa especial</p>
+            <div id="defensaEspecial"></div>
+        </div>
+        <div class="barra velocidad">
+            <p>Velocidad</p>
+            <div id="velocidad"></div>
+        </div> -->
+        <div class="evolucion">
+            <div class="evolucionar">Pokemon1</div>
+            <div class="flecha">Flecha</div>
+            <div class="evolucionar">Pokemon2</div>
+            <div class="flecha">Flecha</div>
+            <div class="evolucionar">Pokemon3</div>
+        </div>
+    </main>
+    <!-- flex + div para evolucion -->
+    <footer>
+        <!-- Pie -->
+        <p class="pie">&copy;Adri &copy;Alex</p>
+    </footer>
+    <script src="./javascriptAdri.js"></script> <!--JavaScript-->
+</body>
+</html>

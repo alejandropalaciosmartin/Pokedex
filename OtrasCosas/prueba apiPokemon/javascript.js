@@ -41,6 +41,7 @@ const showPokemons = (array) => {
             console.log(data);
             loadCard(data);
         })
+        
     })
 }
 
@@ -49,16 +50,20 @@ const loadCard = (data) => {
     const name = data.name;
 
     let card = document.createElement("div");
+    //especifico es la otra web, le pasamos nombre e id
     let content = `
+    <a href ="especifico.html?id=${data.id}&name=${data.name}">  
         <img src="${imagen}" alt="${name}" width="100px">
+    </a>
         <p>${name}</p>
-        <p>${data.order}</p>
+        <p>${data.id}</p>
+   
     `;
     card.innerHTML = content;
     container.appendChild(card);
 }
 
-
+      
 
 getPokemons(`${urlPokeApi}?offset=0&limit=151`)
 
