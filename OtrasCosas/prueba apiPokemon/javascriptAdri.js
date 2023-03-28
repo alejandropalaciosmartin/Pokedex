@@ -1,26 +1,35 @@
-const pokemonDetailsContainer = document.getElementById("pokemon-details");
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
-      const pokemonName = urlParams.get("name");
+const container = document.getElementById("pokemonIndividual"); //Seleccionamos clase DONDE se MOSTRARÁ
+const locationSearchUrl = window.location.search; //Coge direcciones que llevan ? al final de la url
+const urlParams = new URLSearchParams(locationSearchUrl); //coge window.location.search y lo coge con URLSearchParams
+const pokemonId = urlParams.get("id"); //coge de la direccion el número de la id
+const urlApi = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`; //Cogemos la direccion con la id del pokemon seleccionamos para poder trabajar con él
 
-      fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-        .then(response => response.json())
-        .then(data => {
-          pokemonDetailsContainer.innerHTML = `
-            <h2>${data.name}</h2>
-            <img src="${data.sprites.other.home.front_default}" alt="${data.name}" />
-            <p>Height: ${data.height} | Weight: ${data.weight}</p>
-          `;
-        })
-        .catch(error => {
-          console.error(error);
-          pokemonDetailsContainer.textContent = "Error loading Pokémon details";
-        });
+fetch(urlApi) //Pasamos el pokemon específico y mostramos los datos
+  .then(response => response.json())
+  .then(data => {
+    //metemos en container lo que se mostrará para mostrarlo en html
+    container.innerHTML = `
+      <h2>${data.name}</h2>
+      <img src="${data.sprites.other.home.front_default}" alt="${data.name}" />
+      <p>Height: ${data.height} | Weight: ${data.weight}</p>
+    `;
+  })
+  .catch(error => {
+    console.error(error);
+    container.textContent = "Error loading Pokémon details"; //Muestra el error en el html
+  });
 
 
 
 
+//EJEMPLO DE window.location y URLSearchParams 
+// Let an <a id="myAnchor" href="/en-US/docs/Location.search?q=123"> element be in the document
+//const anchor = document.getElementById("myAnchor");
+//const queryString = anchor.search; // Returns:'?q=123'
 
+// Further parsing:
+//const params = new URLSearchParams(queryString);
+//const q = parseInt(params.get("q")); // is the number 123
 
 
 

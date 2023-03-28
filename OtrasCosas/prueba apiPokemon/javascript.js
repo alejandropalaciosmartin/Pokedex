@@ -1,56 +1,86 @@
-//const apiButton = document.getElementById('apiBoton'); //Seleccionamos el html y metemos variable para trabajar con él
-/*const apiData = document.getElementById('apiData');
-const baseExp = document.getElementById('baseExp');
 
-const callAPI = () => { //Creamos función que asignaremos al botón luego
-    // alert("Llama API")
-    fetch('https://pokeapi.co/api/v2/pokemon/pikachu') //metemos la dirección API
-        .then(res => res.json()) //Entonces lo pasamos a JSON para trabajar con la información que nos llega
-        //.then(data => console.log(data)); //Entonces el dato que nos llega y transformado a json lo pasamos a console para verlo
-        .then(data => {
-            apiData.innerText = JSON.stringify(data.name); //funciona si es un solo pokemon -> pokemon/pikachu
-            apiData.innerText += data.name; //sin comillas
-            baseExp.innerText =`Experiencia ${JSON.stringify(data.base_experience)}` //mirar diferencia con innerHtml
-        })
-        .catch(e => console.error(new Error(e)));
-}
+let container = document.querySelector(".pokemons"); //Seleccionamos clase DONDE se MOSTRARÁ
 
-callAPI();*/
-//apiButton.addEventListener('click', callAPI); //Aplicamos al botón la función al hacer click
-
-let container = document.querySelector(".pokemons");
-
-const urlPokeApi = "https://pokeapi.co/api/v2/pokemon/";
+const urlPokeApi = `https://pokeapi.co/api/v2/pokemon?offset=0&limit=151`;
 
 //Coge el CONJUNTO de TODOS los pokemons
-const getPokemons = (url) => {
-    fetch(url)
-        .then(resp => resp.json())
+const getPokemons = (url) => { //coge la url la urlPokeApi de getPokemons de abajo
+    fetch(url) //Cogemos para trabajar con la API la urlPokeApi
+        .then(resp => resp.json()) //Transformamos en json para poder trabajar
         .then(data => {
             console.log(data); //Muestra todos los pokemons con su url y nombre solo
-            showPokemons(data.results); //Muestra todos los pokemons pero con sus especificaciones
-        })
+            
+            showPokemons(data.results); //results -> Lo mandamos a showPokemons para mostrar todos los pokemons pero con sus especificaciones
+            
+            const searchInput = document.querySelector("#SearchInput");
+            const updatePokemonList = () => {
+            const searchTerm = searchInput.value.toLowerCase();
+
+     //LIMPIA LA PANTALLA
+     //Mientras tenga 1º hijo container 
+      while (container.firstChild) { 
+        container.removeChild(container.firstChild); //Borra el 1º hijo de container
+      }
+
+      data.results
+        .filter((p) => p.name.toLowerCase().includes(searchTerm))
+        .forEach((p) => {
+          
+          const card = document.createElement("div");
+          const name = document.createElement("span");
+          name.textContent = p.name;
+          const idSpan = document.createElement("span");
+          const image = document.createElement("img");
+          
+          fetch(p.url)
+            .then((response) => response.json())
+            .then((data) => {
+              image.src = data.sprites.other.home.front_default;
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+
+          card.appendChild(name);
+          card.appendChild(idSpan); 
+          card.appendChild(image);
+        
+          container.appendChild(card);
+        });
+    };
+
+    searchInput.addEventListener("input", updatePokemonList);
+ 
+    updatePokemonList();
+
+    
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+        
 }
 
 //Coge TODOS los pokemons pero por SEPARADO
-const showPokemons = (array) => {
-    array.map(item => { //filtramos el resultado
-        fetch(item.url) //Cogemos el enlace de cada pokemon
-        .then(resp => resp.json())
+const showPokemons = (dataResults) => { //Cogemos el resultado de getPokemons
+    dataResults.map(item => { //Filtramos el resultado
+        fetch(item.url) //url -> Cogemos el enlace de cada pokemon
+        .then(resp => resp.json()) 
         .then(data => {
             console.log(data);
             loadCard(data);
         })
-        
     })
 }
 
 const loadCard = (data) => {
-    const imagen = data.sprites.other.home.front_default;
+    const imagen = data.sprites.other.home.front_default; //Metemos imagen
     const name = data.name;
 
-    let card = document.createElement("div");
+    let card = document.createElement("div"); //CREAMOS div para poder mostrarlos, puede ser p u otro
     //especifico es la otra web, le pasamos nombre e id
+    //CONTENIDO que se MOSTRARÁ
     let content = `
     <a href ="especifico.html?id=${data.id}&name=${data.name}">  
         <img src="${imagen}" alt="${name}" width="100px">
@@ -59,12 +89,12 @@ const loadCard = (data) => {
         <p>${data.id}</p>
    
     `;
-    card.innerHTML = content;
-    container.appendChild(card);
+    
+    card.innerHTML = content; //METEMOS el contenido en el div/contenedor
+    container.appendChild(card); //METEMOS todo lo GENERADO en la ETIQUETA relacionada
 }
 
-      
+getPokemons(urlPokeApi) //offset comienzo, limit cantidad que coge
 
-getPokemons(`${urlPokeApi}?offset=0&limit=151`)
 
 
