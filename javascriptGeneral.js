@@ -69,6 +69,15 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=151") // Obtener los primeros 151
           `;
           // Establecer los estilos CSS de la tarjeta
           card.style.cssText = "display:flex; flex-direction:column; justify-content:center; width:250px; height:350px; border:1px solid #ddd; border-radius:10px; background-color:#f1f1f1;";
+          
+          /////////////////////////////////////////////////////////////////////////////////////////////////////
+          // Add an event listener to the card element to make it clickable
+          card.addEventListener('click', () => {
+            // Redirect to another HTML page with more detailed information about the selected Pokémon
+            window.location.href = `especifico.html?name=${p.name}`;
+          });
+          /////////////////////////////////////////////////////////////////////////////////////////////////////
+          
           // Obtener los datos detallados del Pokémon de la PokéAPI
           fetch(p.url)
             .then(response => response.json())
