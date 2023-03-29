@@ -1,4 +1,4 @@
-const container = document.getElementById("pokemonIndividual"); //Seleccionamos clase DONDE se MOSTRARÁ
+const container = document.getElementById("#pokemonIndividual"); //Seleccionamos clase DONDE se MOSTRARÁ
 const locationSearchUrl = window.location.search; //Coge direcciones que llevan ? al final de la url
 const urlParams = new URLSearchParams(locationSearchUrl); //coge window.location.search y lo coge con URLSearchParams
 const pokemonId = urlParams.get("id"); //coge de la direccion el número de la id
@@ -10,11 +10,13 @@ fetch(urlApi) //Pasamos el pokemon específico y mostramos los datos
     data.types
     .forEach((p) => {
     //metemos en container lo que se mostrará para mostrarlo en html
-    container.innerHTML = `
+    console.log(p);
+    container.innerHTML += `
       <h1>${data.name}</h1>
       <img src="${data.sprites.other.home.front_default}" alt="${data.name}" />
       <span>${data.id}</span>
       <p>Height: ${data.height} | Weight: ${data.weight}</p>
+      <span>${p}</span>
     `;
    });
   })
