@@ -7,12 +7,23 @@ const urlApi = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`; //Cogemos la di
 fetch(urlApi) //Pasamos el pokemon específico y mostramos los datos
   .then(response => response.json())
   .then(data => {
+    data.types
+    .forEach((datoFor) => {
+      const types = document.createElement("span");
+      types.textContent = datoFor.types;
     //metemos en container lo que se mostrará para mostrarlo en html
     container.innerHTML = `
-      <h2>${data.name}</h2>
+      <h1>${data.name}</h1>
       <img src="${data.sprites.other.home.front_default}" alt="${data.name}" />
+      <br>
+      <span>Número: ${data.id}</span>
+      <span>Tipos: ${types.type.name}</span>
       <p>Height: ${data.height} | Weight: ${data.weight}</p>
     `;
+    container.innerHTML = `
+      <span>Tipos: ${types.type.name}</span>
+    `;
+    });
   })
   .catch(error => {
     console.error(error);
@@ -22,7 +33,7 @@ fetch(urlApi) //Pasamos el pokemon específico y mostramos los datos
 
 
 
-//EJEMPLO DE window.location y URLSearchParams 
+//EJEMPLO DE window.location y URLSearchParams
 // Let an <a id="myAnchor" href="/en-US/docs/Location.search?q=123"> element be in the document
 //const anchor = document.getElementById("myAnchor");
 //const queryString = anchor.search; // Returns:'?q=123'
@@ -58,8 +69,8 @@ function takePokemon(id){
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     .then(resp => resp.json())
     .then(datoPokemon => console.log(datoPokemon))
-    .then(datoPokemon => { 
-      createPokemons(datoPokemon) 
+    .then(datoPokemon => {
+      createPokemons(datoPokemon)
     });
   }
   // takePokemon(1);
@@ -76,7 +87,7 @@ function createPokemons(pokemon){
   pokemonContainer.appendChild(card); //Metemos la tarjeta en el Container del div del html creado
 }
 
-     
+
 
 
   // card.classList.add('xS');
@@ -88,7 +99,7 @@ function createPokemons(pokemon){
   sprite.src = pokemon.sprites.front_default
 
   spriteContainer.appendChild(sprite);
-  
+
   card.appendChild(spriteContainer);
 
   */
@@ -98,14 +109,14 @@ function createPokemons(pokemon){
 
 
 
-/*Si clicamos en el botón del sol, borrarémos la clase css modoOscuro del div 
+/*Si clicamos en el botón del sol, borrarémos la clase css modoOscuro del div
 con id modo y se aplicará el estilo modoClaro al sol*/
 /*document.getElementById('sol').onclick = function(){
   document.getElementById('modo').classList.remove('modoOscuro')
 //   document.getElementById('luna').classList.remove('modoClaro')
   this.classList.add('modoClaro')
 }
-/*Si clicamos en el botón de la luna, añadiremos la clase css modoOscuro del div 
+/*Si clicamos en el botón de la luna, añadiremos la clase css modoOscuro del div
 con id modo y se aplicará el estilo modoClaro a la luna*/
 /*document.getElementById('luna').onclick = function(){
   document.getElementById('modo').classList.add('modoOscuro')
