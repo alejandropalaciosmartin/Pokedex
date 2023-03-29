@@ -12,54 +12,61 @@ const getPokemons = (url) => { //coge la url la urlPokeApi de getPokemons de aba
             
             showPokemons(data.results); //results -> Lo mandamos a showPokemons para mostrar todos los pokemons pero con sus especificaciones
             
+            //BÚSQUEDA - Botón, COGE valor
             const searchInput = document.querySelector("#SearchInput");
             const updatePokemonList = () => {
-            const searchTerm = searchInput.value.toLowerCase();
+            const searchTerm = searchInput.value.toLowerCase(); //pasamos a minúscula lo que escribimos en la búsqueda
 
-     //LIMPIA LA PANTALLA
-     //Mientras tenga 1º hijo container 
-      while (container.firstChild) { 
-        container.removeChild(container.firstChild); //Borra el 1º hijo de container
-      }
+            //BÚSQUEDA - LIMPIA la pantalla
+            //Mientras tenga 1º hijo container 
+              while (container.firstChild) { 
+                container.removeChild(container.firstChild); //Borra el 1º hijo de container
+              }
 
-      data.results
-        .filter((p) => p.name.toLowerCase().includes(searchTerm))
-        .forEach((p) => {
-          
-          const card = document.createElement("div");
-          const name = document.createElement("span");
-          name.textContent = p.name;
-          const idSpan = document.createElement("span");
-          const image = document.createElement("img");
-          
-          fetch(p.url)
-            .then((response) => response.json())
-            .then((data) => {
-              image.src = data.sprites.other.home.front_default;
-            })
-            .catch((error) => {
-              console.error(error);
-            });
+              //BÚSQUEDA - COMPARA el valor del cuadro con la Api
+              data.results
+                .filter((dato) => dato.name.toLowerCase().includes(searchTerm)) //includes -> Determina si el valor(searchTerm) está en dato.name
+                                                                                //si buscaramos por otra cosa es cambiar name por otro de la api
+              
+                //BÚSQUEDA - Por CADA DATO que coincida CREA como se va a ver                                                          
+                .forEach((dato) => {
+                  
+                  //BÚSQUEDA - CREA como se va a ver
+                  const card = document.createElement("div");
+                  const name = document.createElement("span");
+                  name.textContent = dato.name;
+                  const idSpan = document.createElement("span");
+                  const image = document.createElement("img");
+                  
+                  //BÚSQUEDA - COGEMOS el valor URL de la API
+                  fetch(dato.url)
+                    .then((response) => response.json())
+                    .then((data) => {
+                      //BÚSQUEDA - GUARDAMOS la dirección de la imagen en imagen, en el atributo src
+                      image.src = data.sprites.other.home.front_default;
+                    })
+                    .catch((error) => {
+                      console.error(error);
+                    });
 
-          card.appendChild(name);
-          card.appendChild(idSpan); 
-          card.appendChild(image);
-        
-          container.appendChild(card);
+                  //BÚSQUEDA - METEMOS los VALORES de ETIQUETA (span, span, img) dentro del div
+                  card.appendChild(name); //span
+                  card.appendChild(idSpan); //span
+                  card.appendChild(image); //img
+                
+                  //BÚSQUEDA - METEMOS el VALOR de card en container, que es donde irá a mostrar en el html (clase .pokemons)
+                  container.appendChild(card); 
         });
     };
 
+    //BÚSQUEDA - Escucha cuando introducimos (input) lo detecte al momento de teclear y llama al método para ir buscando según vamos 
+    //introduciendo 
     searchInput.addEventListener("input", updatePokemonList);
  
-    updatePokemonList();
-
-    
   })
   .catch((error) => {
     console.error(error);
   });
-
-        
 }
 
 //Coge TODOS los pokemons pero por SEPARADO
