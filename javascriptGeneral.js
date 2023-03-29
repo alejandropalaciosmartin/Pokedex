@@ -68,7 +68,7 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=151") // Obtener los primeros 151
             <div class="types" style="display:flex; justify-content:center;"></div>
           `;
           // Establecer los estilos CSS de la tarjeta
-          card.style.cssText = "display:flex; flex-direction:column; justify-content:center; width:250px; height:325px; border:1px solid #ddd; border-radius:10px; background-color:#f1f1f1;";
+          card.style.cssText = "display:flex; flex-direction:column; justify-content:center; width:250px; height:350px; border:1px solid #ddd; border-radius:10px; background-color:#f1f1f1;";
           // Obtener los datos detallados del Pokémon de la PokéAPI
           fetch(p.url)
             .then(response => response.json())
