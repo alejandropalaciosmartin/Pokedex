@@ -74,7 +74,7 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=151") // Obtener los primeros 151
           // Add an event listener to the card element to make it clickable
           card.addEventListener('click', () => {
             // Redirect to another HTML page with more detailed information about the selected Pokémon
-            window.location.href = `especifico.html?name=${p.name}`;
+            window.location.href = `especifico.html?id=${p.url.split("/")[6]}`;
           });
           /////////////////////////////////////////////////////////////////////////////////////////////////////
           
