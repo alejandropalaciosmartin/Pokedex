@@ -35,10 +35,10 @@ fetch(urlApi) //Pasamos el pokemon específico y mostramos los datos
   console.log(data);
   nombre.innerHTML = data.name.charAt(0).toUpperCase() + data.name.slice(1); //////
   numero.innerHTML = `#${pokemonId.padStart(3, "0")}`; //////
+  
   data.types.forEach(dato => {
-    console.log(dato);
-     tipo.innerHTML += dato.name + " "; //////
-
+    console.log(dato.type.name);
+     tipo.innerHTML += dato.type.name + " "; //////
   })
  
 })
