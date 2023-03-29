@@ -4,17 +4,20 @@ const urlParams = new URLSearchParams(locationSearchUrl); //coge window.location
 const pokemonId = urlParams.get("id"); //coge de la direccion el número de la id
 const urlApi = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`; //Cogemos la direccion con la id del pokemon seleccionamos para poder trabajar con él
 
+
 fetch(urlApi) //Pasamos el pokemon específico y mostramos los datos
   .then(response => response.json())
   .then(data => {
+  
+    
     //metemos en container lo que se mostrará para mostrarlo en html
     container.innerHTML = `
       <h1>${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h1>
       <img src="${data.sprites.other.home.front_default}" alt="${data.name}" />
       <br>
       <span>Número: #${data.id}</span>
-      <span>Tipos: ${data.types[0].type.name}</span>
-      <p>Height: ${data.height} | Weight: ${data.weight}</p>
+      <span class="types">Tipos: ${data.types[0].type.name}</span>
+      <p>Altura: ${data.height}cm |||| Peso: ${data.weight}kg</p>
       `;
       // <span>Número: #${data.id.padStart(3, "0")}</span>
   })
@@ -22,7 +25,6 @@ fetch(urlApi) //Pasamos el pokemon específico y mostramos los datos
     console.error(error);
     container.textContent = "Error loading Pokémon details"; //Muestra el error en el html
   });
-
 
 
 
