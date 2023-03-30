@@ -54,8 +54,8 @@ header{
     display: grid; /*Para hacerlo responsive, dividimos por filas y columnas*/
     grid-template-columns: repeat(2, 1fr); /*Definimos el grosor de las columnas, ponemos para que sean 4 columnas con el mismo grosor(1fr)*/
     grid-template-areas: "boton solluna"
-                         "imagen imagen"
                          "titulo titulo"
+                         "imagen imagen"
                          "numero tipo" 
                          "peso altura"
                          "vida ataque"
@@ -69,6 +69,7 @@ header{
 }
 
 .solluna {
+    grid-area: solluna;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,41 +79,32 @@ header{
     width: 10%;
     border-radius: 5vh;
     box-shadow: 1vh 2vh 3vh rgb(43, 42, 42);
-}
-
-.sol{
-    grid-area: sol;
-    margin-left: 60vh;
+    margin-left: 5vh;
     background: linear-gradient(90deg, rgb(255, 234, 0) 0%, rgb(255, 213, 0) 35%, rgb(255, 241, 134) 100%);
 }
 
-.luna{
-    grid-area: luna; 
-    margin-left: 0;
-    background: linear-gradient(90deg, rgb(0, 0, 87) 0%, rgb(52, 33, 110) 35%, rgb(151, 218, 255) 100%);
-}
 
-.imagenPosicion{
+#imagenPokemon{
     grid-area: imagen;
     margin-top: 5vh;
     
 }
 
-.efecto3D {
+/* .efecto3D {
     box-shadow: 3vh 5vh 5vh rgb(43, 42, 42);
     width: 80%; 
-}
+} */
 
-.textoPokemon {
+#textoPokemon {
     grid-area: titulo;
     font-size: 6vw;
 }
 
-.numeroPokemon{
+#numeroPokemon{
     grid-area: numero;
 }
 
-.tipoPokemon{
+#tipoPokemon{
     grid-area: tipo;
     background-color: rgb(0, 82, 54);
     border-radius: 15px;
@@ -120,11 +112,11 @@ header{
     outline: solid black;
 }
 
-.pesoPokemon{
+#pesoPokemon{
     grid-area: peso;
 }
 
-.alturaPokemon{
+#alturaPokemon{
     grid-area: altura;
 }
 
@@ -133,27 +125,27 @@ header{
 }
 
 
-.vida{
+#vida{
     grid-area: vida; 
 }
 
-.ataque{
+#ataque{
     grid-area: ataque; 
 }
 
-.defensa{
+#defensa{
     grid-area: defensa;
 }
 
-.ataqueEspecial{
+#ataqueEspecial{
     grid-area: ataqueEspecial; 
 }
 
-.defensaEspecial{
+#defensaEspecial{
     grid-area: defensaEspecial; 
 }
 
-.velocidad{
+#velocidad{
     grid-area: velocidad; 
 }
 
@@ -179,7 +171,7 @@ footer{
 }
 
 /*MODO OSCURO/CLARO*/
-.modoOscuro {
+/* .modoOscuro {
     background-color:#1A1C1E;
     color:white;
 } 
@@ -187,7 +179,7 @@ footer{
 .modoClaro {
     background-color:#ffffff;
     color:black;
-} 
+}  */
 /*gradiente para la sombra con after y before*/
 
 

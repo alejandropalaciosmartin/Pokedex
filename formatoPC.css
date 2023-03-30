@@ -15,11 +15,7 @@
     font-size: 2vw;
 }
 
-.sol{
-    margin-left: 90vh;
-}
-
-.luna{
+.solluna{
     margin-left: 0;
 }
 
@@ -27,11 +23,11 @@
     width: 40%; 
 }
 
-.textoPokemon {
+#textoPokemon {
     font-size: 4vw;
 }
 
- .tipoPokemon, .numeroPokemon, .pesoPokemon, .alturaPokemon{
+ #tipoPokemon, #numeroPokemon, #pesoPokemon, #alturaPokemon{
     width: 30%;
     margin: auto; 
 } 

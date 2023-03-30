@@ -5,8 +5,10 @@ const urlApi = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`; //Cogemos la di
 
 const container = document.getElementById("pokemonIndividual"); //Seleccionamos clase DONDE se MOSTRARÁ
 let nombre = document.getElementById("textoPokemon"); //////
+let imagen = ""; //////
 let numero = document.getElementById("numeroPokemon"); //////
 let tipo = document.getElementById("tipoPokemon"); //////
+let typeName = "";
 let peso = document.getElementById("pesoPokemon"); //////
 let altura = document.getElementById("alturaPokemon"); //////
 let vida = document.getElementById("vida"); //////
@@ -15,8 +17,6 @@ let defensa = document.getElementById("defensa"); //////
 let ataqueEspecial = document.getElementById("ataqueEspecial"); //////
 let defensaEspecial = document.getElementById("defensaEspecial"); //////
 let velocidad = document.getElementById("velocidad"); //////
-let imagen = ""; //////
-let typeName = "";
 
 const typeTranslations = {
   normal: 'Normal',
