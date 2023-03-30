@@ -1,11 +1,11 @@
-/*Variables*/
+/*VARIABLES*/
 :root{
     --marron: brown;
     --blanco: rgb(230, 217, 210);
     --gris: #797979;
 }
 
-/*Toda la página*/
+/*TODA LA PÁGINA*/
 *{ 
     /*Para quitar los márgenes*/
     margin: 0;
@@ -20,7 +20,7 @@
     src: url("./letterFont/Pokemon\ Hollow.ttf"); /*Donde se coge*/
 }
 
-/*Cabecera*/
+/*CABECERA*/
 header{ 
     /* --marron: yellow; */          /*Si se usa en otra clase y se cambia el contenido a partir de ahí lo usa de este modo*/
     background-color: var(--marron); /*Fondo del encabezado*/
@@ -32,28 +32,34 @@ header{
     color: var(--blanco);            /*Color de la letra*/
 }
 
+/*Título de la cabecera*/
 #tituloHead{
+    /*Posición*/
     position: relative;
-    margin-top: -3vh;  /*Título arriba*/
-    z-index: 1;
+    margin-top: -3vh; 
+    z-index: 1; /*Colocar delante del icono*/
 }
 
+/*Contenedor de la imagen de la cabecera*/
 #cabeceraHead{
     margin-top: -8vh; /*Cuadrar imagen con el título*/
 }
 
+/*Imagen de la cabecera*/
 #imagenHead{
-    align-items: center;
+    align-items: center; /*Centrar imagen verticalmente*/
     width: 5vh;
     margin-left: 20vh;
-    opacity: 0.8; 
+    opacity: 0.8; /*Esté más transparente de lo normal*/
     z-index: -1; /*Poner bola atrás del título*/
 }
 
+/*CONTENEDOR - MAIN*/
 .container{
     /*GRID*/
     display: grid; /*Para hacerlo responsive, dividimos por filas y columnas*/
     grid-template-columns: repeat(2, 1fr); /*Definimos el grosor de las columnas, ponemos para que sean 4 columnas con el mismo grosor(1fr)*/
+    /*Estructuramos donde se verán cada parte*/
     grid-template-areas: "boton solluna"
                          "titulo titulo"
                          "imagen imagen"
@@ -64,24 +70,25 @@ header{
                          "defensaEspecial velocidad"
                          "evolucion evolucion";
     grid-gap: 5vh;  /*Separación entre elementos*/  
-    font-size: 4vw;
     color: var(--gris);
     margin-left: 20vh;
 }
 
+/*Modo oscuro/claro*/
 .solluna {
-    grid-area: solluna;
+    /*Posición*/
+    grid-area: solluna; /*GRID*/
+    /*Cuadrar iconos dentro del div*/
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    /*Cuadrar y formar div*/
     margin-top: 1vh;
     margin-bottom: -6vh;
-    width: 10%;
+    width: 45%;
     border-radius: 5vh;
-    box-shadow: 1vh 2vh 3vh rgb(43, 42, 42);
-    margin-left: 5vh;
-    background: linear-gradient(90deg, rgb(243, 222, 0) 0%, rgb(255, 187, 0) 35%, rgb(0, 0, 1) 100%);
+    box-shadow: 1vh 2vh 3vh rgb(43, 42, 42); /*Sombrear, para efecto 3D*/
+    background: linear-gradient(90deg, rgb(243, 222, 0) 0%, rgb(255, 187, 0) 35%, rgb(0, 0, 1) 100%); /*Fondo con gradiente*/
 }
 
 
@@ -91,10 +98,6 @@ header{
     
 }
 
-/* .efecto3D {
-    box-shadow: 3vh 5vh 5vh rgb(43, 42, 42);
-    width: 80%; 
-} */
 
 #textoPokemon {
     grid-area: titulo;

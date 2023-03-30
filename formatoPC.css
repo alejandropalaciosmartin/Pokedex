@@ -1,3 +1,4 @@
+/*CABECERA*/
 #cabeceraHead{
     margin-top: -8vh;
 }
@@ -10,13 +11,15 @@
     margin-left: 18vh;
 }
 
+/*CONTAINER - MAIN*/
 .container{
     margin-left: 0;
     font-size: 2vw;
 }
 
 .solluna{
-    margin-left: 0;
+    width: 10%;
+    margin-left: -5vh;
 }
 
 .efecto3D {
@@ -32,6 +35,7 @@
     margin: auto; 
 } 
 
+/*PIE*/
 footer{
     margin-top: 10vh;
 }
