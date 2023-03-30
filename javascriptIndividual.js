@@ -10,27 +10,33 @@ let tipo = document.getElementById("tipoPokemon"); //////
 let peso = document.getElementById("pesoPokemon"); //////
 let altura = document.getElementById("alturaPokemon"); //////
 let vida = document.getElementById("vida"); //////
+let ataque = document.getElementById("ataque"); //////
+let defensa = document.getElementById("defensa"); //////
+let ataqueEspecial = document.getElementById("ataqueEspecial"); //////
+let defensaEspecial = document.getElementById("defensaEspecial"); //////
+let velocidad = document.getElementById("velocidad"); //////
 let imagen = ""; //////
+let typeName = "";
 
 const typeTranslations = {
-  normal: 'normal',
-  fire: 'fuego',
-  water: 'agua',
-  electric: 'eléctrico',
-  grass: 'planta',
-  ice: 'hielo',
-  fighting: 'lucha',
-  poison: 'veneno',
-  ground: 'tierra',
-  flying: 'volador',
-  psychic: 'psíquico',
-  bug: 'bicho',
-  rock: 'roca',
-  ghost: 'fantasma',
-  dragon: 'dragón',
-  dark: 'siniestro',
-  steel: 'acero',
-  fairy: 'hada'
+  normal: 'Normal',
+  fire: 'Fuego',
+  water: 'Agua',
+  electric: 'Eléctrico',
+  grass: 'Planta',
+  ice: 'Hielo',
+  fighting: 'Lucha',
+  poison: 'Veneno',
+  ground: 'Tierra',
+  flying: 'Volador',
+  psychic: 'Psíquico',
+  bug: 'Bicho',
+  rock: 'Roca',
+  ghost: 'Fantasma',
+  dragon: 'Dragón',
+  dark: 'Siniestro',
+  steel: 'Acero',
+  fairy: 'Hada'
 };
 
 function Mostrar(){
@@ -39,15 +45,21 @@ function Mostrar(){
   .then(data => {
   console.log(data);
   nombre.innerHTML = data.name.charAt(0).toUpperCase() + data.name.slice(1); //////
+  document.getElementById('imagenPokemon').src = data.sprites.other.home.front_default;
   numero.innerHTML = `#${pokemonId.padStart(3, "0")}`; //////
   peso.innerHTML = data.weight + "kg";
   altura.innerHTML = data.height + "cm";
   vida.value = data.stats[0].base_stat;
-  document.getElementById('imagenPokemon').src = data.sprites.other.home.front_default;
+  ataque.value = data.stats[1].base_stat;
+  defensa.value = data.stats[2].base_stat;
+  ataqueEspecial.value = data.stats[3].base_stat;
+  defensaEspecial.value = data.stats[4].base_stat;
+  velocidad.value = data.stats[5].base_stat;
 
   data.types.forEach(dato => {
     // console.log(dato.type.name);
-     tipo.innerHTML += dato.type.name + " "; //////
+     typeName = dato.type.name; //////
+     tipo.innerHTML += typeTranslations[typeName] + " "; //////
   })
  
 })
