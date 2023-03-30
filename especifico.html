@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Para que el navegador pueda controlar las dimensiones y la escala de la página -->
     <link rel="stylesheet" href="./formatoMovil.css"><!--CSS formato movil-->
     <link rel="stylesheet" media="(min-width: 768px)" href="./formatoPc.css"><!--CSS formato pc-->
+    <link rel="stylesheet" type="text/css" href="./darkWeb.css" /> <!--ModoOscuro-->
 
     <script src="https://kit.fontawesome.com/e0f3b21040.js"crossorigin="anonymous"></script><!--FontAwesome-->
     <title>Pokédex</title> <!--Título de pestaña-->
@@ -26,6 +27,7 @@
         <a class="boton" href="./index.html">Atrás</a>
         
         <!--Botón modo oscuro-->
+        <!-- <button class="darkModeSwitch ms-2" id="switch"></button> -->
         <div id="modoOscuro"> 
             <!-- Iconos de Fontawesome sol/luna (fa-1x - tamaño)-->
             <i class="fas fa-sun fa-1x"></i> <!--Sol--> 
@@ -45,45 +47,45 @@
  
             <!--Vida-->
             <div class="vida">
-            <label for="vida">Vida</label>
+            <label for="vida" class="colorFuente">Vida</label>
                 <input type="range" name="vida" id="vida" disabled max="256">
             </div>
 
             <!--Defensa-->
             <div class="defensa">
-                <label for="defensa">Defensa</label>
+                <label for="defensa" class="colorFuente">Defensa</label>
                 <input type="range" name="defensa" id="defensa" disabled>
             </div>
             
             <!--Defensa Especial-->
             <div class="defensaEspecial">
-                <label for="defensaEspecial">Defensa especial</label>
+                <label for="defensaEspecial" class="colorFuente">Defensa especial</label>
                 <input type="range" name="defensaEspecial" id="defensaEspecial" disabled>
             </div>
                         
             <!--Velocidad-->
             <div class="velocidad">
-                <label for="velocidad">Velocidad</label>
+                <label for="velocidad" class="colorFuente">Velocidad</label>
                 <input type="range" name="velocidad" id="velocidad" disabled>
             </div>
             <!--Ataque-->
             <div class="ataque">
-                <label for="ataque">Ataque</label>
+                <label for="ataque" class="colorFuente">Ataque</label>
                 <input type="range" name="ataque" id="ataque" disabled>
             </div>
             <!--Ataque especial-->
             <div class="ataqueEspecial">
-                <label for="ataqueespecial">Ataque especial</label>
+                <label for="ataqueespecial" class="colorFuente">Ataque especial</label>
                 <input type="range" name="ataqueEspecial" id="ataqueEspecial" disabled>
             </div>
 
         <!--Evolución-->
         <div class="evolucion">
-            <div class="evolucionar">Pokemon1</div>
-            <div class="flecha">Flecha</div>
-            <div class="evolucionar">Pokemon2</div>
-            <div class="flecha">Flecha</div>
-            <div class="evolucionar">Pokemon3</div>
+            <div class="evolucionar colorFuente">Pokemon1</div>
+            <div class="flecha colorFuente">Flecha</div>
+            <div class="evolucionar colorFuente">Pokemon2</div>
+            <div class="flecha colorFuente">Flecha</div>
+            <div class="evolucionar colorFuente">Pokemon3</div>
         </div>
     </main>
     <!-- flex + div para evolucion -->

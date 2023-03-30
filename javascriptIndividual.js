@@ -1,10 +1,8 @@
 /*MODO OSCURO/CLARO*/
-const modoOscuro = document.querySelector("#modoOscuro");
-
-modoOscuro.addEventListener("click", () => {
-  document.body.classList.toggle("darkMode"); /*Coge del archivo aparte del Css*/
-    
-  document.body.classList.contains("darkMode") ? "#666" : "#f1f1f1";
+const modoOscuro = document.getElementById('modoOscuro');
+ 
+modoOscuro.addEventListener('click', () => {
+    document.body.classList.toggle('dark'); //Coge del archivo aparte del Css
 });
 
 /*COGER DATO URL*/

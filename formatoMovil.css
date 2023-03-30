@@ -2,7 +2,7 @@
 :root{
     --marron: brown;
     --blanco: rgb(230, 217, 210);
-    --gris: #797979;
+    --gris: #555555;
 }
 
 /*TODA LA PÁGINA*/
@@ -126,12 +126,6 @@ header{
     margin-left: 2vh;
 }
 
-/*Modificado por JavaScript*/
-body.darkMode {
-  background-color: #222;
-  color: #fff;
-}
-
 /*Texto*/
 #textoPokemon {
     grid-area: titulo;
@@ -221,23 +215,30 @@ body.darkMode {
 }
 
 @keyframes primera{                         
-  0%{                                   
+    0%{                                   
         transform: scale(1,1);
-      }
-  50%{                                     
+    }
+    50%{                                     
         transform: scale(1.5,1.5);
     }
     100%{                                   
         transform: scale(1,1);
-      }
+    }
 } 
 
 #numeroPokemon, #tipoPokemon, .vida, .ataque, .defensa, .ataqueEspecial, .defensaEspecial, .velocidad{
     font-size: 5vh;
+    
 }
 
 #numeroPokemon, #pesoPokemon, #alturaPokemon {
     font-size: 8vh;
+    color: var(--gris);
+}
+
+.colorFuente {
+    color: var(--gris);
+
 }
 
 /*Id*/
@@ -252,7 +253,7 @@ body.darkMode {
 #tipoPokemon{
     grid-area: tipo;
     border-radius: 15px;
-    color: var(--blanco);
+    color: var(--gris);
     outline: solid black;
 }
 
@@ -290,6 +291,10 @@ body.darkMode {
     grid-area: velocidad; 
 }
 
+[type=range]  {
+    background-color: aqua;
+  }
+
 /*Evoluciones*/
 .evolucion{
     grid-area: evolucion; 
@@ -311,22 +316,22 @@ footer{
     color: var(--blanco);
 }
 
-/*MODO OSCURO/CLARO*/
-/* .modoOscuro {
-    background-color:#1A1C1E;
-    color:white;
-} 
+/*MODO OSCURO - Modificado por JavaScript*/
+body.dark {   
+    background:  rgba(0, 0, 0, 0.911); 
+}
+body.dark h1, span, label, .evolucion {   
+    color:var(--blanco);
 
-.modoClaro {
-    background-color:#ffffff;
-    color:black;
-}  */
-/*gradiente para la sombra con after y before*/
+}
 
+body.dark a {   
+    background:  rgb(59, 59, 59); 
+    color: var(--blanco);
+    box-shadow: 0 0 3vh 20px rgba(255, 0, 0, 0.2);
+}
 
-/*Rodear cada letra del texto y la caja -> outline que pide*/
-
-
-
-
-
+body.dark #modoOscuro{
+    box-shadow: 1vh 2vh 3vh rgba(255, 0, 0, 0.2); 
+    background: linear-gradient(90deg, rgb(0, 0, 1) 10%, rgb(255, 187, 0) 35%, rgb(243, 222, 0) 100%);
+}
