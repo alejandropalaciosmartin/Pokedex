@@ -8,83 +8,66 @@
     <link rel="stylesheet" media="(min-width: 768px)" href="./formatoPc.css"><!--CSS formato pc-->
 
     <script src="https://kit.fontawesome.com/e0f3b21040.js"crossorigin="anonymous"></script><!--FontAwesome-->
-    <title>Pokédex</title>
+    <title>Pokédex</title> <!--Título de pestaña-->
 </head>
 <body>
-    <!-- Cabezal -->
+    <!-- Cabecera -->
     <header>
-        <h1 role="Título de la Pokédex" id="tituloHead">Pokédex</h1>
-        <div id="cabeceraHead">
+        <h1 role="Título de la Pokédex" id="tituloHead">Pokédex</h1> <!--Título de la cabecera-->
+        <!--Imagen de la cabecera-->
+        <div id="cabeceraHead"> 
             <img src="./img/pokeball.png" id="imagenHead">
         </div>
     </header>
     <!-- Cuerpo -->
     <main class="container">
-        <!-- <button class="boton" id="darkMode" onclick="cambiarModo()">Modo Oscuro/Claro</button> -->
-        <a class="boton" href="./index.html">Atrás</a>
+        <a class="boton" href="./index.html">Atrás</a> <!--Botón atrás-->
         
-        <div id="solluna" class="solluna sol">
-            <i class="fas fa-sun"></i>
+        <!--Botón modo oscuro-->
+        <div id="solluna" class="solluna sol"> 
+            <!-- Iconos de Fontawesome sol/luna -->
+            <i class="fas fa-sun"></i> <!--Sol-->
+            <i class="fa fa-moon-o" aria-hidden="true"></i> <!--Luna-->
          </div>
-        <!-- <div class="imagenPosicion" >
-            <img src="./img/noImagen.jpg" class="efecto3D">
-        </div> -->
 
-        <h1 id="textoPokemon"></h1>
-        <img id="imagenPokemon" src="">
-        <span id="numeroPokemon"></span>
-        <span id="tipoPokemon"></span>
-        <span id="pesoPokemon"></span>
-        <span id="alturaPokemon">x m</span>
+        <h1 id="textoPokemon"></h1> <!--Título-->
+        <img id="imagenPokemon" src=""> <!--Imagen-->
+        <span id="numeroPokemon"></span> <!--Id-->
+        <span id="tipoPokemon"></span> <!--Tipos-->
+        <span id="pesoPokemon"></span> <!--Peso-->
+        <span id="alturaPokemon"></span> <!--Altura-->
+ 
+        <!--Vida-->
         <div class="vida">
         <label for="vida">Vida</label>
             <input type="range" name="vida" id="vida" disabled max="256">
         </div>
+        <!--Ataque-->
         <div class="ataque">
             <label for="ataque">Ataque</label>
             <input type="range" name="ataque" id="ataque" disabled>
         </div>
+        <!--Defensa-->
         <div class="defensa">
             <label for="defensa">Defensa</label>
             <input type="range" name="defensa" id="defensa" disabled>
         </div>
+        <!--Ataque especial-->
         <div class="ataqueespecial">
             <label for="ataqueespecial">Ataque especial</label>
             <input type="range" name="ataqueEspecial" id="ataqueEspecial" disabled>
         </div>
+        <!--Defensa Especial-->
         <div class="defensaEspecial">
             <label for="defensaEspecial">Defensa especial</label>
             <input type="range" name="defensaEspecial" id="defensaEspecial" disabled>
         </div>
+        <!--Velocidad-->
         <div class="velocidad">
             <label for="velocidad">Velocidad</label>
             <input type="range" name="velocidad" id="velocidad" disabled>
         </div>
-        <!-- CUANDO ACABAE TODO ME COMPLICO CON ESTA PARTE, QUE ES CREAR LAS BARRAS CON DIV -->
-        <!-- <div class="barra vida">
-            <p>Vida</p>
-            <div id="vida"></div>
-        </div>
-        <div class="barra ataque">
-            <p>Ataque</p>
-            <div id="ataque"></div>
-        </div>
-        <div class="barra defensa">
-            <p>Defensa</p>
-            <div id="defensa"></div>
-        </div>
-        <div class="barra ataqueespecial">
-            <p>Ataque especial</p>
-            <div id="ataqueespecial"></div>
-        </div>
-        <div class="barra defensaEspecial">
-            <p>Defensa especial</p>
-            <div id="defensaEspecial"></div>
-        </div>
-        <div class="barra velocidad">
-            <p>Velocidad</p>
-            <div id="velocidad"></div>
-        </div> -->
+        <!--Evolución-->
         <div class="evolucion">
             <div class="evolucionar">Pokemon1</div>
             <div class="flecha">Flecha</div>
@@ -96,7 +79,7 @@
     <!-- flex + div para evolucion -->
     <footer>
         <!-- Pie -->
-        <p class="pie">&copy;Adri &copy;Alex</p>
+        <p class="pie">Página realizada por &copy;Adri / &copy;Alex</p>
     </footer>
     <script src="./javascriptIndividual.js"></script> <!--JavaScript-->
 </body>

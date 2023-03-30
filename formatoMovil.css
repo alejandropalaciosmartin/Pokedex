@@ -4,36 +4,37 @@
     --blanco: rgb(230, 217, 210);
     --gris: #797979;
 }
+
 /*Toda la página*/
-*{ /*Para quitar los márgenes*/
+*{ 
+    /*Para quitar los márgenes*/
     margin: 0;
     padding: 0;
-    text-align: center;
-    font-weight: bold; /*Poner negrita*/
+    text-align: center; /*Alinear en el centro los textos*/
+    font-weight: bold;  /*Poner negrita*/
 }
 
 /*Fuente descargada*/
-@font-face{ /*Declaramos para usarla*/
-    font-family: Pokemon;  /*Nombre puesto por nosotros*/
+@font-face{                                       /*Declaramos para usarla*/
+    font-family: Pokemon;                         /*Nombre puesto por nosotros*/
     src: url("./letterFont/Pokemon\ Hollow.ttf"); /*Donde se coge*/
 }
 
 /*Cabecera*/
 header{ 
-    /* --marron: yellow; *//*Si se usa en otra clase y se cambia el cotnenido a partir de ahí lo usa de este modo*/
+    /* --marron: yellow; */          /*Si se usa en otra clase y se cambia el contenido a partir de ahí lo usa de este modo*/
     background-color: var(--marron); /*Fondo del encabezado*/
-    min-width: 100vh; /*Ancho de la cabecera*/
-    height: 100%;
-    /*Posición de la cabecera*/
-    top: 0;  /*Se coloque arriba del todo*/
+    min-width: 100vh;                /*Ancho de la cabecera*/
+    height: 100%;                    /*Alto de la cabecera*/
+    top: 0;                          /*Se coloca arriba del todo*/
     /*Texto*/
-    font-family: "Pokemon";   /*Fuente Descargada: Ponemos aquí el nombre de como hemos declarado la fuente descargada, arriba se declara*/
-    color: var(--blanco);
+    font-family: "Pokemon";          /*Fuente Descargada: Ponemos aquí el nombre de como hemos declarado la fuente descargada, arriba se declara*/
+    color: var(--blanco);            /*Color de la letra*/
 }
 
 #tituloHead{
     position: relative;
-    margin-top: -3vh; /*Título arriba*/
+    margin-top: -3vh;  /*Título arriba*/
     z-index: 1;
 }
 
@@ -80,7 +81,7 @@ header{
     border-radius: 5vh;
     box-shadow: 1vh 2vh 3vh rgb(43, 42, 42);
     margin-left: 5vh;
-    background: linear-gradient(90deg, rgb(255, 234, 0) 0%, rgb(255, 213, 0) 35%, rgb(255, 241, 134) 100%);
+    background: linear-gradient(90deg, rgb(243, 222, 0) 0%, rgb(255, 187, 0) 35%, rgb(0, 0, 1) 100%);
 }
 
 
@@ -125,27 +126,27 @@ header{
 }
 
 
-#vida{
+.vida{
     grid-area: vida; 
 }
 
-#ataque{
+.ataque{
     grid-area: ataque; 
 }
 
-#defensa{
+.defensa{
     grid-area: defensa;
 }
 
-#ataqueEspecial{
+.ataqueEspecial{
     grid-area: ataqueEspecial; 
 }
 
-#defensaEspecial{
+.defensaEspecial{
     grid-area: defensaEspecial; 
 }
 
-#velocidad{
+.velocidad{
     grid-area: velocidad; 
 }
 
