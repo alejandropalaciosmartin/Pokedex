@@ -1,8 +1,19 @@
+/*MODO OSCURO/CLARO*/
+const modoOscuro = document.querySelector("#modoOscuro");
+
+modoOscuro.addEventListener("click", () => {
+  document.body.classList.toggle("darkMode");
+    
+  style.backgroundColor = document.body.classList.contains("darkMode") ? "#666" : "#f1f1f1";
+});
+
+/*COGER DATO URL*/
 const locationSearchUrl = window.location.search; //Coge direcciones que llevan ? al final de la url
 const urlParams = new URLSearchParams(locationSearchUrl); //coge window.location.search y lo coge con URLSearchParams
 const pokemonId = urlParams.get("id"); //coge de la direccion el número de la id
 const urlApi = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`; //Cogemos la direccion con la id del pokemon seleccionamos para poder trabajar con él
 
+/*VARIABLES*/
 const container = document.getElementById("pokemonIndividual"); //Seleccionamos clase DONDE se MOSTRARÁ
 let nombre = document.getElementById("textoPokemon"); //////
 let imagen = ""; //////
@@ -18,6 +29,7 @@ let ataqueEspecial = document.getElementById("ataqueEspecial"); //////
 let defensaEspecial = document.getElementById("defensaEspecial"); //////
 let velocidad = document.getElementById("velocidad"); //////
 
+/*ENUMERADOS*/
 const typeTranslations = {
   normal: 'Normal',
   fire: 'Fuego',
@@ -70,6 +82,7 @@ function Mostrar(){
 
 }
  Mostrar();
+
 
 //EJEMPLO DE window.location y URLSearchParams 
 // Let an <a id="myAnchor" href="/en-US/docs/Location.search?q=123"> element be in the document
