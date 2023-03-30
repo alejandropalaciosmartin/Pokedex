@@ -53,7 +53,7 @@ header{
     /*GRID*/
     display: grid; /*Para hacerlo responsive, dividimos por filas y columnas*/
     grid-template-columns: repeat(2, 1fr); /*Definimos el grosor de las columnas, ponemos para que sean 4 columnas con el mismo grosor(1fr)*/
-    grid-template-areas: "sol luna"
+    grid-template-areas: "boton solluna"
                          "imagen imagen"
                          "titulo titulo"
                          "numero tipo" 
@@ -68,7 +68,7 @@ header{
     margin-left: 20vh;
 }
 
-.sol, .luna{
+.solluna {
     display: flex;
     justify-content: center;
     align-items: center;
