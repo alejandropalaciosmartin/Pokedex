@@ -74,8 +74,30 @@ header{
     margin-left: 20vh;
 }
 
+/*Atrás*/
+.boton{
+    grid-area: boton;
+    margin-top: 5vh;
+    text-decoration: none; /*Quitar subrayado*/
+    color: var(--gris);
+    background-color: white;
+    border-radius: 2vh;
+    box-shadow: 0 0 3vh 10px rgba(0, 0, 0, 0.2);
+    width: 15vh;
+    text-align: center;
+    padding: 2vh;
+    margin-left: -10vh;
+    font-size: 5vh;
+}
+
+.boton:hover{
+    background-color: var(--marron);
+    box-shadow: 0 0 3vh 10px red;
+    color: var(--blanco);
+}
+
 /*Modo oscuro/claro*/
-.solluna {
+#solluna {
     /*Posición*/
     grid-area: solluna; /*GRID*/
     /*Cuadrar iconos dentro del div*/
@@ -83,51 +105,84 @@ header{
     justify-content: center;
     align-items: center;
     /*Cuadrar y formar div*/
-    margin-top: 1vh;
+    margin-top: 3vh;
     margin-bottom: -6vh;
-    width: 45%;
-    border-radius: 5vh;
+    margin-left: 20vh;
+    width: 10vh;
+    height: 10vh;
+    padding: 1vh;
+    border-radius: 10vh; /*Redondear*/
     box-shadow: 1vh 2vh 3vh rgb(43, 42, 42); /*Sombrear, para efecto 3D*/
     background: linear-gradient(90deg, rgb(243, 222, 0) 0%, rgb(255, 187, 0) 35%, rgb(0, 0, 1) 100%); /*Fondo con gradiente*/
 }
 
-
-#imagenPokemon{
-    grid-area: imagen;
-    margin-top: 5vh;
-    
+.separar{
+    margin-left: 2vh;
 }
 
-
+/*Texto*/
 #textoPokemon {
     grid-area: titulo;
-    font-size: 6vw;
+    margin-top: 2vh;
+    margin-bottom: -50vh;
+    margin-left: -10vh;
+    font-size: 15vh;
 }
 
+/*Imagen*/
+.posicionPokemon{
+    /*Posición*/
+    grid-area: imagen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10vh;
+}
+
+#numeroPokemon, #tipoPokemon, .vida, .ataque, .defensa, .ataqueEspecial, .defensaEspecial, .velocidad{
+    font-size: 5vh;
+}
+
+#numeroPokemon, #pesoPokemon, #alturaPokemon {
+    font-size: 8vh;
+}
+
+/*Id*/
 #numeroPokemon{
     grid-area: numero;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/*Tipos*/
 #tipoPokemon{
     grid-area: tipo;
-    background-color: rgb(0, 82, 54);
     border-radius: 15px;
     color: var(--blanco);
     outline: solid black;
 }
 
+/*Peso*/
 #pesoPokemon{
     grid-area: peso;
 }
 
+/*Peso*/
 #alturaPokemon{
     grid-area: altura;
 }
 
-.bordes{
-    border: var(--marron) solid 1vh;
-}
+/*Barras de vida, ataque, atque especial, defensa especial y velocidad*/
+/* .vida, .defensa, .defensaEspecial{
+    margin-left: 8vh;
+} */
 
+.englobar{
+    border: solid 1vh var(--gris);
+    border-radius: 5vh;
+    padding: 5vh;
+}
 
 .vida{
     grid-area: vida; 
@@ -153,6 +208,7 @@ header{
     grid-area: velocidad; 
 }
 
+/*Evoluciones*/
 .evolucion{
     grid-area: evolucion; 
     display: flex;
@@ -170,7 +226,6 @@ footer{
     background-color: var(--marron);
     min-width:100vh; /*Para el ancho que se acortaba y de este modo se extiende en todas las dimensiones*/
     height: 5vh;
-    /*Texto*/
     color: var(--blanco);
 }
 

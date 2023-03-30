@@ -59,7 +59,7 @@ function Mostrar(){
   data.types.forEach(dato => {
     // console.log(dato.type.name);
      typeName = dato.type.name; //////
-     tipo.innerHTML += typeTranslations[typeName] + " "; //////
+     tipo.innerHTML += typeTranslations[typeName] + "  "; //////
   })
  
 })

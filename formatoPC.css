@@ -17,17 +17,22 @@
     font-size: 2vw;
 }
 
-.solluna{
-    width: 10%;
-    margin-left: -5vh;
+.boton{
+    margin-left: 10vh;
 }
 
-.efecto3D {
-    width: 40%; 
+#solluna{
+    width: 10%;
+    margin-left: 70vh;
 }
 
 #textoPokemon {
-    font-size: 4vw;
+    margin: auto; 
+    margin-top: -18vh;
+}
+
+.posicionPokemon{
+    margin-top: -10vh;
 }
 
  #tipoPokemon, #numeroPokemon, #pesoPokemon, #alturaPokemon{
