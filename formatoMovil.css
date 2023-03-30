@@ -291,9 +291,32 @@ header{
     grid-area: velocidad; 
 }
 
-[type=range]  {
-    background-color: aqua;
-  }
+
+input[type=range]:disabled {
+    background-color: var(--marron);/* Disabled Element */
+    border-radius: 50vh;
+}
+
+input[type=range]:disabled::-webkit-slider-runnable-track {
+    background-color: var(--marron);/* Disabled slider-runnable-track */
+    border-radius: 50vh;
+}
+
+input[type=range]:disabled::-moz-range-track {
+      background-color: var(--marron);/* Disabled slider-range-track */
+      border-radius: 50vh;
+}
+
+input[type=range]:disabled::-webkit-slider-thumb {
+    background-color: var(--marron);/* Disabled slider-thumb */
+    border-radius: 50vh;
+}
+
+input[type=range]:disabled::-moz-range-thumb {
+    background-color: var(--marron);/* Disabled slider-thumb */
+    border-radius: 50vh;
+}
+
 
 /*Evoluciones*/
 .evolucion{
