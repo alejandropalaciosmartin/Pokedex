@@ -49,7 +49,7 @@ header{
 #imagenHead{
     align-items: center; /*Centrar imagen verticalmente*/
     width: 5vh;
-    margin-left: 20vh;
+    margin-left: 25vh;
     opacity: 0.8; /*Esté más transparente de lo normal*/
     z-index: -1; /*Poner bola atrás del título*/
 }
@@ -214,10 +214,10 @@ body.darkMode {
 
 .posicionPokemon:hover{           
     animation-name: primera;                /*Nombre a elegir para que se haga el efecto abajo descrito (keyframes)*/
-  animation-duration: 1s;                 /*Duración*/
-  animation-direction: normal;            /*Dirección*/
-  animation-timing-function: linear;        /*Velocidad*/
-  animation-fill-mode: both;               
+    animation-duration: 1s;                 /*Duración*/
+    animation-direction: normal;            /*Dirección*/
+    animation-timing-function: linear;        /*Velocidad*/
+    animation-fill-mode: both;               
 }
 
 @keyframes primera{                         

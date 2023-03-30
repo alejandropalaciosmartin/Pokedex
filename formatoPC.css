@@ -6,10 +6,6 @@
     margin-left: 1vh;
 }
 
-#imagenHead{
-    margin-left: 18vh;
-}
-
 .container{
     display: grid; 
     grid-template-columns: 2fr, repeat(2, 1fr);

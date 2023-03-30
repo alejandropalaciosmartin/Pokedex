@@ -1,3 +1,10 @@
+/*TODA LA PÁGINA*/
+*{ 
+  /*Para quitar los márgenes*/
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,11 +14,25 @@ body {
 header {  
   background-color: brown;   
   font-family: "Pokemon";  
-  width: 100%;
+  min-width: 100%;
   top: 0;  
   height: 100%;
   text-align: center;
   color: rgb(230, 217, 210);
+}
+
+/*Contenedor de la imagen de la cabecera*/
+#cabeceraHead{
+  margin-top: -8vh; /*Cuadrar imagen con el título*/
+}
+
+/*Imagen de la cabecera*/
+#imagenHead{
+  align-items: center; /*Centrar imagen verticalmente*/
+  width: 5vh;
+  margin-left: 25vh;
+  opacity: 0.8; /*Esté más transparente de lo normal*/
+  z-index: -1; /*Poner bola atrás del título*/
 }
 
 main {
@@ -29,8 +50,9 @@ footer {
 }
 
 #tituloHead {
-    margin-top: -4vh;
-    z-index: 10;
+    position: relative;
+    margin-top: -3vh;
+    z-index: 1;
 }
 
 @font-face { 
@@ -126,3 +148,23 @@ body.dark-mode {
 .pokemon-card.dark-mode span:nth-of-type(2) {
   color: #fff;
 }
+
+.mover:hover{
+  animation-name: primera;                /*Nombre a elegir para que se haga el efecto abajo descrito (keyframes)*/
+    animation-duration: 1s;                 /*Duración*/
+    animation-direction: normal;            /*Dirección*/
+    animation-timing-function: linear;        /*Velocidad*/
+    animation-fill-mode: both;               
+}
+
+@keyframes primera{                         
+  0%{                                   
+        transform: scale(1,1);
+      }
+  50%{                                     
+        transform: scale(1.5,1.5);
+    }
+    100%{                                   
+        transform: scale(1,1);
+      }
+} 

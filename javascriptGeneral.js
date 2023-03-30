@@ -66,10 +66,11 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
         .forEach(p => {
           const card = document.createElement("div");
           card.classList.add("pokemon-card");
+          card.classList.add("mover");
           card.innerHTML = `
             <span class="name" style="margin-top: 10px; text-align:center; font-size: 18px;">${p.name.charAt(0).toUpperCase() + p.name.slice(1)}</span>
             <span style="font-weight:bold; display:block; text-align:center;">#${p.url.split("/")[6].padStart(3, "0")}</span>
-            <img src="">
+            <img src="" class="mover">
             <div class="types" style="display:flex; justify-content:center;"></div>`;
           card.style.cssText = "cursor: pointer; display:flex; flex-direction:column; justify-content:center; width:250px; height:350px; border:1px solid #ddd; border-radius:10px; background-color:#f1f1f1;";
           
