@@ -7,6 +7,10 @@ const container = document.getElementById("pokemonIndividual"); //Seleccionamos 
 let nombre = document.getElementById("textoPokemon"); //////
 let numero = document.getElementById("numeroPokemon"); //////
 let tipo = document.getElementById("tipoPokemon"); //////
+let peso = document.getElementById("pesoPokemon"); //////
+let altura = document.getElementById("alturaPokemon"); //////
+let vida = document.getElementById("vida"); //////
+let imagen = ""; //////
 
 const typeTranslations = {
   normal: 'normal',
@@ -29,15 +33,20 @@ const typeTranslations = {
   fairy: 'hada'
 };
 
-fetch(urlApi) //Pasamos el pokemon específico y mostramos los datos
+function Mostrar(){
+  fetch(urlApi) //Pasamos el pokemon específico y mostramos los datos
   .then(response => response.json())
   .then(data => {
   console.log(data);
   nombre.innerHTML = data.name.charAt(0).toUpperCase() + data.name.slice(1); //////
   numero.innerHTML = `#${pokemonId.padStart(3, "0")}`; //////
-  
+  peso.innerHTML = data.weight + "kg";
+  altura.innerHTML = data.height + "cm";
+  vida.value = data.stats[0].base_stat;
+  document.getElementById('imagenPokemon').src = data.sprites.other.home.front_default;
+
   data.types.forEach(dato => {
-    console.log(dato.type.name);
+    // console.log(dato.type.name);
      tipo.innerHTML += dato.type.name + " "; //////
   })
  
@@ -47,7 +56,8 @@ fetch(urlApi) //Pasamos el pokemon específico y mostramos los datos
     container.textContent = "Error loading Pokémon details"; //Muestra el error en el html
   });
 
- 
+}
+ Mostrar();
 
 //EJEMPLO DE window.location y URLSearchParams 
 // Let an <a id="myAnchor" href="/en-US/docs/Location.search?q=123"> element be in the document
