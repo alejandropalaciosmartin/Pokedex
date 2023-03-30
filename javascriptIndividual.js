@@ -2,9 +2,9 @@
 const modoOscuro = document.querySelector("#modoOscuro");
 
 modoOscuro.addEventListener("click", () => {
-  document.body.classList.toggle("darkMode");
+  document.body.classList.toggle("darkMode"); /*Coge del archivo aparte del Css*/
     
-  style.backgroundColor = document.body.classList.contains("darkMode") ? "#666" : "#f1f1f1";
+  document.body.classList.contains("darkMode") ? "#666" : "#f1f1f1";
 });
 
 /*COGER DATO URL*/
