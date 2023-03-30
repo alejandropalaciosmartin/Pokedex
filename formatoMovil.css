@@ -126,6 +126,26 @@ header{
     margin-left: 2vh;
 }
 
+/*MODO OSCURO - Modificado por JavaScript*/
+body.dark {   
+    background:  rgba(0, 0, 0, 0.911); 
+}
+body.dark h1, body.dark label, body.dark #numeroPokemon, body.dark  #tipoPokemon, body.dark #pesoPokemon, 
+body.dark #alturaPokemon, body.dark .colorFuente{   
+    color:var(--blanco);
+}
+
+body.dark a {   
+    background:  rgb(59, 59, 59); 
+    color: var(--blanco);
+    box-shadow: 0 0 3vh 20px rgba(255, 0, 0, 0.2);
+}
+
+body.dark #modoOscuro{
+    box-shadow: 1vh 2vh 3vh rgba(255, 0, 0, 0.2); 
+    background: linear-gradient(90deg, rgb(0, 0, 1) 10%, rgb(255, 187, 0) 35%, rgb(243, 222, 0) 100%);
+}
+
 /*Texto*/
 #textoPokemon {
     grid-area: titulo;
@@ -291,7 +311,7 @@ header{
     grid-area: velocidad; 
 }
 
-
+/*COLOR BARRAS*/
 input[type=range]:disabled {
     background-color: var(--marron);/* Disabled Element */
     border-radius: 50vh;
@@ -339,22 +359,4 @@ footer{
     color: var(--blanco);
 }
 
-/*MODO OSCURO - Modificado por JavaScript*/
-body.dark {   
-    background:  rgba(0, 0, 0, 0.911); 
-}
-body.dark h1, span, label, .evolucion {   
-    color:var(--blanco);
 
-}
-
-body.dark a {   
-    background:  rgb(59, 59, 59); 
-    color: var(--blanco);
-    box-shadow: 0 0 3vh 20px rgba(255, 0, 0, 0.2);
-}
-
-body.dark #modoOscuro{
-    box-shadow: 1vh 2vh 3vh rgba(255, 0, 0, 0.2); 
-    background: linear-gradient(90deg, rgb(0, 0, 1) 10%, rgb(255, 187, 0) 35%, rgb(243, 222, 0) 100%);
-}
