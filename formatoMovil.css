@@ -191,6 +191,36 @@ body.darkMode {
     justify-content: center;
     align-items: center;
     margin-left: 10vh;
+    /*Animación*/
+    animation-name: imagenPokemon; 
+    animation-duration: 6s; 
+}
+
+@keyframes imagenPokemon { 
+    0% {  
+        transform: rotate(5deg); 
+        -ms-transform: rotate(5deg); 
+        -webkit-transform: rotate(5deg); 
+        -moz-transform: rotate(5deg);   
+    } 
+    25% {  
+        transform: rotate(10deg); 
+        -ms-transform: rotate(10deg); 
+        -webkit-transform: rotate(10deg); 
+        -moz-transform: rotate(10deg);   
+    } 
+    75% { 
+        transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg); 
+        -webkit-transform: rotate(-10deg); 
+        -moz-transform: rotate(-10deg);   
+    } 
+    100% {
+        transform: rotate(-5deg); 
+        -ms-transform: rotate(-5deg); 
+        -webkit-transform: rotate(-5deg); 
+        -moz-transform: rotate(-5deg);   
+    }
 }
 
 #numeroPokemon, #tipoPokemon, .vida, .ataque, .defensa, .ataqueEspecial, .defensaEspecial, .velocidad{
