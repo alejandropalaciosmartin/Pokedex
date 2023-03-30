@@ -65,9 +65,9 @@ header{
                          "imagen imagen"
                          "numero tipo" 
                          "peso altura"
-                         "vida ataque"
-                         "defensa ataqueEspecial"
-                         "defensaEspecial velocidad"
+                         "vida velocidad"
+                         "defensa ataque"
+                         "defensaEspecial ataqueEspecial"
                          "evolucion evolucion";
     grid-gap: 5vh;  /*Separación entre elementos*/  
     color: var(--gris);
@@ -77,16 +77,17 @@ header{
 /*Atrás*/
 .boton{
     grid-area: boton;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 5vh;
-    text-decoration: none; /*Quitar subrayado*/
-    color: var(--gris);
     background-color: white;
     border-radius: 2vh;
     box-shadow: 0 0 3vh 10px rgba(0, 0, 0, 0.2);
     width: 15vh;
-    text-align: center;
     padding: 2vh;
-    margin-left: -10vh;
+    text-decoration: none; /*Quitar subrayado*/
+    color: var(--gris);
     font-size: 5vh;
 }
 
@@ -97,7 +98,7 @@ header{
 }
 
 /*Modo oscuro/claro*/
-.solluna {
+#modoOscuro {
     /*Posición*/
     grid-area: solluna; /*GRID*/
     /*Cuadrar iconos dentro del div*/
@@ -116,8 +117,9 @@ header{
     background: linear-gradient(90deg, rgb(243, 222, 0) 0%, rgb(255, 187, 0) 35%, rgb(0, 0, 1) 100%); /*Fondo con gradiente*/
 }
 
-.solluna:hover{
+#modoOscuro:hover{
     transform: scale(1.2, 1.2); 
+    cursor: pointer; /*Dedo índice*/
 }
 
 .separar{
@@ -129,11 +131,6 @@ body.darkMode {
   background-color: #222;
   color: #fff;
 }
-
-#modoOscuro{
-    cursor: pointer; /*Dedo índice*/
-}
-
 
 /*Texto*/
 #textoPokemon {
@@ -155,27 +152,19 @@ body.darkMode {
                  0 0 5px rgba(0,0,0,.05);
     /*Animación*/
     animation-name: tituloPokemon; /*Nombre del @keyframes*/
-    animation-duration: 6s; /*Duración del efecto*/
+    animation-duration: 5s; /*Duración del efecto*/
 }
 
 
 @keyframes tituloPokemon { /*Nombre del efecto*/
     0% {  /*Inicio*/
-        left: 100%;    /*Lado izquierdo*/
         transform: scale(0.1); /*Tamaño a la mitad*/
         -ms-transform: scale(0.1); 
         -webkit-transform: scale(0.1); 
         -moz-transform: scale(0.1);   
     } 
-    50% { /*Mitad*/
-        left: 50%; /*Centro*/
-        transform: scale(2); /*El doble de tamaño*/
-        -ms-transform: scale(2); 
-        -webkit-transform: scale(2); 
-        -moz-transform: scale(2);   
-    } 
+   
     100% { /*Final*/
-        left: 0; /*Lado derecho*/
         transform: scale(1); /*Tamaño real*/
         -ms-transform: scale(1); 
         -webkit-transform: scale(1); 
@@ -223,6 +212,26 @@ body.darkMode {
     }
 }
 
+.posicionPokemon:hover{           
+    animation-name: primera;                /*Nombre a elegir para que se haga el efecto abajo descrito (keyframes)*/
+  animation-duration: 1s;                 /*Duración*/
+  animation-direction: normal;            /*Dirección*/
+  animation-timing-function: linear;        /*Velocidad*/
+  animation-fill-mode: both;               
+}
+
+@keyframes primera{                         
+  0%{                                   
+        transform: scale(1,1);
+      }
+  50%{                                     
+        transform: scale(1.5,1.5);
+    }
+    100%{                                   
+        transform: scale(1,1);
+      }
+} 
+
 #numeroPokemon, #tipoPokemon, .vida, .ataque, .defensa, .ataqueEspecial, .defensaEspecial, .velocidad{
     font-size: 5vh;
 }
@@ -255,17 +264,6 @@ body.darkMode {
 /*Peso*/
 #alturaPokemon{
     grid-area: altura;
-}
-
-/*Barras de vida, ataque, atque especial, defensa especial y velocidad*/
-/* .vida, .defensa, .defensaEspecial{
-    margin-left: 8vh;
-} */
-
-.englobar{
-    border: solid 1vh var(--gris);
-    border-radius: 5vh;
-    padding: 5vh;
 }
 
 .vida{

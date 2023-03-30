@@ -56,6 +56,38 @@ footer {
   margin-top: 5px;
 }
 
+#toggle-mode{
+  cursor: pointer; /*Dedo índice*/
+/*Modo oscuro/claro*/
+  /*Posición*/
+  /*Cuadrar iconos dentro del div*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*Cuadrar y formar div*/
+  margin-top: 3vh;
+  margin-bottom: -6vh;
+  margin-left: 120vh; 
+  width: 10vh;
+  height: 10vh;
+  padding: 1vh;
+  border-radius: 10vh; /*Redondear*/
+  box-shadow: 1vh 2vh 3vh rgb(43, 42, 42); /*Sombrear, para efecto 3D*/
+  color: white;
+  background: linear-gradient(90deg, rgb(243, 222, 0) 0%, rgb(255, 187, 0) 35%, rgb(0, 0, 1) 100%); /*Fondo con gradiente*/
+}
+
+.separar{
+  margin-left: 2vh;
+}
+
+#toggle-mode:hover{
+  transform: scale(1.2, 1.2); 
+  cursor: pointer; /*Dedo índice*/
+}
+
+
+
 label {
   font-family: Arial, sans-serif;
   font-size: 20px;

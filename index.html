@@ -5,16 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="./img/pokeball.png">
   <link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/e0f3b21040.js"crossorigin="anonymous"></script><!--FontAwesome-->
   <title>Pokédex</title>
 </head>
 <body>
   <header>
     <h1 id="tituloHead">Pokédex</h1>
-    
-    <button id="toggle-mode">Modo oscuro</button>
   </header>
   
   <main> 
+    <!--Botón modo oscuro-->
+    <div id="toggle-mode" class="solluna sol"> 
+      <!-- Iconos de Fontawesome sol/luna (fa-1x - tamaño)-->
+      <i class="fas fa-sun fa-1x"></i> <!--Sol--> 
+      <i class="fa fa-moon-o separar fa-1x" aria-hidden="true"></i> <!--Luna-->
+    </div>
     <div class="search-container">
       <label for="search-input">Buscar Pokemon:</label>
       <input type="text" id="search-input" name="search-input">

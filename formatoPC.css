@@ -1,4 +1,3 @@
-/*CABECERA*/
 #cabeceraHead{
     margin-top: -8vh;
 }
@@ -11,8 +10,16 @@
     margin-left: 18vh;
 }
 
-/*CONTAINER - MAIN*/
 .container{
+    display: grid; 
+    grid-template-columns: 2fr, repeat(2, 1fr);
+    grid-template-areas: "boton titulo titulo solluna"
+                         "imagen imagen numero tipo" 
+                         "imagen imagen peso altura"
+                         "imagen imagen vida velocidad"
+                         "imagen imagen defensa ataque"
+                         "imagen imagen defensaEspecial ataqueEspecial"
+                         "evolucion evolucion evolucion evolucion";
     margin-left: 0;
     font-size: 2vw;
 }
@@ -22,25 +29,76 @@
 }
 
 .solluna{
+    grid-area: solluna; 
     width: 10%;
     margin-left: 70vh;
 }
 
 #textoPokemon {
+    grid-area: titulo;
     margin: auto; 
-    margin-top: -18vh;
+    margin-left: 45vh;
 }
 
 .posicionPokemon{
-    margin-top: -10vh;
+    grid-area: imagen;
+    margin-left: 20vh;
 }
 
  #tipoPokemon, #numeroPokemon, #pesoPokemon, #alturaPokemon{
     width: 30%;
     margin: auto; 
+    margin-left: 30vh;
+   
 } 
 
-/*PIE*/
+#numeroPokemon{
+    grid-area: numero;
+}
+
+#tipoPokemon{
+    grid-area: tipo;
+}
+
+#pesoPokemon{
+    grid-area: peso;
+}
+
+#alturaPokemon{
+    grid-area: altura;
+}
+
+.vida{
+    grid-area: vida; 
+}
+
+.ataque{
+    grid-area: ataque; 
+    margin-left: -5vh;
+}
+
+.defensa{
+    grid-area: defensa;
+    margin-left: 6vh;
+}
+
+.ataqueEspecial{
+    grid-area: ataqueEspecial; 
+}
+
+.defensaEspecial{
+    grid-area: defensaEspecial; 
+    margin-left: 15vh;
+}
+
+.velocidad{
+    grid-area: velocidad; 
+}
+
+.evolucion{
+    grid-area: evolucion; 
+}
+
 footer{
     margin-top: 10vh;
 }

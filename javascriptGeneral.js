@@ -2,7 +2,6 @@ const toggleModeButton = document.querySelector("#toggle-mode");
 
 toggleModeButton.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
-  toggleModeButton.textContent = document.body.classList.contains("dark-mode") ? "Modo claro" : "Modo oscuro";
 
   // Actualizamos el estilo de las tarjetas de Pokémon
   const pokemonCards = document.querySelectorAll(".pokemon-card");
@@ -72,7 +71,7 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
             <span style="font-weight:bold; display:block; text-align:center;">#${p.url.split("/")[6].padStart(3, "0")}</span>
             <img src="">
             <div class="types" style="display:flex; justify-content:center;"></div>`;
-          card.style.cssText = "display:flex; flex-direction:column; justify-content:center; width:250px; height:350px; border:1px solid #ddd; border-radius:10px; background-color:#f1f1f1;";
+          card.style.cssText = "cursor: pointer; display:flex; flex-direction:column; justify-content:center; width:250px; height:350px; border:1px solid #ddd; border-radius:10px; background-color:#f1f1f1;";
           
           card.addEventListener('click', () => { window.location.href = `especifico.html?id=${p.url.split("/")[6]}`; });
                  
