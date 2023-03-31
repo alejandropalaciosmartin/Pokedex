@@ -25,6 +25,15 @@ header {
 #cabeceraHead{
   margin-top: -8vh; /*Cuadrar imagen con el título*/
 }
+#claroscuro{
+  margin-top: -6vh;
+  align-items: center; 
+  /* width: 5vh; */
+  z-index: 5;
+  margin-right: 35vh; 
+  /* opacity: 0.8;  */
+  
+}
 
 /*Imagen de la cabecera*/
 #imagenHead{
@@ -32,7 +41,6 @@ header {
   width: 5vh;
   margin-left: 25vh;
   opacity: 0.8; /*Esté más transparente de lo normal*/
-  z-index: -1; /*Poner bola atrás del título*/
 }
 
 main {
@@ -52,7 +60,7 @@ footer {
 #tituloHead {
     position: relative;
     margin-top: -3vh;
-    z-index: 1;
+  
 }
 
 @font-face { 
@@ -78,37 +86,9 @@ footer {
   margin-top: 5px;
 }
 
-#toggle-mode{
-  cursor: pointer; /*Dedo índice*/
-/*Modo oscuro/claro*/
-  /*Posición*/
-  /*Cuadrar iconos dentro del div*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /*Cuadrar y formar div*/
-  margin-top: 3vh;
-  margin-bottom: -6vh;
-  margin-left: 120vh; 
-  width: 10vh;
-  height: 10vh;
-  padding: 1vh;
-  border-radius: 10vh; /*Redondear*/
-  box-shadow: 1vh 2vh 3vh rgb(43, 42, 42); /*Sombrear, para efecto 3D*/
-  color: white;
-  background: linear-gradient(90deg, rgb(243, 222, 0) 0%, rgb(255, 187, 0) 35%, rgb(0, 0, 1) 100%); /*Fondo con gradiente*/
-}
-
 .separar{
   margin-left: 2vh;
 }
-
-#toggle-mode:hover{
-  transform: scale(1.2, 1.2); 
-  cursor: pointer; /*Dedo índice*/
-}
-
-
 
 label {
   font-family: Arial, sans-serif;
@@ -148,3 +128,8 @@ body.dark-mode {
 .pokemon-card.dark-mode span:nth-of-type(2) {
   color: #fff;
 }
+.pokemon-card:hover {
+  box-shadow: 0 0 20px rgb(255, 0, 0);
+}
+
+

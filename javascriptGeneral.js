@@ -1,7 +1,19 @@
-const toggleModeButton = document.querySelector("#toggle-mode");
+const toggleModeButton = document.querySelector("#claroscuro");
+const lunaImage = document.querySelector("#luna");
+const solImage = document.querySelector("#sol");
+
 
 toggleModeButton.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
+
+  // Actualizamos la imagen del botón
+  if (document.body.classList.contains("dark-mode")) {
+    lunaImage.style.display = "none";
+    solImage.style.display = "block";
+  } else {
+    lunaImage.style.display = "block";
+    solImage.style.display = "none";
+  }
 
   // Actualizamos el estilo de las tarjetas de Pokémon
   const pokemonCards = document.querySelectorAll(".pokemon-card");
@@ -11,6 +23,8 @@ toggleModeButton.addEventListener("click", () => {
     card.querySelector("span:nth-of-type(2)").style.color = document.body.classList.contains("dark-mode") ? "#fff" : "#000";
   });
 });
+
+
 
 
 fetch("https://pokeapi.co/api/v2/pokemon?limit=151") 
