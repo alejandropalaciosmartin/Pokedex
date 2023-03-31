@@ -272,9 +272,6 @@ body.dark #modoOscuro{
 /*Tipos*/
 #tipoPokemon{
     grid-area: tipo;
-    border-radius: 15px;
-    color: var(--gris);
-    outline: solid black;
 }
 
 /*Peso*/

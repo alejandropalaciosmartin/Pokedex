@@ -108,20 +108,17 @@ function Mostrar(){
   defensaEspecial.value = data.stats[4].base_stat;
   velocidad.value = data.stats[5].base_stat;
 
+  //Realizamos un forEach para poder visualizar los diferentes tipos
   data.types.forEach(dato => {
-    // console.log(dato.type.name);
+     console.log(dato.type.name);
 
-     typeName = dato.type.name; //////
-     tipo.style.cssText = `background-color:${typeColors[typeName]}; color:white; padding:5px 10px; border-radius:10px; margin-right:5px; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; border:solid black 2px`;
-    //  tipo.innerHTML = typeTranslations[typeName] + "  "; ///
-     tipo.appendChild(typeTranslations[typeName] + "  ");
+     typeName = dato.type.name; //Metemos los nombres en una variable
 
-     tipo.forEach(datito => {
-       tipo.innerHTML = datito; ///
-
-     })
-     
-
+     const tipoDiv = document.createElement("div"); //Creamos un div y lo metemos en la variable
+     //Creamos estilo al div creado, para que se cree un estilo de color diferente según el que toque, para que sea dinámico
+     tipoDiv.style.cssText = `background-color:${typeColors[typeName]}; color: white; padding: 1vh 20vh 1vh 5vh; border-radius:10px; margin-right:5px; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; border:solid black 2px`;
+     tipoDiv.innerHTML = typeTranslations[typeName]; //Metemos en el div el nombre traducido
+     tipo.appendChild(tipoDiv); //Metemos el div creado en el js (div hijo) en el padre (tipo) que está en el html
   })
  
 })
