@@ -3,7 +3,28 @@ const modoOscuro = document.getElementById('modoOscuro');
  
 modoOscuro.addEventListener('click', () => {
     document.body.classList.toggle('dark'); //Coge del archivo aparte del Css
+    modoOscuro.classList.toggle('active'); 
+
+    //Guardamos el modo en localstorage
+    if(document.body.classList.contains('dark')){
+      localStorage.setItem('modeDark', 'true');
+    }
+    else{
+      localStorage.setItem('modeDark','false');
+    }
 });
+
+//Obtener el modo actual
+if(localStorage.getItem('modeDark') === 'true'){
+   document.body.classList.add('dark');
+   modoOscuro.classList.add('active');
+}
+else{
+    document.body.classList.remove('dark');
+    modoOscuro.classList.remove('active');
+}
+
+
 
 /*COGER DATO URL*/
 const locationSearchUrl = window.location.search; //Coge direcciones que llevan ? al final de la url
@@ -49,6 +70,27 @@ const typeTranslations = {
   fairy: 'Hada'
 };
 
+const typeColors = {
+  normal: '#A8A878',
+  fire: '#F08030',
+  water: '#6890F0',
+  electric: '#F8D030',
+  grass: '#78C850',
+  ice: '#98D8D8',
+  fighting: '#C03028',
+  poison: '#A040A0',
+  ground: '#E0C068',
+  flying: '#A890F0',
+  psychic: '#F85888',
+  bug: '#A8B820',
+  rock: '#B8A038',
+  ghost: '#705898',
+  dragon: '#7038F8',
+  dark: '#705848',
+  steel: '#B8B8D0',
+  fairy: '#EE99AC'
+};
+
 function Mostrar(){
   fetch(urlApi) //Pasamos el pokemon específico y mostramos los datos
   .then(response => response.json())
@@ -68,8 +110,18 @@ function Mostrar(){
 
   data.types.forEach(dato => {
     // console.log(dato.type.name);
+
      typeName = dato.type.name; //////
-     tipo.innerHTML += typeTranslations[typeName] + "  "; //////
+     tipo.style.cssText = `background-color:${typeColors[typeName]}; color:white; padding:5px 10px; border-radius:10px; margin-right:5px; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; border:solid black 2px`;
+    //  tipo.innerHTML = typeTranslations[typeName] + "  "; ///
+     tipo.appendChild(typeTranslations[typeName] + "  ");
+
+     tipo.forEach(datito => {
+       tipo.innerHTML = datito; ///
+
+     })
+     
+
   })
  
 })
