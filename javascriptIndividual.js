@@ -1,27 +1,29 @@
 /*MODO OSCURO/CLARO*/
-const modoOscuro = document.getElementById('modoOscuro');
+const modoOscuro = document.getElementById('modoOscuro'); //Guardamos en variable el ID del html que se va a usar
  
-modoOscuro.addEventListener('click', () => {
-    document.body.classList.toggle('dark'); //Coge del archivo aparte del Css
-    modoOscuro.classList.toggle('active'); 
+modoOscuro.addEventListener('click', () => { //Aplicamos al elemento del ID que cuando hagamos click...
+  //.dark se da efecto en el archivo .css aparte
+    document.body.classList.toggle('dark'); //Coge del archivo aparte del Css o que esté dentro del html la clase dark que se encuentra en el body
+    modoOscuro.classList.toggle('active'); //Activa  el estado de la clase modoOscuro
 
     //Guardamos el modo en localstorage
-    if(document.body.classList.contains('dark')){
-      localStorage.setItem('modeDark', 'true');
+    if(document.body.classList.contains('dark')){ //Si contiene activo la clase dark
+      localStorage.setItem('modeDark', 'true'); //se guarda (set) de forma ('clave','valor') ponemos true como podría ser otro valor
     }
     else{
-      localStorage.setItem('modeDark','false');
+      localStorage.setItem('modeDark','false'); //ponemos false para indicar que no está activo el efecto dark, true para señalar que está activo
     }
 });
 
 //Obtener el modo actual
-if(localStorage.getItem('modeDark') === 'true'){
-   document.body.classList.add('dark');
-   modoOscuro.classList.add('active');
+if(localStorage.getItem('modeDark') === 'true'){ //Coge (get) la clave (modeDark) y comparamos si es igual al valor que marcamos arriba
+                                                 //en este caso true, podría ser otro, depend elo que pusimos arriba
+   document.body.classList.add('dark');  //Metemos el efecto dark del archivo .css
+   modoOscuro.classList.add('active');   //Añadimos también que está activo
 }
 else{
-    document.body.classList.remove('dark');
-    modoOscuro.classList.remove('active');
+    document.body.classList.remove('dark'); //Borramos el efecto dark del archivo .css
+    modoOscuro.classList.remove('active');  //Borramos el efecto que 
 }
 
 
