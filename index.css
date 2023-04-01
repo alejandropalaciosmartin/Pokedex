@@ -19,13 +19,11 @@ header {
   color: rgb(230, 217, 210);
 }
 
-#cabeceraHead{
-  margin-top: -8vh; 
-}
 #claroscuro{
-  /* margin-top: -8vh; */
-  align-items: center;  
-  margin-left: 35vh; 
+  /* align-items: center;  
+  margin-left: 35vh;  */
+  position: fixed;
+  right: 40px;
 }
 
 #imagenHead{
