@@ -44,11 +44,17 @@ let typeName = "";
 let peso = document.getElementById("pesoPokemon"); //////
 let altura = document.getElementById("alturaPokemon"); //////
 let vida = document.getElementById("vida"); //////
+let vidaNum = document.getElementById("vidaNum"); //////
 let ataque = document.getElementById("ataque"); //////
+let ataqueNum = document.getElementById("ataqueNum"); //////
 let defensa = document.getElementById("defensa"); //////
+let defensaNum = document.getElementById("defensaNum"); //////
 let ataqueEspecial = document.getElementById("ataqueEspecial"); //////
+let ataqueEspecialNum = document.getElementById("ataqueEspecialNum"); //////
 let defensaEspecial = document.getElementById("defensaEspecial"); //////
+let defensaEspecialNum = document.getElementById("defensaEspecialNum"); //////
 let velocidad = document.getElementById("velocidad"); //////
+let velocidadNum = document.getElementById("velocidadNum"); //////
 
 /*ENUMERADOS*/
 const typeTranslations = {
@@ -97,19 +103,25 @@ function Mostrar(){
   fetch(urlApi) //Pasamos el pokemon específico y mostramos los datos
   .then(response => response.json())
   .then(data => {
-  console.log(data);
+  // console.log(data);
   
   nombre.innerHTML = data.name.charAt(0).toUpperCase() + data.name.slice(1); //////
   document.getElementById('imagenPokemon').src = data.sprites.other.home.front_default;
   numero.innerHTML = `#${pokemonId.padStart(3, "0")}`; //////
-  peso.innerHTML = data.weight + "kg";
-  altura.innerHTML = data.height + "cm";
+  peso.innerHTML = data.weight/10 + "kg"; //estaba en hectogramo
+  altura.innerHTML = data.height/10 + "m";  //estaba en decímetro
   vida.value = data.stats[0].base_stat;
+  vidaNum.innerHTML = `{${data.stats[0].base_stat}}`;
   ataque.value = data.stats[1].base_stat;
+  ataqueNum.innerHTML = `{${data.stats[1].base_stat}}`;
   defensa.value = data.stats[2].base_stat;
+  defensaNum.innerHTML = `{${data.stats[2].base_stat}}`;
   ataqueEspecial.value = data.stats[3].base_stat;
+  ataqueEspecialNum.innerHTML = `{${data.stats[3].base_stat}}`;
   defensaEspecial.value = data.stats[4].base_stat;
+  defensaEspecialNum.innerHTML = `{${data.stats[4].base_stat}}`;
   velocidad.value = data.stats[5].base_stat;
+  velocidadNum.innerHTML = `{${data.stats[5].base_stat}}`;
 
   //Realizamos un forEach para poder visualizar los diferentes tipos
   data.types.forEach(dato => {
@@ -117,7 +129,7 @@ function Mostrar(){
      typeName = dato.type.name; //Metemos los nombres en una variable
      const tipoDiv = document.createElement("div"); //Creamos un div y lo metemos en la variable
      //Creamos estilo al div creado, para que se cree un estilo de color diferente según el que toque, para que sea dinámico
-     tipoDiv.style.cssText = `background-color:${typeColors[typeName]}; color: white; padding: 1vh 20vh 1vh 5vh; border-radius:10px; margin-right:5px; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; border:solid black 2px`;
+     tipoDiv.style.cssText = `background-color:${typeColors[typeName]}; color: white; padding: 1vh 20vh 1vh 6vh; border-radius:10px; margin-right:5px; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; border:solid black 2px`;
      tipoDiv.innerHTML = typeTranslations[typeName]; //Metemos en el div el nombre traducido
      tipo.appendChild(tipoDiv); //Metemos el div creado en el js (div hijo) en el padre (tipo) que está en el html
   })
@@ -127,25 +139,31 @@ function Mostrar(){
 fetch(data.species.url) //Pasamos el pokemon específico y mostramos los datos
   .then(response => response.json())
   .then(data => {
-  console.log(data);
-  console.log("Actual: "+data.name);
+    //console.log(data);
+   console.log("Actual: "+data.name);
   if(data.evolves_from_species == null){
-    console.log("Procede de: NINGUNO");
+    // console.log("Procede de: NINGUNO");
   }
   else{
-    console.log("Procede de: "+data.evolves_from_species.name); //Evolución que procede, sino tiene es null. 2º evolución
+    // console.log("Procede de: "+data.evolves_from_species.name); //Evolución que procede, sino tiene es null. 2º evolución
   }
-  console.log(data.evolution_chain.url); //Nos dice la 1º evolución
     fetch(data.evolution_chain.url)
       .then(response => response.json())
       .then(data => {
-        if(data.chain.species == null){
-          console.log("1º Evolución: NINGUNO");
-        }
-        else{
-          console.log("1º Evolución: "+data.chain.species.name);
-        }
-     
+         console.log(data); 
+         console.log("1º Evolución: " + data.chain.species.name);
+        //console.log(data.chain.evolves_to.evolves_to.species.name);    
+        
+        data.chain.evolves_to.forEach(dato => {
+          console.log(dato);
+          //console.log(dato.evolves_to);
+          console.log("2º Evolución: " + dato.species.name);
+
+           dato.evolves_to.forEach(datito => {
+             console.log("3º evolución " + datito.species.name);
+           })
+
+        })
       });
   })
  

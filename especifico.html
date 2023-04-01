@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Para que el navegador pueda controlar las dimensiones y la escala de la página -->
     <link rel="stylesheet" href="./formatoMovil.css"><!--CSS formato movil-->
     <link rel="stylesheet" media="(min-width: 768px)" href="./formatoPc.css"><!--CSS formato pc-->
-    <link rel="stylesheet" type="text/css" href="./darkWeb.css" /> <!--ModoOscuro-->
 
     <script src="https://kit.fontawesome.com/e0f3b21040.js"crossorigin="anonymous"></script><!--FontAwesome-->
     <title>Pokédex</title> <!--Título de pestaña-->
@@ -47,35 +46,41 @@
  
             <!--Vida-->
             <div class="vida">
-            <label for="vida" class="colorFuente">Vida</label>
+            <label for="vida" class="colorFuente vidaPosicion">Vida</label>
+                <br><output name="result" id="vidaNum" class="vidaPosicion2"></output>
                 <input type="range" name="vida" id="vida" disabled max="256" class="colorBarra">
             </div>
 
             <!--Defensa-->
             <div class="defensa">
-                <label for="defensa" class="colorFuente">Defensa</label>
+                <label for="defensa" class="colorFuente defensaPosicion">Defensa</label>
+                <br><output name="result" id="defensaNum" class="defensaPosicion2"></output>
                 <input type="range" name="defensa" id="defensa" disabled class="colorBarra">
             </div>
             
             <!--Defensa Especial-->
             <div class="defensaEspecial">
-                <label for="defensaEspecial" class="colorFuente">Defensa especial</label>
+                <label for="defensaEspecial" class="colorFuente defensaEspecialPosicion">Defensa especial</label>
+                <br><output name="result" id="defensaEspecialNum"class="defensaEspecialPosicion2"></output>
                 <input type="range" name="defensaEspecial" id="defensaEspecial" disabled class="colorBarra">
             </div>
                         
             <!--Velocidad-->
             <div class="velocidad">
-                <label for="velocidad" class="colorFuente">Velocidad</label>
+                <label for="velocidad" class="colorFuente velocidadPosicion">Velocidad</label>
+                <br><output name="result" id="velocidadNum" class="velocidadPosicion2"></output>
                 <input type="range" name="velocidad" id="velocidad" disabled class="colorBarra">
             </div>
             <!--Ataque-->
             <div class="ataque">
-                <label for="ataque" class="colorFuente">Ataque</label>
+                <label for="ataque" class="colorFuente ataquePosicion">Ataque</label>
+                <br><output name="result" id="ataqueNum" class="ataquePosicion2"></output>
                 <input type="range" name="ataque" id="ataque" disabled class="colorBarra">
             </div>
             <!--Ataque especial-->
             <div class="ataqueEspecial">
-                <label for="ataqueespecial" class="colorFuente">Ataque especial</label>
+                <label for="ataqueespecial" class="colorFuente ataqueEspecialPosicion">Ataque especial</label>
+                <br><output name="result" id="ataqueEspecialNum" class="ataqueEspecialPosicion2"></output>
                 <input type="range" name="ataqueEspecial" id="ataqueEspecial" disabled class="colorBarra">
             </div>
 <!-- species -> url -> fetch -> evolution_chain -> url -> fetch -> ?  -->

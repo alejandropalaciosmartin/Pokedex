@@ -95,6 +95,50 @@
     grid-area: evolucion; 
 }
 
+.vidaPosicion, .defensaPosicion{
+    margin-left: 20vh;
+}
+
+.vidaPosicion2{
+    margin-left: 22vh;
+}
+
+.defensaPosicion2{
+    margin-left: 15vh;
+}
+
+.defensaEspecialPosicion{
+    margin-left: 25vh;
+}
+
+.defensaEspecialPosicion2{
+    margin-left: 6vh;
+}
+
+.velocidadPosicion{
+    margin-left: -7vh;
+}
+
+.velocidadPosicion2{
+    margin-left: -15vh;
+}
+
+.ataquePosicion{
+    margin-left: 15vh;
+}
+
+.ataquePosicion2{
+    margin-left: 11vh;
+}
+
+.ataqueEspecialPosicion{
+    margin-left: 6vh;
+}
+
+.ataqueEspecialPosicion2{
+    margin-left: -11vh;
+}
+
 footer{
     margin-top: 10vh;
 }
