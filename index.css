@@ -20,17 +20,8 @@ header {
 }
 
 #claroscuro{
-  /* align-items: center;  
-  margin-left: 35vh;  */
   position: fixed;
   right: 40px;
-}
-
-#imagenHead{
-  align-items: center; 
-  width: 5vh;
-  margin-left: 25vh;
-  opacity: 0.8; 
 }
 
 main {
@@ -76,10 +67,6 @@ footer {
   margin-top: 5px;
 }
 
-.separar{
-  margin-left: 2vh;
-}
-
 label {
   font-family: Arial, sans-serif;
   font-size: 20px;
@@ -118,21 +105,21 @@ body.dark-mode {
 .pokemon-card.dark-mode span:nth-of-type(2) {
   color: #fff;
 }
+
 .pokemon-card:hover {
   box-shadow: 0 0 20px rgb(255, 0, 0);
 }
 
 #myBtn {
-  display: none; /* oculta el botón por defecto */
-  position: fixed; /* hace que el botón sea fijo en la página */
-  bottom: 40px; /* distancia desde la parte inferior de la ventana del navegador */
-  right: 40px; /* distancia desde la parte derecha de la ventana del navegador */
-  z-index: 99; /* asegura que el botón se muestre encima de otros elementos */
-    /* Agrega el siguiente estilo para eliminar el borde */
-    border: none;
-    /* Agrega el siguiente estilo para eliminar el fondo blanco */
-    background-color: transparent;
+  display: none; 
+  position: fixed; 
+  bottom: 40px; 
+  right: 40px; 
+  z-index: 99; 
+  border: none;
+  background-color: transparent;
 }
+
 #myBtn:hover {
   cursor: pointer;
   box-shadow: 0 0 20px rgb(255, 0, 0);
