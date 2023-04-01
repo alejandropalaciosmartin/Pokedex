@@ -98,6 +98,7 @@ function Mostrar(){
   .then(response => response.json())
   .then(data => {
   console.log(data);
+  
   nombre.innerHTML = data.name.charAt(0).toUpperCase() + data.name.slice(1); //////
   document.getElementById('imagenPokemon').src = data.sprites.other.home.front_default;
   numero.innerHTML = `#${pokemonId.padStart(3, "0")}`; //////
@@ -119,6 +120,14 @@ function Mostrar(){
      tipoDiv.style.cssText = `background-color:${typeColors[typeName]}; color: white; padding: 1vh 20vh 1vh 5vh; border-radius:10px; margin-right:5px; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; border:solid black 2px`;
      tipoDiv.innerHTML = typeTranslations[typeName]; //Metemos en el div el nombre traducido
      tipo.appendChild(tipoDiv); //Metemos el div creado en el js (div hijo) en el padre (tipo) que está en el html
+  })
+
+  //Realizamos un forEach para poder visualizar los diferentes tipos de EVOLUCIÓN
+
+fetch(data.species.url) //Pasamos el pokemon específico y mostramos los datos
+  .then(response => response.json())
+  .then(data => {
+  console.log(data);
   })
  
 })
