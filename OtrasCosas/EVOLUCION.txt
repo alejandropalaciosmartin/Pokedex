@@ -1,0 +1,19 @@
+const idPokemon = 25; // ID del Pokemon Pikachu
+fetch(`https://pokeapi.co/api/v2/pokemon-species/${idPokemon}/`) // Hacemos una solicitud a la API de Pokémon para obtener información de la especie del Pokémon
+  .then(respuesta => respuesta.json()) // Convertimos la respuesta en formato JSON
+  .then(data => {
+    const urlCadenaEvolutiva = data.evolution_chain.url; // Obtenemos la URL de la cadena evolutiva del Pokémon
+    fetch(urlCadenaEvolutiva) // Hacemos otra solicitud a la API para obtener información de la cadena evolutiva del Pokémon
+      .then(respuesta => respuesta.json()) // Convertimos la respuesta en formato JSON
+      .then(data => {
+        const cadenaEvolutiva = []; // Creamos un array para almacenar los nombres de las especies en la cadena evolutiva
+        let actual = data.chain; // Empezamos en la especie base de la cadena evolutiva
+        while (actual) { // Mientras haya otra especie en la cadena evolutiva
+          if (actual.species.url.includes("/api/v2/pokemon-species/") && parseInt(actual.species.url.split("/")[6]) <= 151) { // Comprobamos si la especie es de la primera generación
+            cadenaEvolutiva.push(actual.species.name); // Agregamos el nombre de la especie al array
+          }
+          actual = actual.evolves_to[0]; // Nos movemos a la siguiente especie en la cadena evolutiva
+        }
+        console.log(`La cadena evolutiva de ${data.chain.species.name} es: ${cadenaEvolutiva.join(' -> ')}`); // Mostramos la cadena evolutiva en la consola
+      });
+  });
