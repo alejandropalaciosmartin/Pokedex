@@ -1,6 +1,4 @@
-/*TODA LA PÁGINA*/
 *{ 
-  /*Para quitar los márgenes*/
   margin: 0;
   padding: 0;
 }
@@ -21,26 +19,20 @@ header {
   color: rgb(230, 217, 210);
 }
 
-/*Contenedor de la imagen de la cabecera*/
 #cabeceraHead{
-  margin-top: -8vh; /*Cuadrar imagen con el título*/
+  margin-top: -8vh; 
 }
 #claroscuro{
-  margin-top: -6vh;
-  align-items: center; 
-  /* width: 5vh; */
-  z-index: 5;
-  margin-right: 35vh; 
-  /* opacity: 0.8;  */
-  
+  /* margin-top: -8vh; */
+  align-items: center;  
+  margin-left: 35vh; 
 }
 
-/*Imagen de la cabecera*/
 #imagenHead{
-  align-items: center; /*Centrar imagen verticalmente*/
+  align-items: center; 
   width: 5vh;
   margin-left: 25vh;
-  opacity: 0.8; /*Esté más transparente de lo normal*/
+  opacity: 0.8; 
 }
 
 main {
@@ -60,7 +52,7 @@ footer {
 #tituloHead {
     position: relative;
     margin-top: -3vh;
-  
+    z-index: 1;
 }
 
 @font-face { 
@@ -70,9 +62,9 @@ footer {
      
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* tres columnas iguales */
-  row-gap: 20px; /* espaciado entre las tarjetas */
-  justify-items: center; /* centrar las tarjetas horizontalmente */
+  grid-template-columns: repeat(3, 1fr); 
+  row-gap: 20px; 
+  justify-items: center; 
   margin-top: 25px;
   margin-left: 150px;
   margin-right: 150px;
