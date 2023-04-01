@@ -1,19 +1,68 @@
-const idPokemon = 25; // ID del Pokemon Pikachu
-fetch(`https://pokeapi.co/api/v2/pokemon-species/${idPokemon}/`) // Hacemos una solicitud a la API de Pokémon para obtener información de la especie del Pokémon
-  .then(respuesta => respuesta.json()) // Convertimos la respuesta en formato JSON
+// Definimos la ID del pokemon inicial para el que queremos obtener la cadena evolutiva
+const idPokemon = 1;
+
+// Hacemos una petición a la PokeAPI para obtener la información de la especie del pokemon
+fetch(`https://pokeapi.co/api/v2/pokemon-species/${idPokemon}/`)
+  .then(respuesta => respuesta.json())
   .then(data => {
-    const urlCadenaEvolutiva = data.evolution_chain.url; // Obtenemos la URL de la cadena evolutiva del Pokémon
-    fetch(urlCadenaEvolutiva) // Hacemos otra solicitud a la API para obtener información de la cadena evolutiva del Pokémon
-      .then(respuesta => respuesta.json()) // Convertimos la respuesta en formato JSON
+    // Obtenemos la URL de la cadena evolutiva del pokemon
+    const urlCadenaEvolutiva = data.evolution_chain.url;
+    // Hacemos una petición a la PokeAPI para obtener la información completa de la cadena evolutiva
+    fetch(urlCadenaEvolutiva)
+      .then(respuesta => respuesta.json())
       .then(data => {
-        const cadenaEvolutiva = []; // Creamos un array para almacenar los nombres de las especies en la cadena evolutiva
-        let actual = data.chain; // Empezamos en la especie base de la cadena evolutiva
-        while (actual) { // Mientras haya otra especie en la cadena evolutiva
-          if (actual.species.url.includes("/api/v2/pokemon-species/") && parseInt(actual.species.url.split("/")[6]) <= 151) { // Comprobamos si la especie es de la primera generación
-            cadenaEvolutiva.push(actual.species.name); // Agregamos el nombre de la especie al array
+        // Creamos un array para almacenar los nombres de las especies en la cadena evolutiva
+        const cadenaEvolutiva = [];
+        // Iniciamos el bucle para recorrer la cadena evolutiva
+        let actual = data.chain;
+        while (actual) {
+          // Comprobamos si la especie actual está dentro de los primeros 151 pokemons
+          if (actual.species.url.includes("/api/v2/pokemon-species/") && parseInt(actual.species.url.split("/")[6]) <= 151) {
+            // Si es así, agregamos el nombre de la especie al array de la cadena evolutiva
+            cadenaEvolutiva.push(actual.species.name);
+            // Si la especie actual es Eevee, necesitamos agregar información adicional sobre sus evoluciones
+            if (actual.species.name === "eevee") {
+              // Recorremos las posibles evoluciones de Eevee
+              actual.evolves_to.forEach(evolucion => {
+                // Obtenemos el nombre de la especie a la que evoluciona
+                const nombreEspecie = evolucion.species.name;
+                // Obtenemos el trigger de evolución correspondiente a esa especie
+                const triggerEvolucion = obtenerTriggerEvolucion(evolucion);
+                // Agregamos el nombre de la especie junto con su trigger al array de la cadena evolutiva
+                cadenaEvolutiva.push(`${nombreEspecie} (${triggerEvolucion})`);
+              });
+            } else {
+              // Si la especie actual no es Eevee, simplemente obtenemos el trigger de evolución correspondiente y lo agregamos al nombre de la especie
+              const triggerEvolucion = obtenerTriggerEvolucion(actual);
+              if (triggerEvolucion) {
+                cadenaEvolutiva[cadenaEvolutiva.length - 1] += ` (${triggerEvolucion})`;
+              }
+            }
           }
-          actual = actual.evolves_to[0]; // Nos movemos a la siguiente especie en la cadena evolutiva
+          // Pasamos a la siguiente especie en la cadena evolutiva
+          actual = actual.evolves_to[0];
         }
-        console.log(`La cadena evolutiva de ${data.chain.species.name} es: ${cadenaEvolutiva.join(' -> ')}`); // Mostramos la cadena evolutiva en la consola
+        // Imprimimos la cadena evolutiva completa en la consola
+        console.log(`La cadena evolutiva de ${data.chain.species.name} es: ${cadenaEvolutiva.join(' -> ')}`);
       });
   });
+
+// Esta función toma un objeto de evolución y devuelve el trigger de evolución correspondiente
+function obtenerTriggerEvolucion(evolucion) {
+  let trigger = "";
+  if (evolucion.evolution_details.length > 0) {
+    const detallesEvolucion = evolucion.evolution_details[0];
+    if (detallesEvolucion.trigger.name === "level-up") {
+      trigger = `Nivel ${detallesEvolucion.min_level}`;
+    } else if (detallesEvolucion.trigger.name === "use-item") {
+      trigger = detallesEvolucion.item.name;
+    } else if (detallesEvolucion.trigger.name === "trade") {
+      trigger = "Intercambio";
+    } else if (detallesEvolucion.trigger.name === "friendship") {
+      trigger = "Amistad";
+    } else if (detallesEvolucion.trigger.name === "other") {
+      trigger = detallesEvolucion.trigger.name;
+    }
+  }
+  return trigger;
+}
