@@ -128,7 +128,8 @@ fetch(data.species.url) //Pasamos el pokemon específico y mostramos los datos
   .then(response => response.json())
   .then(data => {
   console.log(data);
-
+  console.log(data.evolves_from_species.name);
+  console.log(data.evolves_from_species.url);
   
   })
  
