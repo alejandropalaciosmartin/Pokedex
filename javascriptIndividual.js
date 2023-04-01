@@ -128,9 +128,25 @@ fetch(data.species.url) //Pasamos el pokemon específico y mostramos los datos
   .then(response => response.json())
   .then(data => {
   console.log(data);
-  console.log(data.evolves_from_species.name);
-  console.log(data.evolves_from_species.url);
-  
+  console.log("Actual: "+data.name);
+  if(data.evolves_from_species == null){
+    console.log("Procede de: NINGUNO");
+  }
+  else{
+    console.log("Procede de: "+data.evolves_from_species.name); //Evolución que procede, sino tiene es null. 2º evolución
+  }
+  console.log(data.evolution_chain.url); //Nos dice la 1º evolución
+    fetch(data.evolution_chain.url)
+      .then(response => response.json())
+      .then(data => {
+        if(data.chain.species == null){
+          console.log("1º Evolución: NINGUNO");
+        }
+        else{
+          console.log("1º Evolución: "+data.chain.species.name);
+        }
+     
+      });
   })
  
 })
