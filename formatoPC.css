@@ -50,6 +50,7 @@
 
 #numeroPokemon{
     grid-area: numero;
+    margin-left: 35vh;
 }
 
 #tipoPokemon{
@@ -58,6 +59,8 @@
 
 #pesoPokemon{
     grid-area: peso;
+    margin-left: 35vh;
+
 }
 
 #alturaPokemon{
