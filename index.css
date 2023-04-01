@@ -141,3 +141,16 @@ body.dark-mode {
   transition: box-shadow 0.3s ease-in-out;
   border-radius: 50%;
 }
+
+#sol:hover{
+  cursor:pointer;
+  box-shadow: 0 0 5px rgb(255, 255, 255);
+  transition: box-shadow 0.1s ease-in-out;
+  border-radius: 60%;
+}
+#luna:hover{
+  cursor:pointer;
+  box-shadow: 0 0 5px rgb(0, 0, 0);
+  transition: box-shadow 0.1s ease-in-out;
+  border-radius: 60%;
+}
