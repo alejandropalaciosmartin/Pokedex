@@ -23,15 +23,29 @@ const solImage = document.querySelector("#sol");
 
 toggleModeButton.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
+  toggleModeButton.classList.toggle('active');
 
   // Actualizamos la imagen del botón
   if (document.body.classList.contains("dark-mode")) {
     lunaImage.style.display = "none";
     solImage.style.display = "block";
+    localStorage.setItem('modeDark', 'true');
   } else {
     lunaImage.style.display = "block";
     solImage.style.display = "none";
+    localStorage.setItem('modeDark','false');
   }
+
+  //Obtener el modo actual
+if(localStorage.getItem('modeDark') === 'true'){ //Coge (get) la clave (modeDark) y comparamos si es igual al valor que marcamos arriba
+                                                 //en este caso true, podría ser otro, depend elo que pusimos arriba
+   document.body.classList.add('dark-mode');  //Metemos el efecto dark del archivo .css
+   modoOscuro.classList.add('active');   //Añadimos también que está activo
+}
+else{
+    document.body.classList.remove('dark-mode'); //Borramos el efecto dark del archivo .css
+    modoOscuro.classList.remove('active');  //Borramos el efecto que indica que esta activo, para que se vea que no lo esta ya
+}
 
   // Actualizamos el estilo de las tarjetas de Pokémon
   const pokemonCards = document.querySelectorAll(".pokemon-card");
