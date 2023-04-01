@@ -23,7 +23,7 @@ if(localStorage.getItem('modeDark') === 'true'){ //Coge (get) la clave (modeDark
 }
 else{
     document.body.classList.remove('dark'); //Borramos el efecto dark del archivo .css
-    modoOscuro.classList.remove('active');  //Borramos el efecto que 
+    modoOscuro.classList.remove('active');  //Borramos el efecto que indica que esta activo, para que se vea que no lo esta ya
 }
 
 
@@ -112,10 +112,8 @@ function Mostrar(){
 
   //Realizamos un forEach para poder visualizar los diferentes tipos
   data.types.forEach(dato => {
-     console.log(dato.type.name);
-
+    //  console.log(dato.type.name);
      typeName = dato.type.name; //Metemos los nombres en una variable
-
      const tipoDiv = document.createElement("div"); //Creamos un div y lo metemos en la variable
      //Creamos estilo al div creado, para que se cree un estilo de color diferente según el que toque, para que sea dinámico
      tipoDiv.style.cssText = `background-color:${typeColors[typeName]}; color: white; padding: 1vh 20vh 1vh 5vh; border-radius:10px; margin-right:5px; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; border:solid black 2px`;
