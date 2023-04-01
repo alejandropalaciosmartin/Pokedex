@@ -124,4 +124,20 @@ body.dark-mode {
   box-shadow: 0 0 20px rgb(255, 0, 0);
 }
 
-
+#myBtn {
+  display: none; /* oculta el botón por defecto */
+  position: fixed; /* hace que el botón sea fijo en la página */
+  bottom: 40px; /* distancia desde la parte inferior de la ventana del navegador */
+  right: 40px; /* distancia desde la parte derecha de la ventana del navegador */
+  z-index: 99; /* asegura que el botón se muestre encima de otros elementos */
+    /* Agrega el siguiente estilo para eliminar el borde */
+    border: none;
+    /* Agrega el siguiente estilo para eliminar el fondo blanco */
+    background-color: transparent;
+}
+#myBtn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px rgb(255, 0, 0);
+  transition: box-shadow 0.3s ease-in-out;
+  border-radius: 50%;
+}

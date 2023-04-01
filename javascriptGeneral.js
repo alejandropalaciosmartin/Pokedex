@@ -1,3 +1,21 @@
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// Cuando se hace clic en el botón, se desplaza hacia arriba hasta la parte superior de la página
+function topFunction() {
+  document.body.scrollTop = 0; // Para Safari
+  document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
+}
+
+
+
 const toggleModeButton = document.querySelector("#claroscuro");
 const lunaImage = document.querySelector("#luna");
 const solImage = document.querySelector("#sol");
