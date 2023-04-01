@@ -14,7 +14,7 @@ header {
   font-family: "Pokemon";  
   min-width: 100%;
   top: 0;  
-  height: 100%;
+  height: 150px;
   text-align: center;
   color: rgb(230, 217, 210);
 }
@@ -40,8 +40,8 @@ footer {
 
 #tituloHead {
     position: relative;
-    margin-top: -3vh;
-    z-index: 1;
+    margin:auto;
+    font-size: 50px;
 }
 
 @font-face { 
@@ -138,4 +138,46 @@ body.dark-mode {
   box-shadow: 0 0 5px rgb(0, 0, 0);
   transition: box-shadow 0.1s ease-in-out;
   border-radius: 60%;
+}
+
+
+#gitbuttons{
+  position: relative;
+  top: -60px;
+}
+
+#botonGit1, #botonGit2 {
+ 
+  margin-right: 10px;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  z-index: 9999;
+}
+
+#botonGit1 img, #botonGit2 img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+#pokeballIzq {
+  position: absolute;
+  top: 20px;
+  left: 625px;
+  width: 100px;
+  height: 100px;
+}
+
+#pokeballDer {
+  position: absolute;
+  top: 20px;
+  right: 625px;
+  width: 100px;
+  height: 100px;
 }
