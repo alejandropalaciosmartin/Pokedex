@@ -103,7 +103,7 @@ function Mostrar(){
   fetch(urlApi) //Pasamos el pokemon específico y mostramos los datos
   .then(response => response.json())
   .then(data => {
-  // console.log(data);
+  //  console.log(data);
   
   nombre.innerHTML = data.name.charAt(0).toUpperCase() + data.name.slice(1); //////
   document.getElementById('imagenPokemon').src = data.sprites.other.home.front_default;
@@ -125,7 +125,6 @@ function Mostrar(){
 
   //Realizamos un forEach para poder visualizar los diferentes tipos
   data.types.forEach(dato => {
-    //  console.log(dato.type.name);
      typeName = dato.type.name; //Metemos los nombres en una variable
      const tipoDiv = document.createElement("div"); //Creamos un div y lo metemos en la variable
      //Creamos estilo al div creado, para que se cree un estilo de color diferente según el que toque, para que sea dinámico
@@ -133,41 +132,51 @@ function Mostrar(){
      tipoDiv.innerHTML = typeTranslations[typeName]; //Metemos en el div el nombre traducido
      tipo.appendChild(tipoDiv); //Metemos el div creado en el js (div hijo) en el padre (tipo) que está en el html
   })
-
+  //  console.log("Actual " + data.id);
+  // console.log(data);
   //Realizamos un forEach para poder visualizar los diferentes tipos de EVOLUCIÓN
+  fetch(data.species.url) //Pasamos el pokemon específico y mostramos los datos
+    .then(response => response.json())
+    .then(data => {
+      // console.log(data);
+          fetch(data.evolution_chain.url)
+          .then(response => response.json())
+          .then(data => {
+             console.log(data); 
+            let id1Evolucion = parseInt(data.chain.species.url.substr(42,3));
+            let nombre1Evolucion = data.chain.species.name;
+            console.log("1º Evolución: " + nombre1Evolucion + " // Id: " + id1Evolucion);  
+            data.chain.evolves_to.forEach(datos => {
+              if(datos.species.name == "vaporeon" || datos.species.name == "jolteon" || datos.species.name == "flareon")
+              {
+                  datos.evolution_details.forEach(dato1 => {
+                      console.log("Evolución: " + datos.species.name + " " + dato1.trigger.name + " " + dato1.item.name);
+                  });
+                }
+              else {
+                datos.evolution_details.forEach(dato1 => {
+                  if(nombre1Evolucion != "eevee" && data.chain.species.name != null && id1Evolucion <= 151){
+                    console.log("Evolución: " + dato1.trigger.name);
+                  }
+                });
+              }
+            });
+            data.chain.evolves_to.forEach(dato => {
+              let id2Evolucion = parseInt(dato.species.url.substr(42,3));
+              if(dato.species.name != null && id2Evolucion <= 151){
+                console.log("2º Evolución: " + dato.species.name + " // Id: " + id2Evolucion); 
+              }
+              dato.evolves_to.forEach(datito => {
+              let id3Evolucion = parseInt(datito.species.url.substr(42,3));
+              if(datito.species.name != null && id3Evolucion <= 151){
+                console.log("3º evolución " + datito.species.name + " // Id: " + id3Evolucion);
+              }
+            })
 
-fetch(data.species.url) //Pasamos el pokemon específico y mostramos los datos
-  .then(response => response.json())
-  .then(data => {
-    //console.log(data);
-   console.log("Actual: "+data.name);
-  if(data.evolves_from_species == null){
-    // console.log("Procede de: NINGUNO");
-  }
-  else{
-    // console.log("Procede de: "+data.evolves_from_species.name); //Evolución que procede, sino tiene es null. 2º evolución
-  }
-    fetch(data.evolution_chain.url)
-      .then(response => response.json())
-      .then(data => {
-         console.log(data); 
-         console.log("1º Evolución: " + data.chain.species.name);
-        //console.log(data.chain.evolves_to.evolves_to.species.name);    
-        
-        data.chain.evolves_to.forEach(dato => {
-          console.log(dato);
-          //console.log(dato.evolves_to);
-          console.log("2º Evolución: " + dato.species.name);
-
-           dato.evolves_to.forEach(datito => {
-             console.log("3º evolución " + datito.species.name);
-           })
-
-        })
-      });
+          })
+        });
+    })
   })
- 
-})
   .catch(error => {
     console.error(error);
     container.textContent = "Error loading Pokémon details"; //Muestra el error en el html

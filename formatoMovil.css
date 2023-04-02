@@ -249,7 +249,6 @@ body.dark #modoOscuro{
 
 #numeroPokemon, #tipoPokemon, .vida, .ataque, .defensa, .ataqueEspecial, .defensaEspecial, .velocidad{
     font-size: 4vh;
-
 }
 
 .velocidad, .ataque, .ataqueEspecial{
@@ -263,7 +262,6 @@ body.dark #modoOscuro{
 
 .colorFuente {
     color: var(--gris);
-
 }
 
 /*Id*/
