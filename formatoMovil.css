@@ -71,7 +71,7 @@ header{
                          "evolucion evolucion";
     grid-gap: 5vh;  /*Separación entre elementos*/  
     color: var(--gris);
-    margin-left: 20vh;
+    /* margin-left: 20vh; */
 }
 
 /*Atrás*/
@@ -251,9 +251,9 @@ body.dark #modoOscuro{
     font-size: 4vh;
 }
 
-.velocidad, .ataque, .ataqueEspecial{
+/* .velocidad, .ataque, .ataqueEspecial{
     margin-left: 20vh;
-}
+} */
 
 #numeroPokemon, #pesoPokemon, #alturaPokemon {
     font-size: 5vh;
@@ -314,14 +314,25 @@ body.dark #modoOscuro{
 /*Evoluciones*/
 .evolucion{
     grid-area: evolucion; 
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    margin-top: 2vh;
+    margin-top: 2vh; */
 }
 
-.evolucionar{
+/* .evolucionar{
     width: 100%;
     /* border: #797979 solid 1vh; */
+/*} */
+
+.imagenEvolucion{
+    width: 20vh;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.flechas{
+    width: 5vh;
 }
 
 /*Pie de página*/

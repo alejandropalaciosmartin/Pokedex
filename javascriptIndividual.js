@@ -36,25 +36,30 @@ const urlApi = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`; //Cogemos la di
 
 /*VARIABLES*/
 const container = document.getElementById("pokemonIndividual"); //Seleccionamos clase DONDE se MOSTRARÁ
-let nombre = document.getElementById("textoPokemon"); //////
-let imagen = ""; //////
-let numero = document.getElementById("numeroPokemon"); //////
-let tipo = document.getElementById("tipoPokemon"); //////
+let nombre = document.getElementById("textoPokemon"); 
+let imagen = ""; 
+let numero = document.getElementById("numeroPokemon"); 
+let tipo = document.getElementById("tipoPokemon"); 
 let typeName = "";
-let peso = document.getElementById("pesoPokemon"); //////
-let altura = document.getElementById("alturaPokemon"); //////
-let vida = document.getElementById("vida"); //////
-let vidaNum = document.getElementById("vidaNum"); //////
-let ataque = document.getElementById("ataque"); //////
-let ataqueNum = document.getElementById("ataqueNum"); //////
-let defensa = document.getElementById("defensa"); //////
-let defensaNum = document.getElementById("defensaNum"); //////
-let ataqueEspecial = document.getElementById("ataqueEspecial"); //////
-let ataqueEspecialNum = document.getElementById("ataqueEspecialNum"); //////
-let defensaEspecial = document.getElementById("defensaEspecial"); //////
-let defensaEspecialNum = document.getElementById("defensaEspecialNum"); //////
-let velocidad = document.getElementById("velocidad"); //////
-let velocidadNum = document.getElementById("velocidadNum"); //////
+let peso = document.getElementById("pesoPokemon"); 
+let altura = document.getElementById("alturaPokemon"); 
+let vida = document.getElementById("vida"); 
+let vidaNum = document.getElementById("vidaNum"); 
+let ataque = document.getElementById("ataque"); 
+let ataqueNum = document.getElementById("ataqueNum"); 
+let defensa = document.getElementById("defensa"); 
+let defensaNum = document.getElementById("defensaNum"); 
+let ataqueEspecial = document.getElementById("ataqueEspecial"); 
+let ataqueEspecialNum = document.getElementById("ataqueEspecialNum"); 
+let defensaEspecial = document.getElementById("defensaEspecial"); 
+let defensaEspecialNum = document.getElementById("defensaEspecialNum"); 
+let velocidad = document.getElementById("velocidad"); 
+let velocidadNum = document.getElementById("velocidadNum"); 
+let evolucion1 = document.getElementById("evolucion1"); 
+let evolucion2 = document.getElementById("evolucion2"); 
+let evolucion2Extra1 = document.getElementById("evolucion2Extra1"); 
+let evolucion2Extra2 = document.getElementById("evolucion2Extra2"); 
+let evolucion3 = document.getElementById("evolucion3"); 
 
 /*ENUMERADOS*/
 const typeTranslations = {
@@ -99,15 +104,21 @@ const typeColors = {
   fairy: '#EE99AC'
 };
 
+const itemTranslations = {
+  water: 'Agua',
+  thunder: 'Trueno',
+  fire: 'Fuego',
+};
+
 function Mostrar(){
   fetch(urlApi) //Pasamos el pokemon específico y mostramos los datos
   .then(response => response.json())
   .then(data => {
-  //  console.log(data);
+    // console.log(data);
   
-  nombre.innerHTML = data.name.charAt(0).toUpperCase() + data.name.slice(1); //////
+  nombre.innerHTML = data.name.charAt(0).toUpperCase() + data.name.slice(1); 
   document.getElementById('imagenPokemon').src = data.sprites.other.home.front_default;
-  numero.innerHTML = `#${pokemonId.padStart(3, "0")}`; //////
+  numero.innerHTML = `#${pokemonId.padStart(3, "0")}`; 
   peso.innerHTML = data.weight/10 + "kg"; //estaba en hectogramo
   altura.innerHTML = data.height/10 + "m";  //estaba en decímetro
   vida.value = data.stats[0].base_stat;
@@ -142,15 +153,20 @@ function Mostrar(){
           fetch(data.evolution_chain.url)
           .then(response => response.json())
           .then(data => {
-             console.log(data); 
+            // console.log(data); 
             let id1Evolucion = parseInt(data.chain.species.url.substr(42,3));
             let nombre1Evolucion = data.chain.species.name;
             console.log("1º Evolución: " + nombre1Evolucion + " // Id: " + id1Evolucion);  
+            if(id1Evolucion <= 151){
+              evolucion1.innerHTML = nombre1Evolucion.charAt(0).toUpperCase() + nombre1Evolucion.slice(1);
+              document.getElementById('evolucion1Img').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id1Evolucion}.png`;
+            }
             data.chain.evolves_to.forEach(datos => {
+              // console.log(datos);
               if(datos.species.name == "vaporeon" || datos.species.name == "jolteon" || datos.species.name == "flareon")
               {
                   datos.evolution_details.forEach(dato1 => {
-                      console.log("Evolución: " + datos.species.name + " " + dato1.trigger.name + " " + dato1.item.name);
+                       console.log("Evolución: " + datos.species.name + " " + dato1.trigger.name + " " + itemTranslations[dato1.item.name.slice(0, -6)]);
                   });
                 }
               else {
@@ -162,14 +178,40 @@ function Mostrar(){
               }
             });
             data.chain.evolves_to.forEach(dato => {
+              console.log(dato);
               let id2Evolucion = parseInt(dato.species.url.substr(42,3));
-              if(dato.species.name != null && id2Evolucion <= 151){
-                console.log("2º Evolución: " + dato.species.name + " // Id: " + id2Evolucion); 
+              if(dato.species.name != null && id2Evolucion <= 151 && id2Evolucion != 134  && id2Evolucion != 135  && id2Evolucion != 136){
+                  console.log("2º Evolución: " + dato.species.name + " // Id: " + id2Evolucion); 
+                  evolucion2.innerHTML = dato.species.name.charAt(0).toUpperCase() + dato.species.name.slice(1);
+                  document.getElementById('evolucion2Img').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id2Evolucion}.png`;
               }
+              else if(id2Evolucion == 134 )
+              {
+                evolucion2.innerHTML = dato.species.name.charAt(0).toUpperCase() + dato.species.name.slice(1);
+                document.getElementById('evolucion2Img').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id2Evolucion}.png`;
+            
+              }
+              else if(id2Evolucion == 135 )
+              {
+                evolucion2Extra1.innerHTML = dato.species.name.charAt(0).toUpperCase() + dato.species.name.slice(1);
+                document.getElementById('evolucion2ImgExtra1').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id2Evolucion}.png`;
+            
+              }
+              else if(id2Evolucion == 136 )
+              {
+                evolucion2Extra2.innerHTML = dato.species.name.charAt(0).toUpperCase() + dato.species.name.slice(1);
+                document.getElementById('evolucion2ImgExtra2').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id2Evolucion}.png`;
+            
+              }
+              
+              
+              
               dato.evolves_to.forEach(datito => {
               let id3Evolucion = parseInt(datito.species.url.substr(42,3));
               if(datito.species.name != null && id3Evolucion <= 151){
                 console.log("3º evolución " + datito.species.name + " // Id: " + id3Evolucion);
+                  evolucion3.innerHTML = datito.species.name.charAt(0).toUpperCase() + datito.species.name.slice(1);
+                  document.getElementById('evolucion3Img').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id3Evolucion}.png`;
               }
             })
 
