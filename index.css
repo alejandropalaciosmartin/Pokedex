@@ -2,14 +2,23 @@
   margin: 0;
   padding: 0;
 }
-
-body {
+body{
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
+body.dark_mode{
+  background-color: #363535;
+  color: #ffffff;
+}
+@font-face{ 
+  font-family: Pokemon; 
+  src: url("./letterFont/Pokemon\ Hollow.ttf");
+}
 
-header {  
+
+/* ----------------------------HEADER---------------------------- */
+header{  
   background-color: brown;   
   font-family: "Pokemon";  
   min-width: 100%;
@@ -19,98 +28,66 @@ header {
   color: rgb(230, 217, 210);
 }
 
-#claroscuro{
-  position: fixed;
-  right: 40px;
+/* -----------Título----------- */
+#tituloHead{
+  position: relative;
+  margin:auto;
+  font-size: 50px;
 }
 
-main {
+/* -----------Botones GitHub----------- */
+#gitbuttons{
+  position: relative;
+  top: -60px;
+}
+.button-link{
+  display: inline-block;
+  width: auto;
+  margin-top: 40px;
+}
+#botonGit1, #botonGit2{
+ 
+  margin-right: 10px;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  z-index: 9999;
+}
+#botonGit1 img, #botonGit2 img{
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+/* -----------Imagen Pokeball----------- */
+#pokeballIzq{
+  position: absolute;
+  top: 20px;
+  left: 525px;
+  width: 100px;
+  height: 100px;
+}
+#pokeballDer{
+  position: absolute;
+  top: 20px;
+  right: 525px;
+  width: 100px;
+  height: 100px;
+}
+
+/* ----------------------------MAIN---------------------------- */
+main{
   justify-content: center;
   padding: 20px;
 }
 
-footer {
-    width: 100%;
-    background-color: brown;
-    bottom: 0;
-    text-align: center;
-    color: white;
-    height: 8vh;
-}
-
-#tituloHead {
-    position: relative;
-    margin:auto;
-    font-size: 50px;
-}
-
-@font-face { 
-    font-family: Pokemon; 
-    src: url("./letterFont/Pokemon\ Hollow.ttf");
-}
-     
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  row-gap: 20px; 
-  justify-items: center; 
-  margin-top: 25px;
-  margin-left: 150px;
-  margin-right: 150px;
-}
-
-.search-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 5px;
-}
-
-label {
-  font-family: Arial, sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-input[type="text"] {
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  color: #333;
-  width: 200px;
-  height: 40px;
-  text-align: center;
-  outline: none;
-}
-
-input[type="text"]:focus {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-
-body.dark-mode {
-  background-color: #222;
-  color: #000000;
-}
-
-.pokemon-card.dark-mode {
-  background-color: #666;
-}
-
-.pokemon-card.dark-mode .name,
-.pokemon-card.dark-mode span:nth-of-type(2) {
-  color: #fff;
-}
-
-.pokemon-card:hover {
-  box-shadow: 0 0 20px rgb(255, 0, 0);
-}
-
-#myBtn {
+/* -----------Botón volver arriba----------- */
+#myBtn{
   display: none; 
   position: fixed; 
   bottom: 40px; 
@@ -119,14 +96,27 @@ body.dark-mode {
   border: none;
   background-color: transparent;
 }
-
-#myBtn:hover {
+#myBtn:hover{
   cursor: pointer;
   box-shadow: 0 0 20px rgb(255, 0, 0);
   transition: box-shadow 0.3s ease-in-out;
   border-radius: 50%;
 }
 
+/* -----------Botón claro/oscuro----------- */
+#claroscuro{
+  position: fixed;
+  right: 40px;
+}
+#sol{
+  display:none;
+  height: 50px; 
+  width: 50px;
+}
+#luna{ 
+  height: 50px; 
+  width: 50px;
+}
 #sol:hover{
   cursor:pointer;
   box-shadow: 0 0 5px rgb(255, 255, 255);
@@ -140,44 +130,88 @@ body.dark-mode {
   border-radius: 60%;
 }
 
-
-#gitbuttons{
-  position: relative;
-  top: -60px;
-}
-
-#botonGit1, #botonGit2 {
- 
-  margin-right: 10px;
-  font-size: 18px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
+/* -----------Buscador Pokemons----------- */
+.search-container{
   display: flex;
+  flex-direction: column;
   align-items: center;
-  color: #fff;
+  justify-content: center;
+  margin-top: 5px;
+}
+label {
   font-family: Arial, sans-serif;
-  z-index: 9999;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+input[type="text"]{
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: #333;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  outline: none;
+}
+input[type="text"]:focus{
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-#botonGit1 img, #botonGit2 img {
-  width: 25px;
-  height: 25px;
-  margin-right: 5px;
+/* -----------Contenedor Pokemons----------- */
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  row-gap: 20px; 
+  justify-items: center; 
+  margin-top: 25px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
-#pokeballIzq {
-  position: absolute;
-  top: 20px;
-  left: 525px;
-  width: 100px;
-  height: 100px;
+/* ----------------------------FOOTER---------------------------- */
+footer{
+  width: 100%;
+  background-color: brown;
+  bottom: 0;
+  text-align: center;
+  color: white;
+  height: 8vh;
+}
+     
+/* ----------------------------CARTA POKEMON---------------------------- */
+.pokemon_card{
+  cursor: pointer; 
+  display:flex; 
+  flex-direction:column; 
+  justify-content:center; 
+  width:250px; height:350px; 
+  border:1px solid #ddd; 
+  border-radius:10px; 
+  background-color:#f1f1f1;
+}
+.pokemon_card:hover{
+  box-shadow: 0 0 40px rgb(255, 5, 5);
+}
+.types{
+  display:flex; 
+  justify-content:center;
 }
 
-#pokeballDer {
-  position: absolute;
-  top: 20px;
-  right: 525px;
-  width: 100px;
-  height: 100px;
+.numero{
+  font-weight:bold; 
+  display:block; 
+  text-align:center;
 }
+
+.name{
+  margin-top: 10px; 
+  text-align:center; 
+  font-size: 18px;
+}
+
+
+
