@@ -169,7 +169,7 @@ body.dark-mode {
 #pokeballIzq {
   position: absolute;
   top: 20px;
-  left: 625px;
+  left: 525px;
   width: 100px;
   height: 100px;
 }
@@ -177,7 +177,7 @@ body.dark-mode {
 #pokeballDer {
   position: absolute;
   top: 20px;
-  right: 625px;
+  right: 525px;
   width: 100px;
   height: 100px;
 }
