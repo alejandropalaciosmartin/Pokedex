@@ -1,15 +1,8 @@
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("myBtn").style.display = "block";
-  } else {
-    document.getElementById("myBtn").style.display = "none";
-  }
-}
+window.onscroll = function() {
+  const myBtn = document.getElementById("myBtn");
+  myBtn.style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? "block" : "none"; };
 function topFunction() {
-  document.documentElement.scrollTop = 0;
-}
-
+  document.documentElement.scrollTop = 0; }
 
 const toggleModeButton = document.querySelector("#claroscuro");
 const lunaImage = document.querySelector("#luna");
@@ -24,21 +17,18 @@ toggleModeButton.addEventListener("click", () => {
   if (document.body.classList.contains("dark_mode")) {
     lunaImage.style.display = "none";
     solImage.style.display = "block";
-    localStorage.setItem('modeDark', 'true');
-  } else {
+    localStorage.setItem('modeDark', 'true'); } 
+  else {
     lunaImage.style.display = "block";
     solImage.style.display = "none";
-    localStorage.setItem('modeDark','false');
-  }
+    localStorage.setItem('modeDark','false'); }
 
-  if(localStorage.getItem('modeDark') === 'true'){
+  if(localStorage.getItem('modeDark') == 'true'){
     document.body.classList.add('dark_mode');
-    toggleModeButton.classList.add('active');
-  }
+    toggleModeButton.classList.add('active'); }
 else{
     document.body.classList.remove('dark_mode');
-    toggleModeButton.classList.remove('active');
-}
+    toggleModeButton.classList.remove('active'); }
  
   const pokemonCards = document.querySelectorAll(".pokemon_card");
   pokemonCards.forEach((card) => {
