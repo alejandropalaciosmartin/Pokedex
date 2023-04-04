@@ -165,24 +165,21 @@ function Mostrar(){
           .then(priEvolu => {
             //1º Evolución
             console.log(priEvolu.chain);
-
-            //2º Evolución
-            priEvolu.chain.evolves_to.forEach(sencEvolu => {
-            // console.log(priEvolu.chain.evolves_to);
-            
-              //3º Evolución
-              sencEvolu.evolves_to.forEach(terEvolu => {
-
-            //1º Evolución
             let id1Evolucion = parseInt(priEvolu.chain.species.url.substr(42,3)); //ID
             let nombre1Evolucion = priEvolu.chain.species.name; //NOMBRE
-             console.log("1º Evolución: " + nombre1Evolucion + " // Id: " + id1Evolucion);  
-
+            console.log("1º Evolución: " + nombre1Evolucion + " // Id: " + id1Evolucion); 
+            
             if(id1Evolucion <= 151){
               evolucion1.innerHTML = nombre1Evolucion.charAt(0).toUpperCase() + nombre1Evolucion.slice(1);
               document.getElementById('evolucion1Img').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id1Evolucion}.png`;
               document.getElementById('irA').href = `especifico.html?id=${id1Evolucion}`;
               document.getElementById('flecha1').src = `./img/flecha2.png`;
+            }
+            
+            //2º Evolución
+            priEvolu.chain.evolves_to.forEach(sencEvolu => {
+            // console.log(priEvolu.chain.evolves_to);
+              //1º a 2º
               sencEvolu.evolution_details.forEach(evoluDetail => {
                 if(evoluDetail.trigger.name == "use-item")
                 {
@@ -203,86 +200,86 @@ function Mostrar(){
                   trigger0.innerHTML = itemTranslations[evoluDetail.trigger.name.slice(0,5)]; 
                 }
               })
-            }
-            
-              //  console.log(sencEvolu);
-              /*if(sencEvolu.species.name == "vaporeon")
-              {
-                  sencEvolu.evolution_details.forEach(dato1 => {
-                      // console.log("Evolución: " + sencEvolu.species.name + " " + dato1.trigger.name + " " + itemTranslations[dato1.item.name.slice(0, -6)]);
-                      trigger1.innerHTML = itemTranslations[dato1.item.name.slice(0, -6)];
-                      document.getElementById('flecha1V').src = `./img/flecha2.png`;
-                  });
-                }
-              else if(sencEvolu.species.name == "jolteon")
-              {
-                  sencEvolu.evolution_details.forEach(dato1 => {
-                      // console.log("Evolución: " + sencEvolu.species.name + " " + dato1.trigger.name + " " + itemTranslations[dato1.item.name.slice(0, -6)]);
-                      trigger2.innerHTML = itemTranslations[dato1.item.name.slice(0, -6)];
-                      document.getElementById('flecha1J').src = `./img/flecha2.png`;
-                  });
+          
+          
+            //  console.log(sencEvolu);
+            /*if(sencEvolu.species.name == "vaporeon")
+            {
+                sencEvolu.evolution_details.forEach(dato1 => {
+                    // console.log("Evolución: " + sencEvolu.species.name + " " + dato1.trigger.name + " " + itemTranslations[dato1.item.name.slice(0, -6)]);
+                    trigger1.innerHTML = itemTranslations[dato1.item.name.slice(0, -6)];
+                    document.getElementById('flecha1V').src = `./img/flecha2.png`;
+                });
               }
-              else if(sencEvolu.species.name == "flareon")
-              {
-                  sencEvolu.evolution_details.forEach(dato1 => {
-                      // console.log("Evolución: " + sencEvolu.species.name + " " + dato1.trigger.name + " " + itemTranslations[dato1.item.name.slice(0, -6)]);
-                      trigger3.innerHTML = itemTranslations[dato1.item.name.slice(0, -6)];
-                  });
-              }*/
+            else if(sencEvolu.species.name == "jolteon")
+            {
+                sencEvolu.evolution_details.forEach(dato1 => {
+                    // console.log("Evolución: " + sencEvolu.species.name + " " + dato1.trigger.name + " " + itemTranslations[dato1.item.name.slice(0, -6)]);
+                    trigger2.innerHTML = itemTranslations[dato1.item.name.slice(0, -6)];
+                    document.getElementById('flecha1J').src = `./img/flecha2.png`;
+                });
+            }
+            else if(sencEvolu.species.name == "flareon")
+            {
+                sencEvolu.evolution_details.forEach(dato1 => {
+                    // console.log("Evolución: " + sencEvolu.species.name + " " + dato1.trigger.name + " " + itemTranslations[dato1.item.name.slice(0, -6)]);
+                    trigger3.innerHTML = itemTranslations[dato1.item.name.slice(0, -6)];
+                });
+            }*/
 
-              //2º Evolución
-              let id2Evolucion = parseInt(sencEvolu.species.url.substr(42,3));
-              if(sencEvolu.species.name != null && id2Evolucion <= 151 && id2Evolucion != 134  && id2Evolucion != 135  && id2Evolucion != 136){
-                  console.log("2º Evolución: " + sencEvolu.species.name + " // Id: " + id2Evolucion); 
-                  evolucion2.innerHTML = sencEvolu.species.name.charAt(0).toUpperCase() + sencEvolu.species.name.slice(1);
-                  document.getElementById('evolucion2Img').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id2Evolucion}.png`;
-                  document.getElementById('irA2').href = `especifico.html?id=${id2Evolucion}`;
-                  document.getElementById('flecha2').src = `./img/flecha2.png`; 
-                  terEvolu.evolution_details.forEach(evoluDetail => {
-                    //PIEDRA
-                    if(evoluDetail.trigger.name == "use-item")
-                    {
-                      console.log("2º Forma de evolucionar " + evoluDetail.trigger.name.slice(4,8));
-                      trigger00.innerHTML = itemTranslations[evoluDetail.trigger.name.slice(4,8)] + " ";
-                      trigger00.innerHTML += itemTranslations[evoluDetail.item.name.slice(0,-6)];
-                    }
-                    //NIVEL
-                    else{
-                      console.log("2º Forma de evolucionar " + evoluDetail.trigger.name);
-                      trigger00.innerHTML = itemTranslations[evoluDetail.trigger.name.slice(0,5)];
-                    }
-                  })
-              }/*
-              else if(id2Evolucion == 134 )
-              {
+            let id2Evolucion = parseInt(sencEvolu.species.url.substr(42,3));
+            if(sencEvolu.species.name != null && id2Evolucion <= 151 && id2Evolucion != 134  && id2Evolucion != 135  && id2Evolucion != 136){
+                console.log("2º Evolución: " + sencEvolu.species.name + " // Id: " + id2Evolucion); 
                 evolucion2.innerHTML = sencEvolu.species.name.charAt(0).toUpperCase() + sencEvolu.species.name.slice(1);
                 document.getElementById('evolucion2Img').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id2Evolucion}.png`;
-              }
-              else if(id2Evolucion == 135 )
-              {
-                evolucion2Extra1.innerHTML = sencEvolu.species.name.charAt(0).toUpperCase() + sencEvolu.species.name.slice(1);
-                document.getElementById('evolucion2ImgExtra1').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id2Evolucion}.png`;
-              }
-              else if(id2Evolucion == 136 )
-              {
-                evolucion2Extra2.innerHTML = sencEvolu.species.name.charAt(0).toUpperCase() + sencEvolu.species.name.slice(1);
-                document.getElementById('evolucion2ImgExtra2').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id2Evolucion}.png`;
-            
-              }*/
+                document.getElementById('irA2').href = `especifico.html?id=${id2Evolucion}`;
+                document.getElementById('flecha2').src = `./img/flecha2.png`; 
+                
+            }/*
+            else if(id2Evolucion == 134 )
+            {
+              evolucion2.innerHTML = sencEvolu.species.name.charAt(0).toUpperCase() + sencEvolu.species.name.slice(1);
+              document.getElementById('evolucion2Img').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id2Evolucion}.png`;
+            }
+            else if(id2Evolucion == 135 )
+            {
+              evolucion2Extra1.innerHTML = sencEvolu.species.name.charAt(0).toUpperCase() + sencEvolu.species.name.slice(1);
+              document.getElementById('evolucion2ImgExtra1').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id2Evolucion}.png`;
+            }
+            else if(id2Evolucion == 136 )
+            {
+              evolucion2Extra2.innerHTML = sencEvolu.species.name.charAt(0).toUpperCase() + sencEvolu.species.name.slice(1);
+              document.getElementById('evolucion2ImgExtra2').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id2Evolucion}.png`;
+          
+            }*/
 
+            
               //3º Evolución
+              sencEvolu.evolves_to.forEach(terEvolu => {
+                //2º a 3º
+                terEvolu.evolution_details.forEach(evoluDetail => {
+                  //PIEDRA
+                  if(evoluDetail.trigger.name == "use-item")
+                  {
+                    console.log("2º Forma de evolucionar " + evoluDetail.trigger.name.slice(4,8));
+                    trigger00.innerHTML = itemTranslations[evoluDetail.trigger.name.slice(4,8)] + " ";
+                    trigger00.innerHTML += itemTranslations[evoluDetail.item.name.slice(0,-6)];
+                  }
+                  //NIVEL
+                  else{
+                    console.log("2º Forma de evolucionar " + evoluDetail.trigger.name);
+                    trigger00.innerHTML = itemTranslations[evoluDetail.trigger.name.slice(0,5)];
+                  }
+                })
+
               let id3Evolucion = parseInt(terEvolu.species.url.substr(42,3));
-              if(terEvolu.species.name != null && id3Evolucion <= 151){
-                 console.log("3º evolución " + terEvolu.species.name + " // Id: " + id3Evolucion);
-                  evolucion3.innerHTML = terEvolu.species.name.charAt(0).toUpperCase() + terEvolu.species.name.slice(1);
-                  document.getElementById('evolucion3Img').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id3Evolucion}.png`;
-                  document.getElementById('irA3').href = `especifico.html?id=${id3Evolucion}`;
-                  // text-decoration: none; /*Quitar subrayado*/
-                  enlace3.style.cssText = `text-decoration: none;`; 
-                  // enlace3.style.cssText = `background: blue`; 
-                  // enlace3.classList.add("boton");
-              }
-            })
+                if(terEvolu.species.name != null && id3Evolucion <= 151){
+                  console.log("3º evolución " + terEvolu.species.name + " // Id: " + id3Evolucion);
+                    evolucion3.innerHTML = terEvolu.species.name.charAt(0).toUpperCase() + terEvolu.species.name.slice(1);
+                    document.getElementById('evolucion3Img').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id3Evolucion}.png`;
+                    document.getElementById('irA3').href = `especifico.html?id=${id3Evolucion}`;
+                }
+              })
           })
         });
     })

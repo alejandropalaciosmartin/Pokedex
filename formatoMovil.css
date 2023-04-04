@@ -130,7 +130,7 @@ header{
 
 /*MODO OSCURO - Modificado por JavaScript*/
 body.dark {   
-    background:  rgba(0, 0, 0, 0.911); 
+    background:  #363535; 
 }
 body.dark h1, body.dark label, body.dark #numeroPokemon, body.dark  #tipoPokemon, body.dark #pesoPokemon, 
 body.dark #alturaPokemon, body.dark .colorFuente, body.dark #vidaNum, body.dark #velocidadNum, body.dark #defensaNum, 
@@ -139,9 +139,15 @@ body.dark #ataqueNum, body.dark #ataqueEspecialNum, body.dark #defensaEspecialNu
 }
 
 body.dark .boton {   
-    background:  rgb(59, 59, 59); 
+    background:  rgb(33, 33, 33); 
     color: var(--blanco);
     box-shadow: 0 0 3vh 20px rgba(255, 0, 0, 0.2);
+}
+
+body.dark .boton:hover {   
+    box-shadow: 0 0 3vh 10px red;
+    background:  rgb(33, 33, 33); 
+    color: var(--blanco);
 }
 
 body.dark #modoOscuro{
