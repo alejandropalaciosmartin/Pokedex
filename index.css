@@ -44,6 +44,7 @@ header{
   display: inline-block;
   width: auto;
   margin-top: 40px;
+  text-decoration: none;
 }
 #botonGit1, #botonGit2{
  
@@ -57,6 +58,11 @@ header{
   color: #fff;
   font-family: Arial, sans-serif;
   z-index: 9999;
+}
+#botonGit1:hover, #botonGit2:hover{
+  cursor: pointer;
+  box-shadow: 0 0 20px rgb(255, 0, 0);
+  border-radius: 20%;
 }
 #botonGit1 img, #botonGit2 img{
   width: 25px;
