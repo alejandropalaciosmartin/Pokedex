@@ -160,7 +160,7 @@ body.dark #modoOscuro{
     grid-area: titulo;
     margin-top: 2vh;
     margin-bottom: -50vh;
-    font-size: 15vh;
+    font-size: 10vh;
     /*Efecto 3D*/
     text-shadow: 0 1px 0 hsl(170, 90%, 71%),
                  0 2px 0 hsl(174,5%,75%),
