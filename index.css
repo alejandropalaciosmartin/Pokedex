@@ -164,7 +164,7 @@ input[type="text"]{
   outline: none;
 }
 input[type="text"]:focus{
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 25px rgb(255, 0, 0);
 }
 
 /* -----------Contenedor Pokemons----------- */
@@ -200,7 +200,7 @@ footer{
   background-color:#f1f1f1;
 }
 .pokemon_card:hover{
-  box-shadow: 0 0 40px rgb(255, 5, 5);
+  box-shadow: 0 0 40px rgb(255, 0, 0);
 }
 .types{
   display:flex; 
