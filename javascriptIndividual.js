@@ -1,6 +1,6 @@
 /*MODO OSCURO/CLARO*/
 const modoOscuro = document.getElementById('modoOscuro'); //Guardamos en variable el ID del html que se va a usar
- 
+
 modoOscuro.addEventListener('click', () => { //Aplicamos al elemento del ID que cuando hagamos click...
   //.dark se da efecto en el archivo .css aparte
     document.body.classList.toggle('dark'); //Coge del archivo aparte del Css o que esté dentro del html la clase dark que se encuentra en el body
@@ -25,7 +25,6 @@ else{
     document.body.classList.remove('dark'); //Borramos el efecto dark del archivo .css
     modoOscuro.classList.remove('active');  //Borramos el efecto que indica que esta activo, para que se vea que no lo esta ya
 }
-
 
 
 /*COGER DATO URL*/
