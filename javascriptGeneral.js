@@ -40,6 +40,7 @@ else{
  .then(data => {
    const pokemon = data.results; 
    const container = document.querySelector(".grid-container");
+   container.style = "justify-content:center;alight-item:center;";
    const searchInput = document.querySelector("#search-input");
    const typeColors = {
      normal: '#A8A878',  fire: '#F08030',  water: '#6890F0',
