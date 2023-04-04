@@ -132,17 +132,17 @@ function Mostrar(){
   peso.innerHTML = data.weight/10 + "kg"; //estaba en hectogramo
   altura.innerHTML = data.height/10 + "m";  //estaba en decímetro
   vida.value = data.stats[0].base_stat;
-  vidaNum.innerHTML = `{${data.stats[0].base_stat}}`;
+  vidaNum.innerHTML = `${data.stats[0].base_stat}`;
   ataque.value = data.stats[1].base_stat;
-  ataqueNum.innerHTML = `{${data.stats[1].base_stat}}`;
+  ataqueNum.innerHTML = `${data.stats[1].base_stat}`;
   defensa.value = data.stats[2].base_stat;
-  defensaNum.innerHTML = `{${data.stats[2].base_stat}}`;
+  defensaNum.innerHTML = `${data.stats[2].base_stat}`;
   ataqueEspecial.value = data.stats[3].base_stat;
-  ataqueEspecialNum.innerHTML = `{${data.stats[3].base_stat}}`;
+  ataqueEspecialNum.innerHTML = `${data.stats[3].base_stat}`;
   defensaEspecial.value = data.stats[4].base_stat;
-  defensaEspecialNum.innerHTML = `{${data.stats[4].base_stat}}`;
+  defensaEspecialNum.innerHTML = `${data.stats[4].base_stat}`;
   velocidad.value = data.stats[5].base_stat;
-  velocidadNum.innerHTML = `{${data.stats[5].base_stat}}`;
+  velocidadNum.innerHTML = `${data.stats[5].base_stat}`;
 
   //Realizamos un forEach para poder visualizar los diferentes tipos
   data.types.forEach(dato => {
