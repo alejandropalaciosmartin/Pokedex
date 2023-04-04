@@ -179,6 +179,7 @@ function Mostrar(){
             }
             
             //2º Evolución
+
               priEvolu.chain.evolves_to.forEach(sencEvolu => {
                 //1º a 2º
                 sencEvolu.evolution_details.forEach(evoluDetail => { 
@@ -213,7 +214,10 @@ function Mostrar(){
                   }
                 })
 
-            
+                if(id1Evolucion == 80 || id1Evolucion == 79)
+                {
+                  trigger0.innerHTML = itemTranslations[priEvolu.chain.evolves_to[0].evolution_details[0].trigger.name.slice(0,5)] + " " + priEvolu.chain.evolves_to[0].evolution_details[0].min_level; 
+                }
             
           
             //  console.log(sencEvolu);
@@ -241,6 +245,7 @@ function Mostrar(){
                 });
             }*/
 
+            
             let id2Evolucion = parseInt(sencEvolu.species.url.substr(42,3));
             if(sencEvolu.species.name != null && id2Evolucion <= 151 && id2Evolucion != 134  && id2Evolucion != 135  && id2Evolucion != 136){
                 // console.log("2º Evolución: " + sencEvolu.species.name + " // Id: " + id2Evolucion); 
@@ -300,6 +305,7 @@ function Mostrar(){
                     }
                   }
                 })
+                
               }
 
 
