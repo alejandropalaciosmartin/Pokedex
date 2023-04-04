@@ -8,7 +8,7 @@ const toggleModeButton = document.querySelector("#claroscuro");
 const lunaImage = document.querySelector("#luna");
 const solImage = document.querySelector("#sol");
 
-// getItem
+
 toggleModeButton.addEventListener("click", () => {
   document.body.classList.toggle("dark_mode");
   document.querySelector(".pokemon_card").classList.toggle("dark_mode");
@@ -22,8 +22,6 @@ toggleModeButton.addEventListener("click", () => {
     lunaImage.style.display = "block";
     solImage.style.display = "none";
     localStorage.setItem('modeDark','false'); }
-  
-});
 
   if(localStorage.getItem('modeDark') == 'true'){
     document.body.classList.add('dark_mode');
@@ -38,7 +36,7 @@ else{
   card.querySelector(".name").style.color = document.body.classList.contains("dark_mode") ? "#fff" : "#000";
  card.querySelector("span:nth-of-type(2)").style.color = document.body.classList.contains("dark_mode") ? "#fff" : "#000";
   });
-// });
+});
 
 
  fetch("https://pokeapi.co/api/v2/pokemon?limit=151") 
