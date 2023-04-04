@@ -9,6 +9,10 @@ body{
 }
 body.dark_mode{
   background-color: #363535;
+  color: #050505;
+}
+body.dark_mode label{
+  background-color: #363535;
   color: #ffffff;
 }
 @font-face{ 
