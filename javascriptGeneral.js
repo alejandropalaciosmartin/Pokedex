@@ -27,10 +27,16 @@ toggleModeButton.addEventListener("click", () => {
 
   if(localStorage.getItem('modeDark') == 'true'){
     document.body.classList.add('dark_mode');
-    toggleModeButton.classList.add('active'); }
+    toggleModeButton.classList.add('active'); 
+    lunaImage.style.display = "none";
+    solImage.style.display = "block";
+  }
 else{
     document.body.classList.remove('dark_mode');
-    toggleModeButton.classList.remove('active'); }
+    toggleModeButton.classList.remove('active'); 
+    lunaImage.style.display = "block";
+    solImage.style.display = "none";
+  }
  
   const pokemonCards = document.querySelectorAll(".pokemon_card");
   pokemonCards.forEach((card) => {
