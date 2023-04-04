@@ -21,13 +21,6 @@ function topFunction() {
       lunaImage.style.display = "block";
       solImage.style.display = "none";
       localStorage.setItem('modeDark','false'); }
-
-  const pokemonCards = document.querySelectorAll(".pokemon_card");
-  pokemonCards.forEach((card) => {
-  card.style.backgroundColor = document.body.classList.contains("dark_mode") ? "#666" : "#f1f1f1";
-  card.querySelector(".name").style.color = document.body.classList.contains("dark_mode") ? "#fff" : "#000";
-  card.querySelector("span:nth-of-type(2)").style.color = document.body.classList.contains("dark_mode") ? "#fff" : "#000";
-  });
 });
 if(localStorage.getItem('modeDark') == 'true'){
   document.body.classList.add('dark_mode');
@@ -74,9 +67,7 @@ else{
          card.innerHTML = `
            <span class="name">${p.name.charAt(0).toUpperCase() + p.name.slice(1)}</span>
            <span class="numero">#${p.url.split("/")[6].padStart(3, "0")}</span>
-           
            <img src="">
-           <button class="description-button"><img src="./img/info.png"></button>
            <div class="types"></div>`;
 
          card.addEventListener('click', () => { window.location.href = `especifico.html?id=${p.url.split("/")[6]}`; });
@@ -93,18 +84,6 @@ else{
                typeElement.style.cssText = `background-color:${typeColors[typeName]}; color:white; padding:5px 10px; border-radius:10px; margin-right:5px; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; border:solid black 2px`;
                typesContainer.appendChild(typeElement);
               });
-                const descriptionButton = card.querySelector(".description-button img");
-                const speciesUrl = data.species.url;
-                fetch(speciesUrl)
-                  .then((response) => response.json())
-                  .then((speciesData) => {
-                    const flavorTextEntries =
-                      speciesData.flavor_text_entries;
-                    const englishEntries = flavorTextEntries.filter(
-                      (entry) => entry.language.name === "en");
-                    const firstEntry = englishEntries[0];
-                    descriptionButton.title = firstEntry.flavor_text;
-                  })
            })
           container.appendChild(card);
        });

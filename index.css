@@ -9,7 +9,7 @@ body{
 }
 body.dark_mode{
   background-color: #363535;
-  color: #050505;
+  color: #ffffff;
 }
 body.dark_mode label{
   background-color: #363535;
@@ -202,7 +202,7 @@ footer{
   height:408px; 
   border:1px solid #ddd; 
   border-radius:10px; 
-  background-color:#f1f1f1;
+  background-color:#ab6262;
 }
 .pokemon_card:hover{
   box-shadow: 0 0 40px rgb(255, 0, 0);
@@ -224,14 +224,5 @@ footer{
   font-size: 25px;
 }
 
-.description-button {
-  border:#a81313;
-  background: transparent;
-  padding: 0;
-}
 
-.description-button img {
-  width: 30px;
-  height: 30px;
-}
 
