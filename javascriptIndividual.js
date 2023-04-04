@@ -233,8 +233,6 @@ function Mostrar(){
                 evolucion2.innerHTML = sencEvolu.species.name.charAt(0).toUpperCase() + sencEvolu.species.name.slice(1);
                 document.getElementById('evolucion2Img').src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id2Evolucion}.png`;
                 document.getElementById('irA2').href = `especifico.html?id=${id2Evolucion}`;
-                document.getElementById('flecha2').src = `./img/flecha2.png`; 
-                
             }/*
             else if(id2Evolucion == 134 )
             {
@@ -255,6 +253,9 @@ function Mostrar(){
 
             
               //3º Evolución
+              if(sencEvolu.evolves_to != 0){ //Si no tiene 3º evolución
+                document.getElementById('flecha2').src = `./img/flecha2.png`; 
+              }
               sencEvolu.evolves_to.forEach(terEvolu => {
                 //2º a 3º
                 terEvolu.evolution_details.forEach(evoluDetail => {
