@@ -194,7 +194,8 @@ footer{
   display:flex; 
   flex-direction:column; 
   justify-content:center; 
-  width:250px; height:350px; 
+  width:275px; 
+  height:408px; 
   border:1px solid #ddd; 
   border-radius:10px; 
   background-color:#f1f1f1;
@@ -216,8 +217,17 @@ footer{
 .name{
   margin-top: 10px; 
   text-align:center; 
-  font-size: 18px;
+  font-size: 25px;
 }
 
+.description-button {
+  border:#a81313;
+  background: transparent;
+  padding: 0;
+}
 
+.description-button img {
+  width: 30px;
+  height: 30px;
+}
 
