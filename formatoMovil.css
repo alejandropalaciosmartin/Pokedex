@@ -71,8 +71,10 @@ header{
                          "evolucion evolucion";
     grid-gap: 5vh;  /*Separación entre elementos*/  
     color: var(--gris);
-    /* margin-left: 20vh; */
+    margin-left: 5vh;
 }
+
+
 
 /*Atrás*/
 .boton{
@@ -86,9 +88,9 @@ header{
     box-shadow: 0 0 3vh 10px rgba(0, 0, 0, 0.2);
     width: 15vh;
     padding: 2vh;
-    text-decoration: none; /*Quitar subrayado*/
     color: var(--gris);
     font-size: 5vh;
+    text-decoration: none; /*Quitar subrayado*/
 }
 
 .boton:hover{
@@ -136,7 +138,7 @@ body.dark #ataqueNum, body.dark #ataqueEspecialNum, body.dark #defensaEspecialNu
     color:var(--blanco);
 }
 
-body.dark a {   
+body.dark .boton {   
     background:  rgb(59, 59, 59); 
     color: var(--blanco);
     box-shadow: 0 0 3vh 20px rgba(255, 0, 0, 0.2);
@@ -152,7 +154,6 @@ body.dark #modoOscuro{
     grid-area: titulo;
     margin-top: 2vh;
     margin-bottom: -50vh;
-    margin-left: -10vh;
     font-size: 15vh;
     /*Efecto 3D*/
     text-shadow: 0 1px 0 hsl(170, 90%, 71%),
@@ -251,10 +252,6 @@ body.dark #modoOscuro{
     font-size: 4vh;
 }
 
-/* .velocidad, .ataque, .ataqueEspecial{
-    margin-left: 20vh;
-} */
-
 #numeroPokemon, #pesoPokemon, #alturaPokemon {
     font-size: 5vh;
     color: var(--gris);
@@ -314,15 +311,18 @@ body.dark #modoOscuro{
 /*Evoluciones*/
 .evolucion{
     grid-area: evolucion; 
-    /* display: flex;
+    display: flex;
     justify-content: center;
-    margin-top: 2vh; */
+    margin-top: 2vh; 
 }
 
-/* .evolucionar{
-    width: 100%;
-    /* border: #797979 solid 1vh; */
-/*} */
+#flecha1{
+    margin-top: 15vh;
+}
+
+#flecha2{
+    margin-top: 15vh;
+}
 
 .imagenEvolucion{
     width: 20vh;

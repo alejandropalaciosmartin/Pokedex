@@ -2,6 +2,7 @@
 ARREGLAR BOTON OSCURO Y ASIMILAR A ALE (FIJA Y CAMBIAR D ELUNA/SOL)
 HACER QUE CUANDO DE ATRAS SE MANTENGA MODO OSCURO U OTRO
 CAMBIAR EL VALOR DE BARRAS Y QUITAR {} Y PONER FONDO DE COLOR CON SPAN O SIMILAR -> Ssi es menor que la mitad color rojo si es mayor color verde, si es mitad + 5 y -5 color amarillo
+MIRAR AJUSTE DEL TIPO
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +42,7 @@ CAMBIAR EL VALOR DE BARRAS Y QUITAR {} Y PONER FONDO DE COLOR CON SPAN O SIMILAR
         <!-- INFORMACIÓN Pokemon -->
         <h1 id="textoPokemon"></h1> <!--Título-->
         <!--Imagen-->
-        <div class="posicionPokemon">
+        <div class="posicionPokemon" id="imagenDiv">
             <img id="imagenPokemon" src=""> 
         </div>
         <span id="numeroPokemon"></span> <!--Id-->
@@ -88,40 +89,72 @@ CAMBIAR EL VALOR DE BARRAS Y QUITAR {} Y PONER FONDO DE COLOR CON SPAN O SIMILAR
                 <br><output name="result" id="ataqueEspecialNum" class="ataqueEspecialPosicion2"></output>
                 <input type="range" name="ataqueEspecial" id="ataqueEspecial" disabled class="colorBarra">
             </div>
-<!-- species -> url -> fetch -> evolution_chain -> url -> fetch -> ?  -->
         <!--Evolución-->
         <div class="evolucion">
-            <div class="xxx">
-                <img id="evolucion1Img" src="" class="imagenEvolucion"> 
+            <!--1º Evolución General-->
+            <div>
+                <a id="irA" href="">
+                    <img id="evolucion1Img" src="" class="imagenEvolucion"> 
+                </a>
                 <div class="colorFuente" id="evolucion1"></div>
             </div>
+            <!--1º Flecha General-->
             <div class="flecha2">
-                <img class="flechas" src="./img/flecha2.png"> 
-                <div class="colorFuente" id="forma de evolucionar"></div>
+                <img class="flechas" src="" id="flecha1"> 
+                <div class="colorFuente" id="trigger0"></div>
             </div>
-            <div class="xxx">
-                <img id="evolucion2Img" src="" class="imagenEvolucion"> 
+            <!--2º Evolución General y 2º Evolución Eevee -> Vaporeon-->
+            <div>
+                <a id="irA2" href="">
+                    <img id="evolucion2Img" src="" class="imagenEvolucion"> 
+                </a>
+                <!-- <img class="flechas" src="" id="flecha11">  -->
                 <div class="colorFuente" id="evolucion2"></div>
+                <!-- <div class="colorFuente" id="trigger1"></div> -->
             </div>
-            <div class="xxx">
-                <img id="evolucion2ImgExtra1" src="" class="imagenEvolucion"> 
+            <!-- <div>
+                <a id="irA2" href="">
+                    <img id="evolucion2Img" src="" class="imagenEvolucion"> 
+                </a>
+                <img class="flechas" src="" id="flecha11"> 
+                <div class="colorFuente" id="evolucion2"></div>
+                <div class="colorFuente" id="trigger1"></div>
+            </div> -->
+            <div class="flechaVaporeon">
+                <img class="flechas" src="" id="flecha1V"> 
+                <div class="colorFuente" id="triggerV"></div>
+            </div>
+            <!--1º Evolución 2º Evolución Eevee -> Jolteon-->
+            <div>
+                <img id="evolucion2ImgExtra1" src="" class="imagenEvolucion">
+                <img class="flechas" src="" id="flecha12">  
                 <div class="colorFuente" id="evolucion2Extra1"></div>
+                <div class="colorFuente" id="trigger2"></div>
             </div>
-            <div class="xxx">
+            <div class="flechaJolteon">
+                <img class="flechas" src="" id="flecha1J"> 
+                <div class="colorFuente" id="triggerJ"></div>
+            </div>
+            <!--1º Evolución 2º Evolución Eevee -> Flareon-->
+            <div>
                 <img id="evolucion2ImgExtra2" src="" class="imagenEvolucion"> 
                 <div class="colorFuente" id="evolucion2Extra2"></div>
+                <div class="colorFuente" id="trigger3"></div>
             </div>
+            <!--2º Flecha General-->
             <div class="flecha2">
-                <img class="flechas" src="./img/flecha2.png"> 
-                <div class="colorFuente" id="forma de evolucionar"></div>
+                <img class="flechas" src="" id="flecha2"> 
+                <div class="colorFuente" id="trigger00"></div>
             </div>
-            <div class="xxx">
-                <img id="evolucion3Img" src="" class="imagenEvolucion"> 
+            <!-- 3º Evolución General -->
+            <div>
+                <a id="irA3" href="">
+                    <img id="evolucion3Img" src="" class="imagenEvolucion"> 
+                </a>
                 <div class="colorFuente" id="evolucion3"></div>
             </div>
         </div>
     </main>
-    <!-- flex + div para evolucion -->
     <footer>
         <!-- Pie -->
         <p class="pie">Página realizada por &copy;Adri / &copy;Alex</p>

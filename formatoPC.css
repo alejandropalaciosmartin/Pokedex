@@ -73,7 +73,7 @@
 
 .ataque{
     grid-area: ataque; 
-    margin-left: -5vh;
+    margin-left: -25vh;
 }
 
 .defensa{
@@ -141,6 +141,19 @@
 .ataqueEspecialPosicion2{
     margin-left: -12vh;
 }
+
+.imagenEvolucion{
+    width: 50vh;
+}
+
+#flecha1{
+    margin-top: 45vh;
+}
+
+#flecha2{
+    margin-top: 45vh;
+}
+
 
 footer{
     margin-top: 10vh;
