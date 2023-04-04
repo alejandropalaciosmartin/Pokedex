@@ -4,37 +4,25 @@ window.onscroll = function() {
 function topFunction() {
   document.documentElement.scrollTop = 0; }
 
-const toggleModeButton = document.querySelector("#claroscuro");
-const lunaImage = document.querySelector("#luna");
-const solImage = document.querySelector("#sol");
+  const toggleModeButton = document.querySelector("#claroscuro");
+  const lunaImage = document.querySelector("#luna");
+  const solImage = document.querySelector("#sol");
 
+  toggleModeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark_mode");
+    document.querySelector(".pokemon_card").classList.toggle("dark_mode");
+    toggleModeButton.classList.toggle('active');
 
-toggleModeButton.addEventListener("click", () => {
-  document.body.classList.toggle("dark_mode");
-  document.querySelector(".pokemon_card").classList.toggle("dark_mode");
-  toggleModeButton.classList.toggle('active');
+    if (document.body.classList.contains("dark_mode")) {
+      lunaImage.style.display = "none";
+      solImage.style.display = "block";
+      localStorage.setItem('modeDark', 'true'); } 
+    else {
+      lunaImage.style.display = "block";
+      solImage.style.display = "none";
+      localStorage.setItem('modeDark','false'); }
 
-  if (document.body.classList.contains("dark_mode")) {
-    lunaImage.style.display = "none";
-    solImage.style.display = "block";
-    localStorage.setItem('modeDark', 'true'); } 
-  else {
-    lunaImage.style.display = "block";
-    solImage.style.display = "none";
-    localStorage.setItem('modeDark','false'); }
-
-  if(localStorage.getItem('modeDark') == 'true'){
-    document.body.classList.add('dark_mode');
-    toggleModeButton.classList.add('active'); 
-    lunaImage.style.display = "none";
-    solImage.style.display = "block";
-  }
-else{
-    document.body.classList.remove('dark_mode');
-    toggleModeButton.classList.remove('active'); 
-    lunaImage.style.display = "block";
-    solImage.style.display = "none";
-  }
+  
  
   const pokemonCards = document.querySelectorAll(".pokemon_card");
   pokemonCards.forEach((card) => {
@@ -43,7 +31,18 @@ else{
  card.querySelector("span:nth-of-type(2)").style.color = document.body.classList.contains("dark_mode") ? "#fff" : "#000";
   });
 });
-
+if(localStorage.getItem('modeDark') == 'true'){
+  document.body.classList.add('dark_mode');
+  toggleModeButton.classList.add('active'); 
+  lunaImage.style.display = "none";
+  solImage.style.display = "block";
+}
+else{
+  document.body.classList.remove('dark_mode');
+  toggleModeButton.classList.remove('active'); 
+  lunaImage.style.display = "block";
+  solImage.style.display = "none";
+}
 
  fetch("https://pokeapi.co/api/v2/pokemon?limit=151") 
  .then(response => response.json())
