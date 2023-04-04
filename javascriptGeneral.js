@@ -22,13 +22,11 @@ function topFunction() {
       solImage.style.display = "none";
       localStorage.setItem('modeDark','false'); }
 
-  
- 
   const pokemonCards = document.querySelectorAll(".pokemon_card");
   pokemonCards.forEach((card) => {
   card.style.backgroundColor = document.body.classList.contains("dark_mode") ? "#666" : "#f1f1f1";
   card.querySelector(".name").style.color = document.body.classList.contains("dark_mode") ? "#fff" : "#000";
- card.querySelector("span:nth-of-type(2)").style.color = document.body.classList.contains("dark_mode") ? "#fff" : "#000";
+  card.querySelector("span:nth-of-type(2)").style.color = document.body.classList.contains("dark_mode") ? "#fff" : "#000";
   });
 });
 if(localStorage.getItem('modeDark') == 'true'){
