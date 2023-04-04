@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="./img/pokeball.png">
-  <link rel="stylesheet" href="index.css">
-  <title>Pokédex</title>
-</head>
-<body>
-  <header>
-    <h1 id="tituloHead">Pokédex</h1>
-    <div id="gitbuttons">
-      <a href="https://github.com/alejandropalaciosmartin" target="_blank"><button id="botonGit1"><img src="./img/github.png" alt="GitHub">Alejandro</button></a>
-      <a href="https://github.com/AdrianLozanoMartinez" target="_blank"><button id="botonGit2"><img src="./img/github.png" alt="GitHub">Adrián</button></a>
-    </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./img/pokeball.png">
+    <link rel="stylesheet" href="index.css">
+    <title>Pokédex</title>
+  </head>
+  <body>
+    <header>
+      <h1 id="tituloHead">Pokédex</h1>
+      
+      <div id="gitbuttons">
+        <a href="https://github.com/alejandropalaciosmartin" target="_blank" class="button-link">
+          <button id="botonGit1"><img src="./img/github.png" alt="GitHub">Alejandro</button>
+        </a>
+        <a href="https://github.com/AdrianLozanoMartinez" target="_blank" class="button-link">
+          <button id="botonGit2"><img src="./img/github.png" alt="GitHub">Adrián</button>
+        </a>
+      </div>
     
-    <img id="pokeballIzq" src="./img/pokeball.png" alt="Pokeball">
-    <img id="pokeballDer" src="./img/pokeball.png" alt="Pokeball">
-  </header>
+      <img id="pokeballIzq" src="./img/pokeball.png" alt="Pokeball">
+      <img id="pokeballDer" src="./img/pokeball.png" alt="Pokeball">
+    </header>
   
-  <main> 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">
-      <img src="./img/flecha.png" alt="Volver arriba">
-    </button>
+    <main> 
+      <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <img src="./img/flecha.png" alt="Volver arriba">
+      </button>
 
+      <div id="claroscuro">  
+        <img id="luna" src="./img/ClaroOscuro/luna.svg" alt="Luna">
+        <img id="sol" src="./img/ClaroOscuro/sol.png" alt="Sol">
+      </div>
+      <div class="search-container">
+        <label for="search-input">Buscar Pokemon:</label>
+        <input type="text" id="search-input" name="search-input">
+      </div>   
+      <div class="grid-container"></div>
+    </main>
 
-    <div id="claroscuro">  
-      <img id="luna" src="./img/ClaroOscuro/luna.svg" alt="Luna" style="height: 50px; width: 50px;">
-      <img id="sol" src="./img/ClaroOscuro/sol.png" alt="Sol" style="display:none; height: 50px; width: 50px;">
-    </div>
-    <div class="search-container">
-      <label for="search-input">Buscar Pokemon:</label>
-      <input type="text" id="search-input" name="search-input">
-    </div>   
-    <div class="grid-container"></div>
-  </main>
+    <footer>
+      <p class="pie">Página realizada por &copy;Adri / &copy;Alex</p>
+    </footer>
 
-  <footer>
-    <p class="pie">Página realizada por &copy;Adri / &copy;Alex</p>
-  </footer>
-
-  <script src="./javascriptGeneral.js"></script>
-</body>
+    <script src="./javascriptGeneral.js"></script>
+  </body>
 </html>
