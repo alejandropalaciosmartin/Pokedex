@@ -298,19 +298,3 @@ function showPokemon(){
 }
 showModeDark();
 showPokemon();
-
-
-//EJEMPLO DE window.location y URLSearchParams 
-// Let an <a id="myAnchor" href="/en-US/docs/Location.search?q=123"> element be in the document
-//const anchor = document.getElementById("myAnchor");
-//const queryString = anchor.search; // Returns:'?q=123'
-
-// Further parsing:
-//const params = new URLSearchParams(queryString);
-//const q = parseInt(params.get("q")); // is the number 123
-
-
-
-
-
-
