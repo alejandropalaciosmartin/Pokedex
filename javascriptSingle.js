@@ -13,18 +13,18 @@ function showModeDark(){
     else{
       localStorage.setItem('modeDark','false'); //ponemos false para indicar que no está activo el efecto dark, true para señalar que está activo
     }
-});
+  });
 
-//Obtener el modo actual
-if(localStorage.getItem('modeDark') === 'true'){ //Coge (get) la clave (modeDark) y comparamos si es igual al valor que marcamos arriba
-                                                 //en este caso true, podría ser otro, depend elo que pusimos arriba
-   document.body.classList.add('dark');  //Metemos el efecto dark del archivo .css
-   darkMode.classList.add('active');   //Añadimos también que está activo
-}
-else{
-    document.body.classList.remove('dark'); //Borramos el efecto dark del archivo .css
-    darkMode.classList.remove('active');  //Borramos el efecto que indica que esta activo, para que se vea que no lo esta ya
-}
+  //Obtener el modo actual
+  if(localStorage.getItem('modeDark') === 'true'){ //Coge (get) la clave (modeDark) y comparamos si es igual al valor que marcamos arriba
+                                                  //en este caso true, podría ser otro, depend elo que pusimos arriba
+    document.body.classList.add('dark');  //Metemos el efecto dark del archivo .css
+    darkMode.classList.add('active');   //Añadimos también que está activo
+  }
+  else{
+      document.body.classList.remove('dark'); //Borramos el efecto dark del archivo .css
+      darkMode.classList.remove('active');  //Borramos el efecto que indica que esta activo, para que se vea que no lo esta ya
+  }
 }
 
 
@@ -126,23 +126,31 @@ function showPokemonDetails(evolutionXImg, goX, idXEvolution){
     document.getElementById(goX).href = `single.html?id=${idXEvolution}`;
 }
 
-//MOSTRAR NIVEL/PIEDRA/LINK
+//MOSTRAR NIVEL/PIEDRA/LINK de TODOS incluido EEVEE
 function showLevelItemTrade(evoluDetailNew, noEvolution, id1Evolution, triggerNew, newEvolu){
-  if(evoluDetailNew.trigger.name == "use-item"  && !noEvolution.includes(id1Evolution)){
-    //PIEDRA
-    // console.log("1º Forma de evolucionar " + evoluDetailNew.trigger.name.slice(4,8));
-    triggerNew.innerHTML += itemTranslations[evoluDetailNew.trigger.name.slice(4,8)] + " " + itemTranslations[evoluDetailNew.item.name.slice(0,-6)];
-  }                 
-  else if(evoluDetailNew.trigger.name == "trade"  && !noEvolution.includes(id1Evolution)){
-    //Cable Link
-    // console.log("1º Forma de evolucionar " + evoluDetailNew.trigger.name.slice(0,5));
-    triggerNew.innerHTML = itemTranslations[evoluDetailNew.trigger.name.slice(0,5)];
-  }
-  else if(evoluDetailNew.trigger.name == "level-up" && !noEvolution.includes(id1Evolution)){ //para que no aparezca nivel nulo en los que no hya evolución
-    //NIVEL
-    // console.log("1º Forma de evolucionar " + evoluDetailNew.trigger.name.slice(0,5));
-    triggerNew.innerHTML = itemTranslations[evoluDetailNew.trigger.name.slice(0,5)] + " " + newEvolu.evolution_details[0].min_level; 
-  }
+  let eevee = ["vaporeon", "jolteon", "flareon"];
+  let trigger = [trigger1, trigger2, trigger3]
+  eevee.forEach(data =>{
+    if(newEvolu.species.name == data || evoluDetailNew.trigger.name == "use-item"  && !noEvolution.includes(id1Evolution)){
+        trigger.forEach(dato => {
+        if(newEvolu.species.name == data)
+        {
+          // console.log("Evolución: " + newEvolu.species.name + " " + dato1.trigger.name + " " + itemTranslations[dato1.item.name.slice(0, -6)]);
+          dato.innerHTML = itemTranslations[evoluDetailNew.trigger.name.slice(4,8)] + " " + itemTranslations[evoluDetailNew.item.name.slice(0,-6)];
+        }
+      })
+    }
+    else if(evoluDetailNew.trigger.name == "trade"  && !noEvolution.includes(id1Evolution)){
+      //Cable Link
+      // console.log("1º Forma de evolucionar " + evoluDetailNew.trigger.name.slice(0,5));
+      triggerNew.innerHTML = itemTranslations[evoluDetailNew.trigger.name.slice(0,5)];
+    }
+    else if(evoluDetailNew.trigger.name == "level-up" && !noEvolution.includes(id1Evolution)){ //para que no aparezca nivel nulo en los que no hya evolución
+      //NIVEL
+      // console.log("1º Forma de evolucionar " + evoluDetailNew.trigger.name.slice(0,5));
+      triggerNew.innerHTML = itemTranslations[evoluDetailNew.trigger.name.slice(0,5)] + " " + newEvolu.evolution_details[0].min_level; 
+    }
+  })   
 }
 
 //MOSTRAR POKEMON Y SUS DATOS
@@ -167,7 +175,7 @@ function showPokemon(){
   defenseSpecialNum.innerHTML = `${data.stats[4].base_stat}`;
   speed.value = data.stats[5].base_stat;
   speedNum.innerHTML = `${data.stats[5].base_stat}`;
-  //src
+
   //Realizamos un forEach para poder visualizar los diferentes tipos
   data.types.forEach(dato => {
      typeName = dato.type.name; //Metemos los nombres en una variable
@@ -216,11 +224,11 @@ function showPokemon(){
                   let evoluDetailNew = evoluDetail;
                   let triggerNew = trigger0;
                   let newEvolu = sencEvolu;
-                  if(id1Evolution <= 151 && id1Evolution == 27 || id1Evolution == 28){ //Sandshrew
+                  if(id1Evolution == 27 || id1Evolution == 28){ //Sandshrew
                     // console.log("1º Forma de evolucionar " + evoluDetail.trigger.name.slice(0,5));
                     trigger0.innerHTML = itemTranslations[sencEvolu.evolution_details[0].trigger.name.slice(0,5)] + " " + sencEvolu.evolution_details[0].min_level; 
                   }
-                  else if(id1Evolution <= 151 && id1Evolution == 37 || id1Evolution == 38){ //Vulpix
+                  else if(id1Evolution == 37 || id1Evolution == 38){ //Vulpix
                     // console.log("1º Forma de evolucionar " + evoluDetail.trigger.name.slice(4,8));
                     trigger0.innerHTML = itemTranslations[sencEvolu.evolution_details[0].trigger.name.slice(4,8)] + " " + itemTranslations[sencEvolu.evolution_details[0].item.name.slice(0,-6)]; 
                   }
@@ -231,21 +239,6 @@ function showPokemon(){
                 {
                   trigger0.innerHTML = itemTranslations[priEvolu.chain.evolves_to[0].evolution_details[0].trigger.name.slice(0,5)] + " " + priEvolu.chain.evolves_to[0].evolution_details[0].min_level; 
                 }
-            if(sencEvolu.species.name == "vaporeon")
-            {
-                // console.log("Evolución: " + sencEvolu.species.name + " " + dato1.trigger.name + " " + itemTranslations[dato1.item.name.slice(0, -6)]);
-                trigger1.innerHTML = itemTranslations[evoluDetail.trigger.name.slice(4,8)] + " " + itemTranslations[evoluDetail.item.name.slice(0,-6)];
-            }
-            else if(sencEvolu.species.name == "jolteon")
-            {
-                // console.log("Evolución: " + sencEvolu.species.name + " " + dato1.trigger.name + " " + itemTranslations[dato1.item.name.slice(0, -6)]);
-                trigger2.innerHTML = itemTranslations[evoluDetail.trigger.name.slice(4,8)] + " " + itemTranslations[evoluDetail.item.name.slice(0,-6)];
-            }
-            else if(sencEvolu.species.name == "flareon")
-            {
-                // console.log("Evolución: " + sencEvolu.species.name + " " + dato1.trigger.name + " " + itemTranslations[dato1.item.name.slice(0, -6)]);
-                trigger3.innerHTML = itemTranslations[evoluDetail.trigger.name.slice(4,8)] + " " + itemTranslations[evoluDetail.item.name.slice(0,-6)];
-            }
           })
           
             let id2Evolution = parseInt(sencEvolu.species.url.substr(42,3));
