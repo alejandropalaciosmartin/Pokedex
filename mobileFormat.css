@@ -33,7 +33,7 @@ header{
 }
 
 /*Título de la cabecera*/
-#tituloHead{
+#headTitle{
     /*Posición*/
     position: relative;
     margin-top: -3vh; 
@@ -41,12 +41,12 @@ header{
 }
 
 /*Contenedor de la imagen de la cabecera*/
-#cabeceraHead{
+#pokemonHead{
     margin-top: -8vh; /*Cuadrar imagen con el título*/
 }
 
 /*Imagen de la cabecera*/
-#imagenHead{
+#imageHead{
     align-items: center; /*Centrar imagen verticalmente*/
     width: 5vh;
     margin-left: 25vh;
@@ -60,15 +60,15 @@ header{
     display: grid; /*Para hacerlo responsive, dividimos por filas y columnas*/
     grid-template-columns: repeat(2, 1fr); /*Definimos el grosor de las columnas, ponemos para que sean 4 columnas con el mismo grosor(1fr)*/
     /*Estructuramos donde se verán cada parte*/
-    grid-template-areas: "boton solluna"
-                         "titulo titulo"
-                         "imagen imagen"
-                         "numero tipo" 
-                         "peso altura"
-                         "vida velocidad"
-                         "defensa ataque"
-                         "defensaEspecial ataqueEspecial"
-                         "evolucion evolucion";
+    grid-template-areas: "button sunmoon"
+                         "title title"
+                         "image image"
+                         "number type" 
+                         "weightPokemon heightPokemon"
+                         "live speed"
+                         "defense attack"
+                         "defenseSpecial attackSpecial"
+                         "evolution evolution";
     grid-gap: 5vh;  /*Separación entre elementos*/  
     color: var(--gris);
     margin-left: 5vh;
@@ -77,8 +77,8 @@ header{
 
 
 /*Atrás*/
-.boton{
-    grid-area: boton;
+.button{
+    grid-area: button;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,16 +93,16 @@ header{
     text-decoration: none; /*Quitar subrayado*/
 }
 
-.boton:hover{
+.button:hover{
     background-color: var(--marron);
     box-shadow: 0 0 3vh 10px red;
     color: var(--blanco);
 }
 
 /*Modo oscuro/claro*/
-#modoOscuro {
+#darkMode {
     /*Posición*/
-    grid-area: solluna; /*GRID*/
+    grid-area: sunmoon; /*GRID*/
     /*Cuadrar iconos dentro del div*/
     display: flex;
     justify-content: center;
@@ -119,12 +119,12 @@ header{
     background: linear-gradient(90deg, rgb(243, 222, 0) 0%, rgb(255, 187, 0) 35%, rgb(0, 0, 1) 100%); /*Fondo con gradiente*/
 }
 
-#modoOscuro:hover{
+#darkMode:hover{
     transform: scale(1.2, 1.2); 
     cursor: pointer; /*Dedo índice*/
 }
 
-.separar{
+.separate{
     margin-left: 2vh;
 }
 
@@ -132,32 +132,32 @@ header{
 body.dark {   
     background:  #363535; 
 }
-body.dark h1, body.dark label, body.dark #numeroPokemon, body.dark  #tipoPokemon, body.dark #pesoPokemon, 
-body.dark #alturaPokemon, body.dark .colorFuente, body.dark #vidaNum, body.dark #velocidadNum, body.dark #defensaNum, 
-body.dark #ataqueNum, body.dark #ataqueEspecialNum, body.dark #defensaEspecialNum{   
+body.dark h1, body.dark label, body.dark #numberPokemon, body.dark  #typePokemon, body.dark #weightPokemon, 
+body.dark #heightPokemon, body.dark .fontColor, body.dark #liveNum, body.dark #speedNum, body.dark #defenseNum, 
+body.dark #attackNum, body.dark #attackSpecialNum, body.dark #defenseSpecialNum{   
     color:var(--blanco);
 }
 
-body.dark .boton {   
+body.dark .button {   
     background:  rgb(33, 33, 33); 
     color: var(--blanco);
     box-shadow: 0 0 3vh 20px rgba(255, 0, 0, 0.2);
 }
 
-body.dark .boton:hover {   
+body.dark .button:hover {   
     box-shadow: 0 0 3vh 10px red;
     background-color: var(--marron); 
     color: var(--blanco);
 }
 
-body.dark #modoOscuro{
+body.dark #darkMode{
     box-shadow: 1vh 2vh 3vh rgba(255, 0, 0, 0.2); 
     background: linear-gradient(90deg, rgb(0, 0, 1) 10%, rgb(255, 187, 0) 35%, rgb(243, 222, 0) 100%);
 }
 
 /*Texto*/
-#textoPokemon {
-    grid-area: titulo;
+#textPokemon {
+    grid-area: title;
     margin-top: 2vh;
     margin-bottom: -50vh;
     font-size: 10vh;
@@ -173,12 +173,12 @@ body.dark #modoOscuro{
 
                  0 0 5px rgba(0,0,0,.05);
     /*Animación*/
-    animation-name: tituloPokemon; /*Nombre del @keyframes*/
+    animation-name: titlePokemon; /*Nombre del @keyframes*/
     animation-duration: 5s; /*Duración del efecto*/
 }
 
 
-@keyframes tituloPokemon { /*Nombre del efecto*/
+@keyframes titlePokemon { /*Nombre del efecto*/
     0% {  /*Inicio*/
         transform: scale(0.1); /*Tamaño a la mitad*/
         -ms-transform: scale(0.1); 
@@ -195,19 +195,19 @@ body.dark #modoOscuro{
 }
 
 /*Imagen*/
-.posicionPokemon{
+.positionPokemon{
     /*Posición*/
-    grid-area: imagen;
+    grid-area: image;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 10vh;
     /*Animación*/
-    animation-name: imagenPokemon; 
+    animation-name: imagePokemon; 
     animation-duration: 6s; 
 }
 
-@keyframes imagenPokemon { 
+@keyframes imagePokemon { 
     0% {  
         transform: rotate(5deg); 
         -ms-transform: rotate(5deg); 
@@ -234,15 +234,15 @@ body.dark #modoOscuro{
     }
 }
 
-.posicionPokemon:hover{           
-    animation-name: primera;                /*Nombre a elegir para que se haga el efecto abajo descrito (keyframes)*/
+.positionPokemon:hover{           
+    animation-name: first;                /*Nombre a elegir para que se haga el efecto abajo descrito (keyframes)*/
     animation-duration: 1s;                 /*Duración*/
     animation-direction: normal;            /*Dirección*/
     animation-timing-function: linear;        /*Velocidad*/
     animation-fill-mode: both;               
 }
 
-@keyframes primera{                         
+@keyframes first{                         
     0%{                                   
         transform: scale(1,1);
     }
@@ -254,95 +254,99 @@ body.dark #modoOscuro{
     }
 } 
 
-#numeroPokemon, #tipoPokemon, .vida, .ataque, .defensa, .ataqueEspecial, .defensaEspecial, .velocidad{
+#numberPokemon, #typePokemon, .live, .attack, .defense, .attackSpecial, .defenseSpecial, .speed{
     font-size: 4vh;
 }
 
-#numeroPokemon, #pesoPokemon, #alturaPokemon {
+#numberPokemon, #weightPokemon, #heightPokemon {
     font-size: 5vh;
     color: var(--gris);
 }
 
-.colorFuente {
+.fontColor {
     color: var(--gris);
 }
 
 /*Id*/
-#numeroPokemon{
-    grid-area: numero;
+#numberPokemon{
+    grid-area: number;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 /*Tipos*/
-#tipoPokemon{
-    grid-area: tipo;
+#typePokemon{
+    grid-area: type;
 }
 
 /*Peso*/
-#pesoPokemon{
-    grid-area: peso;
+#weightPokemon{
+    grid-area: weightPokemon;
 }
 
 /*Peso*/
-#alturaPokemon{
-    grid-area: altura;
+#heightPokemon{
+    grid-area: heightPokemon;
 }
 
-.vida{
-    grid-area: vida; 
+.live{
+    grid-area: live; 
 }
 
-.ataque{
-    grid-area: ataque; 
+.attack{
+    grid-area: attack; 
 }
 
-.defensa{
-    grid-area: defensa;
+.defense{
+    grid-area: defense;
 }
 
-.ataqueEspecial{
-    grid-area: ataqueEspecial; 
+.attackSpecial{
+    grid-area: attackSpecial; 
 }
 
-.defensaEspecial{
-    grid-area: defensaEspecial; 
+.defenseSpecial{
+    grid-area: defenseSpecial; 
 }
 
-.velocidad{
-    grid-area: velocidad; 
+.speed{
+    grid-area: speed; 
 }
 
 /*Evoluciones*/
-.evolucion{
-    grid-area: evolucion; 
+.evolution{
+    grid-area: evolution; 
     display: flex;
     justify-content: center;
     margin-top: 2vh; 
 }
 
-#flecha1{
+#arrow1{
     margin-top: 15vh;
 }
 
-#flecha2{
+#arrow2{
     margin-top: 15vh;
 }
 
-.imagenEvolucion{
+.imageEvolution{
     width: 20vh;
     /* display: flex;
     justify-content: center;
     align-items: center; */
 }
 
-.flechas{
+.arrows{
     width: 5vh;
 }
 
 /*Pie de página*/
+
 footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--marron);
     min-width:100vh; /*Para el ancho que se acortaba y de este modo se extiende en todas las dimensiones*/
     height: 5vh;

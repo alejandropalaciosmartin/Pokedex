@@ -1,0 +1,152 @@
+<!--CAMBIAR EL VALOR DE BARRAS Y PONER FONDO DE COLOR CON SPAN O SIMILAR -> Ssi es menor que la mitad color rojo si es mayor color verde, si es mitad + 5 y -5 color amarillo
+MIRAR AJUSTE DEL TIPO con if si es tipo tal coger un maring/pading sino otro margin/pading
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="./img/pokeball.png"><!--Icono de la pestaña-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Para que el navegador pueda controlar las dimensiones y la escala de la página -->
+    <link rel="stylesheet" href="./mobileFormat.css"><!--CSS formato movil-->
+    <link rel="stylesheet" media="(min-width: 768px)" href="./pcFormat.css"><!--CSS formato pc-->
+    <script src="https://kit.fontawesome.com/e0f3b21040.js"crossorigin="anonymous"></script><!--FontAwesome-->
+    <title>Pokédex</title> <!--Título de pestaña-->
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <h1 role="Título de la Pokédex" id="headTitle">Pokédex</h1> <!--Título de la cabecera-->
+        <!--Imagen de la cabecera-->
+        <div id="pokemonHead"> 
+            <img src="./img/pokeball.png" id="imageHead">
+        </div>
+    </header>
+    <!-- Cuerpo -->
+    <main class="container">
+
+        <!--Botón atrás-->
+        <a class="button" href="./index.html">Atrás</a>
+        
+        <!--Botón modo oscuro-->
+        <!-- <button class="darkModeSwitch ms-2" id="switch"></button> -->
+        <div id="darkMode"> 
+            <!-- Iconos de Fontawesome sol/luna (fa-1x - tamaño)-->
+            <i class="fas fa-sun fa-1x"></i> <!--Sol--> 
+            <i class="fa fa-moon-o separate fa-1x" aria-hidden="true"></i> <!--Luna-->
+         </div>
+
+        <!-- INFORMACIÓN Pokemon -->
+        <h1 id="textPokemon"></h1> <!--Título-->
+        <!--Imagen-->
+        <div class="positionPokemon">
+            <img id="imagePokemon" src=""> 
+        </div>
+        <span id="numberPokemon"></span> <!--Id-->
+        <div id="typePokemon"></div> <!--Tipos-->
+        <span id="weightPokemon"></span> <!--Peso-->
+        <span id="heightPokemon"></span> <!--Altura-->
+ 
+            <!--Vida-->
+            <div class="live">
+            <label for="live" class="fontColor livePosition">Vida</label>
+                <br><output name="result" id="liveNum" class="livePosition2"></output>
+                <input type="range" name="live" id="live" disabled max="256">
+            </div>
+
+            <!--Defensa-->
+            <div class="defense">
+                <label for="defense" class="fontColor defensePosition">Defensa</label>
+                <br><output name="result" id="defenseNum" class="defensePosition2"></output>
+                <input type="range" name="defense" id="defense" disabled>
+            </div>
+            
+            <!--Defensa Especial-->
+            <div class="defenseSpecial">
+                <label for="defenseSpecial" class="fontColor defenseSpecialPosition">Defensa Especial</label>
+                <br><output name="result" id="defenseSpecialNum"class="defenseSpecialPosition2"></output>
+                <input type="range" name="defenseSpecial" id="defenseSpecial" disabled>
+            </div>
+                        
+            <!--Velocidad-->
+            <div class="speed">
+                <label for="speed" class="fontColor speedPosition">Velocidad</label>
+                <br><output name="result" id="speedNum" class="speedPosition2"></output>
+                <input type="range" name="speed" id="speed" disabled>
+            </div>
+            <!--Ataque-->
+            <div class="attack">
+                <label for="attack" class="fontColor attackPosition">Ataque</label>
+                <br><output name="result" id="attackNum" class="attackPosition2"></output>
+                <input type="range" name="attack" id="attack" disabled>
+            </div>
+            <!--Ataque especial-->
+            <div class="attackSpecial">
+                <label for="attackSpecial" class="fontColor attackSpecialPosition">Ataque Especial</label>
+                <br><output name="result" id="attackSpecialNum" class="attackSpecialPosition2"></output>
+                <input type="range" name="attackSpecial" id="attackSpecial" disabled>
+            </div>
+        <!--Evolución-->
+        <div class="evolution">
+            <!--1º Evolución General-->
+            <div>
+                <a id="go" href="">
+                    <img id="evolution1Img" src="" class="imageEvolution"> 
+                </a>
+                <div class="fontColor" id="evolution1"></div>
+            </div>
+            <!--1º Flecha General-->
+            <div class="arrow2">
+                <img class="arrows" src="" id="arrow1"> 
+                <div class="fontColor" id="trigger0"></div>
+            </div>
+            <!--2º Evolución General y 2º Evolución Eevee -> Vaporeon-->
+            <div>
+                <a id="go2" href="">
+                    <img id="evolution2Img" src="" class="imageEvolution"> 
+                </a>
+                <div class="fontColor" id="evolution2"></div>
+            </div>
+            <div>
+                <a id="go21" href="">
+                    <img id="evolution2Img2" src="" class="imageEvolution"> 
+                </a> 
+                <div class="fontColor" id="evolution2Extra"></div>
+                <div class="fontColor" id="trigger1"></div>
+            </div>
+            <!--1º Evolución 2º Evolución Eevee -> Jolteon-->
+            <div>
+                <a id="go22" href="">
+                    <img id="evolution2ImgExtra1" src="" class="imageEvolution">
+                </a>
+                <div class="fontColor" id="evolution2Extra1"></div>
+                <div class="fontColor" id="trigger2"></div>
+            </div>
+            <!--1º Evolución 2º Evolución Eevee -> Flareon-->
+            <div>
+                <a id="go23" href="">
+                    <img id="evolution2ImgExtra2" src="" class="imageEvolution"> 
+                </a>
+                <div class="fontColor" id="evolution2Extra2"></div>
+                <div class="fontColor" id="trigger3"></div>
+            </div>
+            <!--2º Flecha General-->
+            <div class="arrow2">
+                <img class="arrows" src="" id="arrow2"> 
+                <div class="fontColor" id="trigger00"></div>
+            </div>
+            <!-- 3º Evolución General -->
+            <div>
+                <a id="go3" href="">
+                    <img id="evolution3Img" src="" class="imageEvolution"> 
+                </a>
+                <div class="fontColor" id="evolution3"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- Pie -->
+        <p>Página realizada por &copy;Adri / &copy;Alex</p>
+    </footer>
+    <script src="./javascriptSingle.js"></script> <!--JavaScript-->
+</body>
+</html>

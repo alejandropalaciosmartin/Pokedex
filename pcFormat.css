@@ -1,0 +1,165 @@
+#pokemonHead{
+    margin-top: -8vh;
+}
+
+#headTitle{
+    margin-left: 1vh;
+}
+
+.container{
+    display: grid; 
+    grid-template-columns: 2fr, repeat(2, 1fr);
+    grid-template-areas: "button title title sunmoon"
+                         "image image number type" 
+                         "image image wightPokemon heightPokemon"
+                         "image image live speed"
+                         "image image defense attack"
+                         "image image defenseSpecial attackSpecial"
+                         "evolution evolution evolution evolution";
+    margin-left: 0;
+    font-size: 2vw;
+}
+
+.button{
+    margin-left: 10vh;
+}
+
+#darkMode{
+    grid-area: sunmoon; 
+    width: 10%;
+    margin-left: 70vh;
+}
+
+#textPokemon {
+    grid-area: title;
+    margin: auto; 
+    margin-left: 45vh;
+}
+
+.positionPokemon{
+    grid-area: image;
+    margin-left: 20vh;
+}
+
+#typePokemon, #numberPokemon, #weightPokemon, #heightPokemon{
+    width: 30%;
+    margin: auto; 
+    margin-left: 30vh;
+   
+} 
+
+#numberPokemon{
+    grid-area: number;
+    margin-left: 35vh;
+}
+
+#typePokemon{
+    grid-area: type;
+}
+
+#weightPokemon{
+    grid-area: wightPokemon;
+    margin-left: 35vh;
+
+}
+
+#heightPokemon{
+    grid-area: heightPokemon;
+}
+
+.live{
+    grid-area: live; 
+}
+
+.attack{
+    grid-area: attack; 
+    margin-left: -25vh;
+}
+
+.defense{
+    grid-area: defense;
+    margin-left: 6vh;
+}
+
+.attackSpecial{
+    grid-area: attackSpecial; 
+}
+
+.defenseSpecial{
+    grid-area: defenseSpecial; 
+    margin-left: 15vh;
+}
+
+.speed{
+    grid-area: speed; 
+}
+
+.evolution{
+    grid-area: evolution; 
+}
+
+.livePosition, .defensePosition{
+    margin-left: 20vh;
+}
+
+.attackSpecial, .defenseSpecial{
+    width: 100%;
+}
+
+.livePosition2{
+    margin-left: 22vh;
+}
+
+.defensePosition2{
+    margin-left: 15vh;
+}
+
+.defenseSpecialPosition{
+    margin-left: 10vh;
+
+}
+
+.defenseSpecialPosition2{
+    margin-left: -10vh;
+}
+
+.speedPosition{
+    margin-left: -7vh;
+}
+
+.speedPosition2{
+    margin-left: -15vh;
+}
+
+.attackPosition{
+    margin-left: 15vh;
+}
+
+.attackPosition2{
+    margin-left: 11vh;
+}
+
+.attackSpecialPosition{
+    margin-left: 6vh;
+}
+
+.attackSpecialPosition2{
+    margin-left: -12vh;
+}
+
+.imageEvolution{
+    width: 50vh;
+}
+
+#arrow1{
+    margin-top: 45vh;
+}
+
+#arrow2{
+    margin-top: 45vh;
+}
+
+
+footer{
+    margin-top: 10vh;
+}

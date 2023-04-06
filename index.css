@@ -184,6 +184,9 @@ input[type="text"]:focus{
 
 /* ----------------------------FOOTER---------------------------- */
 footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   background-color: brown;
   bottom: 0;
