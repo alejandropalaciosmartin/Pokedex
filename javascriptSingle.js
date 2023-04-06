@@ -120,29 +120,24 @@ const itemTranslations = {
   trade: 'Cable Link'
 };
 
-//SELECCIONAR NIVEL/PIEDRA/CABLE LINK
-/*function showLevelItemTrade(evolutionIntro, detailIntro){
-  if(id2Evolution <= 151){
+//MOSTRAR NIVEL/PIEDRA/LINK
+function showLevelItemTrade(evoluDetailNew, noEvolution, idNewEvolution, triggerNew, newEvolu){
+  if(evoluDetailNew.trigger.name == "use-item"  && !noEvolution.includes(idNewEvolution)){
     //PIEDRA
-    if(evoluDetail2.trigger.name == "use-item")
-    {
-      // console.log("2º Forma de evolucionar " + evoluDetail2.trigger.name.slice(4,8));
-      trigger00.innerHTML = itemTranslations[evoluDetail2.trigger.name.slice(4,8)] + " ";
-      trigger00.innerHTML += itemTranslations[evoluDetail2.item.name.slice(0,-6)];
-    }
-    else if(evoluDetail2.trigger.name == "trade")
-    {
+    // console.log("1º Forma de evolucionar " + evoluDetailNew.trigger.name.slice(4,8));
+    triggerNew.innerHTML += itemTranslations[evoluDetailNew.trigger.name.slice(4,8)] + " " + itemTranslations[evoluDetailNew.item.name.slice(0,-6)];
+  }                 
+  else if(evoluDetailNew.trigger.name == "trade"  && !noEvolution.includes(idNewEvolution)){
     //Cable Link
-    // console.log("1º Forma de evolucionar " + evoluDetail2.trigger.name.slice(0,5));
-    trigger00.innerHTML += itemTranslations[evoluDetail2.trigger.name.slice(0,5)];
-    }
-    //NIVEL
-    else if(evoluDetail2.trigger.name == "level-up"){
-      // console.log("2º Forma de evolucionar " + evoluDetail2.trigger.name);
-      trigger00.innerHTML = itemTranslations[evoluDetail2.trigger.name.slice(0,5)] + " " + terEvolu.evolution_details[0].min_level;
-    }
+    // console.log("1º Forma de evolucionar " + evoluDetailNew.trigger.name.slice(0,5));
+    triggerNew.innerHTML = itemTranslations[evoluDetailNew.trigger.name.slice(0,5)];
   }
-}*/
+  else if(evoluDetailNew.trigger.name == "level-up" && !noEvolution.includes(idNewEvolution)){ //para que no aparezca nivel nulo en los que no hya evolución
+    //NIVEL
+    // console.log("1º Forma de evolucionar " + evoluDetailNew.trigger.name.slice(0,5));
+    triggerNew.innerHTML = itemTranslations[evoluDetailNew.trigger.name.slice(0,5)] + " " + newEvolu.evolution_details[0].min_level; 
+  }
+}
 
 //MOSTRAR POKEMON Y SUS DATOS
 function showPokemon(){
@@ -214,6 +209,10 @@ function showPokemon(){
               priEvolu.chain.evolves_to.forEach(sencEvolu => {
                 //1º a 2º
                 sencEvolu.evolution_details.forEach(evoluDetail => { 
+                  let evoluDetailNew = evoluDetail;
+                  let idNewEvolution = id1Evolution;
+                  let triggerNew = trigger0;
+                  let newEvolu = sencEvolu;
                   if(id1Evolution <= 151 && id1Evolution == 27 || id1Evolution == 28){ //Sandshrew
                     // console.log("1º Forma de evolucionar " + evoluDetail.trigger.name.slice(0,5));
                     trigger0.innerHTML = itemTranslations[sencEvolu.evolution_details[0].trigger.name.slice(0,5)] + " " + sencEvolu.evolution_details[0].min_level; 
@@ -223,22 +222,7 @@ function showPokemon(){
                     trigger0.innerHTML = itemTranslations[sencEvolu.evolution_details[0].trigger.name.slice(4,8)] + " " + itemTranslations[sencEvolu.evolution_details[0].item.name.slice(0,-6)]; 
                   }
                   else if(id1Evolution <= 151){
-                    if(evoluDetail.trigger.name == "use-item"  && !noEvolution.includes(id1Evolution)){
-                      //PIEDRA
-                      // console.log("1º Forma de evolucionar " + evoluDetail.trigger.name.slice(4,8));
-                      trigger0.innerHTML += itemTranslations[evoluDetail.trigger.name.slice(4,8)] + " ";
-                      trigger0.innerHTML += itemTranslations[evoluDetail.item.name.slice(0,-6)];
-                    }                 
-                    else if(evoluDetail.trigger.name == "trade"  && !noEvolution.includes(id1Evolution)){
-                      //Cable Link
-                      // console.log("1º Forma de evolucionar " + evoluDetail.trigger.name.slice(0,5));
-                      trigger0.innerHTML = itemTranslations[evoluDetail.trigger.name.slice(0,5)];
-                    }
-                    else if(evoluDetail.trigger.name == "level-up" && !noEvolution.includes(id1Evolution)){ //para que no aparezca nivel nulo en los que no hya evolución
-                      //NIVEL
-                      // console.log("1º Forma de evolucionar " + evoluDetail.trigger.name.slice(0,5));
-                      trigger0.innerHTML = itemTranslations[evoluDetail.trigger.name.slice(0,5)] + " " + sencEvolu.evolution_details[0].min_level; 
-                    }
+                    showLevelItemTrade(evoluDetailNew, noEvolution, idNewEvolution, triggerNew, newEvolu);
                   }
                 if(id1Evolution == 80 || id1Evolution == 79) //Slowpoke
                 {
@@ -298,20 +282,19 @@ function showPokemon(){
                 terEvolu.evolution_details.forEach(evoluDetail2 => {
                   if(id2Evolution <= 151){
                     //PIEDRA
-                    if(evoluDetail2.trigger.name == "use-item")
+                    if(evoluDetail2.trigger.name == "use-item"  && !noEvolution.includes(id1Evolution))
                     {
                       // console.log("2º Forma de evolucionar " + evoluDetail2.trigger.name.slice(4,8));
-                      trigger00.innerHTML = itemTranslations[evoluDetail2.trigger.name.slice(4,8)] + " ";
-                      trigger00.innerHTML += itemTranslations[evoluDetail2.item.name.slice(0,-6)];
+                      trigger00.innerHTML = itemTranslations[evoluDetail2.trigger.name.slice(4,8)] + " " + itemTranslations[evoluDetail2.item.name.slice(0,-6)];
                     }
-                    else if(evoluDetail2.trigger.name == "trade")
+                    else if(evoluDetail2.trigger.name == "trade"  && !noEvolution.includes(id1Evolution))
                     {
                     //Cable Link
                     // console.log("1º Forma de evolucionar " + evoluDetail2.trigger.name.slice(0,5));
                     trigger00.innerHTML += itemTranslations[evoluDetail2.trigger.name.slice(0,5)];
                     }
                     //NIVEL
-                    else if(evoluDetail2.trigger.name == "level-up"){
+                    else if(evoluDetail2.trigger.name == "level-up"  && !noEvolution.includes(id1Evolution)){
                       // console.log("2º Forma de evolucionar " + evoluDetail2.trigger.name);
                       trigger00.innerHTML = itemTranslations[evoluDetail2.trigger.name.slice(0,5)] + " " + terEvolu.evolution_details[0].min_level;
                     }
