@@ -175,9 +175,7 @@ function showPokemon(){
   defenseSpecialNum.innerHTML = `${data.stats[4].base_stat}`;
   speed.value = data.stats[5].base_stat;
   speedNum.innerHTML = `${data.stats[5].base_stat}`;
-console.log(data.stats);
-  // if(live.value > )
-
+  
   //Realizamos un forEach para poder visualizar los diferentes tipos
   data.types.forEach(dato => {
      typeName = dato.type.name; //Metemos los nombres en una variable
