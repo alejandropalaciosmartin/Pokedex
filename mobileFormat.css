@@ -37,12 +37,12 @@ header{
     /*Posición*/
     position: relative;
     margin-top: -3vh; 
-    z-index: 1; /*Colocar delante del icono*/
+    z-index: 1;         /*Colocar delante del icono*/
 }
 
 /*Contenedor de la imagen de la cabecera*/
 #pokemonHead{
-    margin-top: -8vh; /*Cuadrar imagen con el título*/
+    margin-top: -8vh;  /*Cuadrar imagen con el título*/
 }
 
 /*Imagen de la cabecera*/
@@ -50,8 +50,8 @@ header{
     align-items: center; /*Centrar imagen verticalmente*/
     width: 5vh;
     margin-left: 25vh;
-    opacity: 0.8; /*Esté más transparente de lo normal*/
-    z-index: -1; /*Poner bola atrás del título*/
+    opacity: 0.8;        /*Esté más transparente de lo normal*/
+    z-index: -1;         /*Poner bola atrás del título*/
 }
 
 /*CONTENEDOR - MAIN*/
@@ -59,7 +59,7 @@ header{
     /*GRID*/
     display: grid; /*Para hacerlo responsive, dividimos por filas y columnas*/
     grid-template-columns: repeat(2, 1fr); /*Definimos el grosor de las columnas, ponemos para que sean 4 columnas con el mismo grosor(1fr)*/
-    /*Estructuramos donde se verán cada parte*/
+    /*Estructuramos de cómo se verán cada parte, dónde irá colocado*/
     grid-template-areas: "button sunmoon"
                          "title title"
                          "image image"
@@ -79,13 +79,14 @@ header{
 /*Atrás*/
 .button{
     grid-area: button;
+    /*Centrar texto dentro del botón*/
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5vh;
     background-color: white;
     border-radius: 2vh;
-    box-shadow: 0 0 3vh 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 3vh 10px rgba(0, 0, 0, 0.2); /*Sombreado alrededor*/
     width: 15vh;
     padding: 2vh;
     color: var(--gris);
@@ -93,7 +94,7 @@ header{
     text-decoration: none; /*Quitar subrayado*/
 }
 
-.button:hover{
+.button:hover{ /*Cuando ponemos el ratón por encima*/
     background-color: var(--marron);
     box-shadow: 0 0 3vh 10px red;
     color: var(--blanco);
@@ -174,11 +175,11 @@ body.dark #darkMode{
                  0 0 5px rgba(0,0,0,.05);
     /*Animación*/
     animation-name: titlePokemon; /*Nombre del @keyframes*/
-    animation-duration: 5s; /*Duración del efecto*/
+    animation-duration: 5s;       /*Duración del efecto*/
 }
 
 
-@keyframes titlePokemon { /*Nombre del efecto*/
+@keyframes titlePokemon { /*Nombre del efecto / Título de tamaño pequeño a grande al iniciar la página*/
     0% {  /*Inicio*/
         transform: scale(0.1); /*Tamaño a la mitad*/
         -ms-transform: scale(0.1); 
@@ -207,7 +208,7 @@ body.dark #darkMode{
     animation-duration: 6s; 
 }
 
-@keyframes imagePokemon { 
+@keyframes imagePokemon { /*Se mueva el pokemon hacia los lados al iniciar la página, efectos de andar/saltar*/
     0% {  
         transform: rotate(5deg); 
         -ms-transform: rotate(5deg); 
@@ -234,23 +235,23 @@ body.dark #darkMode{
     }
 }
 
-.positionPokemon:hover{           
-    animation-name: first;                /*Nombre a elegir para que se haga el efecto abajo descrito (keyframes)*/
-    animation-duration: 1s;                 /*Duración*/
-    animation-direction: normal;            /*Dirección*/
-    animation-timing-function: linear;        /*Velocidad*/
-    animation-fill-mode: both;               
+.positionPokemon:hover{                /*Efecto de ampliar cuando ponemos el ratón encima*/      
+    animation-name: first;               
+    animation-duration: 1s;   
+    animation-direction: normal;          /*Dirección*/
+    animation-timing-function: linear;    /*Velocidad*/
+    animation-fill-mode: both;       
 }
 
 @keyframes first{                         
     0%{                                   
-        transform: scale(1,1);
+        transform: scale(1,1);      /*Tamaño original*/
     }
     50%{                                     
-        transform: scale(1.5,1.5);
+        transform: scale(1.5,1.5);  /*Ampliación*/
     }
     100%{                                   
-        transform: scale(1,1);
+        transform: scale(1,1);      /*Vuelve a su tamaño*/
     }
 } 
 
@@ -290,26 +291,32 @@ body.dark #darkMode{
     grid-area: heightPokemon;
 }
 
+/*Vida*/
 .live{
     grid-area: live; 
 }
 
+/*Ataque*/
 .attack{
     grid-area: attack; 
 }
 
+/*Defensa*/
 .defense{
     grid-area: defense;
 }
 
+/*Ataque especial*/
 .attackSpecial{
     grid-area: attackSpecial; 
 }
 
+/*Defensa especial*/
 .defenseSpecial{
     grid-area: defenseSpecial; 
 }
 
+/*Velocidad*/
 .speed{
     grid-area: speed; 
 }
@@ -322,6 +329,11 @@ body.dark #darkMode{
     margin-top: 2vh; 
 }
 
+/*Flecha de Evolución*/
+.arrows{
+    width: 5vh;
+}
+
 #arrow1{
     margin-top: 15vh;
 }
@@ -332,18 +344,11 @@ body.dark #darkMode{
 
 .imageEvolution{
     width: 20vh;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-}
-
-.arrows{
-    width: 5vh;
 }
 
 /*Pie de página*/
-
 footer{
+    /*Centrar Título*/
     display: flex;
     justify-content: center;
     align-items: center;

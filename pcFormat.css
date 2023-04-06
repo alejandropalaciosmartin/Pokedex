@@ -1,3 +1,4 @@
+/*CABECERA*/
 #pokemonHead{
     margin-top: -8vh;
 }
@@ -6,6 +7,7 @@
     margin-left: 1vh;
 }
 
+/*CUERPO*/
 .container{
     display: grid; 
     grid-template-columns: 2fr, repeat(2, 1fr);
@@ -20,22 +22,26 @@
     font-size: 2vw;
 }
 
+/*BOTÓN*/
 .button{
     margin-left: 10vh;
 }
 
+/*MODOOSCURO*/
 #darkMode{
     grid-area: sunmoon; 
     width: 10%;
     margin-left: 70vh;
 }
 
+/*TÍTULO*/
 #textPokemon {
     grid-area: title;
-    margin: auto; 
+    margin: auto; /*Centrar*/
     margin-left: 45vh;
 }
 
+/*BARRAS + TÍTULOS*/
 .positionPokemon{
     grid-area: image;
     margin-left: 20vh;
@@ -147,6 +153,7 @@
     margin-left: -12vh;
 }
 
+/*EVOLUCIÓN*/
 .imageEvolution{
     width: 50vh;
 }
