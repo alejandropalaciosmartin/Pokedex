@@ -75,8 +75,8 @@ else{
            .then(data => {
              card.querySelector('img').src = data.sprites.other.home.front_default;
              const typesContainer = card.querySelector('.types');
-             data.types.forEach(type => {
-               const typeName = type.type.name;
+             data.types.forEach(typeData => {
+               const typeName = typeData.type.name;
                const typeElement = document.createElement('div');
                typeElement.textContent = typeTranslations[typeName];
                typeElement.style.cssText = `background-color:${typeColors[typeName]}; color:white; padding:5px 10px; border-radius:10px; margin-right:5px; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; border:solid black 2px`;
