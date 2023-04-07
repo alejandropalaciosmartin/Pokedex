@@ -102,6 +102,8 @@
 
 .evolution{
     grid-area: evolution; 
+    display: flex;
+    justify-content: center;
 }
 
 .livePosition, .defensePosition{
@@ -160,10 +162,12 @@
 
 #arrow1{
     margin-top: 45vh;
+    transform: rotate(0deg); /*Lo ponemos horizontal*/
 }
 
 #arrow2{
     margin-top: 45vh;
+    transform: rotate(0deg); 
 }
 
 

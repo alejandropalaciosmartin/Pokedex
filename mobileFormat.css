@@ -183,16 +183,10 @@ body.dark #darkMode{
 @keyframes titlePokemon { /*Nombre del efecto / Título de tamaño pequeño a grande al iniciar la página*/
     0% {  /*Inicio*/
         transform: scale(0.1); /*Tamaño a la mitad*/
-        -ms-transform: scale(0.1); 
-        -webkit-transform: scale(0.1); 
-        -moz-transform: scale(0.1);   
     } 
    
     100% { /*Final*/
         transform: scale(1); /*Tamaño real*/
-        -ms-transform: scale(1); 
-        -webkit-transform: scale(1); 
-        -moz-transform: scale(1);   
     }
 }
 
@@ -212,27 +206,15 @@ body.dark #darkMode{
 @keyframes imagePokemon { /*Se mueva el pokemon hacia los lados al iniciar la página, efectos de andar/saltar*/
     0% {  
         transform: rotate(5deg); 
-        -ms-transform: rotate(5deg); 
-        -webkit-transform: rotate(5deg); 
-        -moz-transform: rotate(5deg);   
     } 
     25% {  
         transform: rotate(10deg); 
-        -ms-transform: rotate(10deg); 
-        -webkit-transform: rotate(10deg); 
-        -moz-transform: rotate(10deg);   
     } 
     75% { 
         transform: rotate(-10deg);
-        -ms-transform: rotate(-10deg); 
-        -webkit-transform: rotate(-10deg); 
-        -moz-transform: rotate(-10deg);   
     } 
     100% {
         transform: rotate(-5deg); 
-        -ms-transform: rotate(-5deg); 
-        -webkit-transform: rotate(-5deg); 
-        -moz-transform: rotate(-5deg);   
     }
 }
 
@@ -267,6 +249,7 @@ body.dark #darkMode{
 
 .fontColor {
     color: var(--gris);
+    font-size: 3vh;
 }
 
 /*Id*/
@@ -328,9 +311,9 @@ body.dark #darkMode{
 /*Evoluciones*/
 .evolution{
     grid-area: evolution; 
-    display: flex;
-    justify-content: center;
     margin-top: 2vh; 
+    /* margin-left: -11vh; */
+    
 }
 
 /*Flecha de Evolución*/
@@ -339,15 +322,18 @@ body.dark #darkMode{
 }
 
 #arrow1{
-    margin-top: 10vh;
+    margin-top: 2vh;
+    transform: rotate(90deg); /*Lo ponemos vertical*/
 }
 
 #arrow2{
-    margin-top: 10vh;
+    margin-top: -20vh;
+    transform: rotate(90deg); 
 }
 
 .imageEvolution{
-    width: 10vh;
+    width: 30vh;
+    margin-top: 2vh;
 }
 
 /*Pie de página*/
