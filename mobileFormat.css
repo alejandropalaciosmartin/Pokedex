@@ -314,7 +314,7 @@ body.dark #darkMode{
 /*Evoluciones*/
 .evolution{
     grid-area: evolution; 
-    margin-top: 2vh; 
+    margin-top: -4vh; 
     /* margin-left: -11vh; */
 
 }
@@ -330,7 +330,7 @@ body.dark #darkMode{
 }
 
 #arrow2{
-    margin-top: -20vh;
+    margin-top: -50vh;
     transform: rotate(90deg); 
 }
 
