@@ -71,7 +71,7 @@ header{
                          "evolution evolution";
     grid-gap: 5vh;  /*Separación entre elementos*/  
     color: var(--gris);
-    margin-left: 2vh;
+    /* margin-left: 1vh; */
 }
 
 
@@ -336,15 +336,15 @@ body.dark #darkMode{
 }
 
 #arrow1{
-    margin-top: 15vh;
+    margin-top: 10vh;
 }
 
 #arrow2{
-    margin-top: 15vh;
+    margin-top: 10vh;
 }
 
 .imageEvolution{
-    width: 20vh;
+    width: 10vh;
 }
 
 /*Pie de página*/
