@@ -24,7 +24,6 @@
 header{ 
     /* --marron: yellow; */          /*Si se usa en otra clase y se cambia el contenido a partir de ahí lo usa de este modo*/
     background-color: var(--marron); /*Fondo del encabezado*/
-    min-width: 100vh;                /*Ancho de la cabecera*/
     height: 100%;                    /*Alto de la cabecera*/
     top: 0;                          /*Se coloca arriba del todo*/
     /*Texto*/
@@ -161,10 +160,12 @@ body.dark #darkMode{
 /*Texto*/
 #textPokemon {
     grid-area: title;
-    margin-top: 2vh;
+    margin-top: 20vh;
     margin-bottom: -50vh;
-    font-size: 8vh;
-    margin-left: -10vh;
+    position: absolute;
+    right: 0;
+    left: 0;
+    font-size: 7vh;
     /*Efecto 3D*/
     text-shadow: 0 1px 0 hsl(170, 90%, 71%),
                  0 2px 0 hsl(174,5%,75%),
