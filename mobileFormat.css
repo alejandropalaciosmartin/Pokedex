@@ -248,6 +248,7 @@ body.dark #darkMode{
 #numberPokemon, #weightPokemon, #heightPokemon {
     font-size: 5vh;
     color: var(--gris);
+    margin-right: 7vh;
 }
 
 .fontColor {
@@ -316,27 +317,32 @@ body.dark #darkMode{
 }
 
 .speedPosition2, .attackPosition2, .attackSpecialPosition2{ 
-    margin-left: 5vh;
+    margin-left: -5vh;
 }
 
 .attackSpecialPosition{
-    margin-left: 10vh;
+    margin-left: 6vh;
 }
 
 .speedPosition{
-    margin-left: 1vh;
+    margin-left: -3vh;
+}
+
+.attackPosition{
+    margin-left: -6vh;
 }
 
 .defensePosition{
-    margin-left: -9vh;
+    margin-left: -4vh;
 }
 
 .livePosition{
-    margin-left: -13vh;
+    margin-left: -10vh;
 }
 
 .defenseSpecialPosition{
-    margin-left: -3vh;
+    margin-left: -5vh;
+    margin-right: 5vh;
 }
 
 /*Evoluciones*/
