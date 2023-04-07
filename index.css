@@ -25,7 +25,7 @@ header{
   font-family: "Pokemon";  
   min-width: 100%;
   top: 0;  
-  height: 15vh;
+  height: 25vh;
   text-align: center;
   color: rgb(230, 217, 210);
 }
@@ -77,16 +77,16 @@ header{
 #pokeballIzq{
   position: absolute;
   top: 20px;
-  left: 0;
-  width: 10vh;
-  height: 10vh;
+  left: 525px;
+  width: 100px;
+  height: 100px;
 }
 #pokeballDer{
   position: absolute;
   top: 20px;
-  right: 0;
-  width: 10vh;
-  height: 10vh;
+  right: 525px;
+  width: 100px;
+  height: 100px;
 }
 
 /* ----------------------------MAIN---------------------------- */

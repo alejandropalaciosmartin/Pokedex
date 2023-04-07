@@ -2,3 +2,15 @@
     display: flex;
     flex-direction: column;
 }
+
+/* -----------Imagen Pokeball----------- */
+#pokeballIzq{
+    width: 10vh;
+    height: 10vh;
+    left: 0;
+  }
+  #pokeballDer{
+    width: 10vh;
+    height: 10vh;
+    right: 0;
+  }
