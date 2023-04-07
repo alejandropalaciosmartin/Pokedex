@@ -78,15 +78,15 @@ header{
   position: absolute;
   top: 20px;
   left: 0;
-  width: 100px;
-  height: 100px;
+  width: 10vh;
+  height: 10vh;
 }
 #pokeballDer{
   position: absolute;
   top: 20px;
   right: 0;
-  width: 100px;
-  height: 100px;
+  width: 10vh;
+  height: 10vh;
 }
 
 /* ----------------------------MAIN---------------------------- */
