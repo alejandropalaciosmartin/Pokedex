@@ -113,7 +113,7 @@ main{
 }
 
 /* -----------Botón claro/oscuro----------- */
-#claroscuro{
+#lightDark{
   position: fixed;
   right: 40px;
 }
@@ -215,7 +215,7 @@ footer{
   justify-content:center;
 }
 
-.numero{
+.number{
   font-weight:bold; 
   display:block; 
   text-align:center;

@@ -4,7 +4,7 @@ window.onscroll = function() {
 function topFunction() {
   document.documentElement.scrollTop = 0; }
 
-  const toggleModeButton = document.querySelector("#claroscuro");
+  const toggleModeButton = document.querySelector("#lightDark");
   const moonImage = document.querySelector("#moon");
   const sunImage = document.querySelector("#sun");
 
@@ -64,7 +64,7 @@ else{
          card.classList.add("pokemon_card");
          card.innerHTML = `
            <span class="name">${p.name.charAt(0).toUpperCase() + p.name.slice(1)}</span>
-           <span class="numero">#${p.url.split("/")[6].padStart(3, "0")}</span>
+           <span class="number">#${p.url.split("/")[6].padStart(3, "0")}</span>
            <img src="">
            <div class="types"></div>`;
 
