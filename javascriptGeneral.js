@@ -5,31 +5,31 @@ function topFunction() {
   document.documentElement.scrollTop = 0; }
 
   const toggleModeButton = document.querySelector("#claroscuro");
-  const lunaImage = document.querySelector("#luna");
-  const solImage = document.querySelector("#sol");
+  const moonImage = document.querySelector("#moon");
+  const sunImage = document.querySelector("#sun");
 
   toggleModeButton.addEventListener("click", () => {
     document.body.classList.toggle("dark_mode");
     document.querySelector(".pokemon_card").classList.toggle("dark_mode");
 
     if (document.body.classList.contains("dark_mode")) {
-      lunaImage.style.display = "none";
-      solImage.style.display = "block";
+      moonImage.style.display = "none";
+      sunImage.style.display = "block";
       localStorage.setItem('modeDark', 'true'); } 
     else {
-      lunaImage.style.display = "block";
-      solImage.style.display = "none";
+      moonImage.style.display = "block";
+      sunImage.style.display = "none";
       localStorage.setItem('modeDark','false'); }
 });
 if(localStorage.getItem('modeDark') == 'true'){
   document.body.classList.add('dark_mode');
-  lunaImage.style.display = "none";
-  solImage.style.display = "block";
+  moonImage.style.display = "none";
+  sunImage.style.display = "block";
 }
 else{
   document.body.classList.remove('dark_mode');
-  lunaImage.style.display = "block";
-  solImage.style.display = "none";
+  moonImage.style.display = "block";
+  sunImage.style.display = "none";
 }
 
  fetch("https://pokeapi.co/api/v2/pokemon?limit=151") 

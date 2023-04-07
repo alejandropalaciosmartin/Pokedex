@@ -4,8 +4,6 @@
 }
 body{
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
 }
 body.dark_mode{
   background-color: #363535;
@@ -27,15 +25,16 @@ header{
   font-family: "Pokemon";  
   min-width: 100%;
   top: 0;  
-  height: 150px;
+  height: 25vh;
   text-align: center;
   color: rgb(230, 217, 210);
 }
 
 /* -----------Título----------- */
 #tituloHead{
-  position: relative;
-  margin:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 50px;
 }
 
@@ -78,14 +77,14 @@ header{
 #pokeballIzq{
   position: absolute;
   top: 20px;
-  left: 525px;
+  left: 0;
   width: 100px;
   height: 100px;
 }
 #pokeballDer{
   position: absolute;
   top: 20px;
-  right: 525px;
+  right: 0;
   width: 100px;
   height: 100px;
 }
@@ -118,22 +117,22 @@ main{
   position: fixed;
   right: 40px;
 }
-#sol{
+#sun{
   display:none;
   height: 50px; 
   width: 50px;
 }
-#luna{ 
+#moon{ 
   height: 50px; 
   width: 50px;
 }
-#sol:hover{
+#sun:hover{
   cursor:pointer;
   box-shadow: 0 0 5px rgb(255, 255, 255);
   transition: box-shadow 0.1s ease-in-out;
   border-radius: 60%;
 }
-#luna:hover{
+#moon:hover{
   cursor:pointer;
   box-shadow: 0 0 5px rgb(0, 0, 0);
   transition: box-shadow 0.1s ease-in-out;
