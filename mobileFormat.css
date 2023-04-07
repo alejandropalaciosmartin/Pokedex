@@ -190,14 +190,18 @@ body.dark #darkMode{
 }
 
 /*Imagen*/
+#imagePokemon{
+    width: 50vh;
+}
+
 .positionPokemon{
     /*Posición*/
     grid-area: image;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-    margin-left: -5vh;
-    /* margin-left: 10vh; */
+    align-items: center; */
+    /* margin-left: -20vh; */
+    right: 0;
     /*Animación*/
     animation-name: imagePokemon; 
     animation-duration: 6s; 
