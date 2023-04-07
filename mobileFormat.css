@@ -73,7 +73,7 @@ header{
                          "evolution evolution";
     grid-gap: 5vh;  /*Separación entre elementos*/  
     color: var(--gris);
-    /* margin-left: 1vh; */
+    margin-left: 5vh;
 }
 
 
@@ -199,6 +199,7 @@ body.dark #darkMode{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: -5vh;
     /* margin-left: 10vh; */
     /*Animación*/
     animation-name: imagePokemon; 
@@ -278,14 +279,14 @@ body.dark #darkMode{
 }
 
 /*Vida*/
-.live{
+.live {
     grid-area: live; 
 }
 
 /*Ataque*/
 .attack{
     grid-area: attack; 
-    margin-left: -10vh;
+      margin-left: -15vh;
 }
 
 /*Defensa*/
@@ -296,7 +297,7 @@ body.dark #darkMode{
 /*Ataque especial*/
 .attackSpecial{
     grid-area: attackSpecial; 
-    margin-left: -10vh;
+      margin-left: -15vh;
 }
 
 /*Defensa especial*/
@@ -307,7 +308,7 @@ body.dark #darkMode{
 /*Velocidad*/
 .speed{
     grid-area: speed; 
-    margin-left: -10vh;
+    margin-left: -15vh;
 }
 
 /*Evoluciones*/
