@@ -300,6 +300,7 @@ body.dark #darkMode{
 /*Ataque*/
 .attack{
     grid-area: attack; 
+    margin-left: -10vh;
 }
 
 /*Defensa*/
@@ -310,6 +311,7 @@ body.dark #darkMode{
 /*Ataque especial*/
 .attackSpecial{
     grid-area: attackSpecial; 
+    margin-left: -10vh;
 }
 
 /*Defensa especial*/
@@ -320,6 +322,7 @@ body.dark #darkMode{
 /*Velocidad*/
 .speed{
     grid-area: speed; 
+    margin-left: -10vh;
 }
 
 /*Evoluciones*/
