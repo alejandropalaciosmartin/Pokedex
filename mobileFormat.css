@@ -71,7 +71,7 @@ header{
                          "evolution evolution";
     grid-gap: 5vh;  /*Separación entre elementos*/  
     color: var(--gris);
-    margin-left: 5vh;
+    /* margin-left: 5vh; */
 }
 
 
