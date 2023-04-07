@@ -297,7 +297,7 @@ body.dark #darkMode{
 /*Ataque especial*/
 .attackSpecial{
     grid-area: attackSpecial; 
-      margin-left: -15vh;
+    margin-left: -15vh;
 }
 
 /*Defensa especial*/
@@ -309,6 +309,34 @@ body.dark #darkMode{
 .speed{
     grid-area: speed; 
     margin-left: -15vh;
+}
+
+.livePosition2, .defensePosition2, .defenseSpecialPosition2{ /*Valor*/
+    margin-left: -4vh;
+}
+
+.speedPosition2, .attackPosition2, .attackSpecialPosition2{ 
+    margin-left: 5vh;
+}
+
+.attackSpecialPosition{
+    margin-left: 10vh;
+}
+
+.speedPosition{
+    margin-left: 1vh;
+}
+
+.defensePosition{
+    margin-left: -9vh;
+}
+
+.livePosition{
+    margin-left: -13vh;
+}
+
+.defenseSpecialPosition{
+    margin-left: -3vh;
 }
 
 /*Evoluciones*/

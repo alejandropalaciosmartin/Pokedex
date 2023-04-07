@@ -106,12 +106,12 @@
     justify-content: center;
 }
 
-.livePosition, .defensePosition{
-    margin-left: 20vh;
-}
-
 .attackSpecial, .defenseSpecial{
     width: 100%;
+}
+
+.livePosition, .defensePosition{
+    margin-left: 20vh;
 }
 
 .livePosition2{
