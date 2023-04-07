@@ -35,9 +35,11 @@ header{
 /*Título de la cabecera*/
 #headTitle{
     /*Posición*/
-    position: relative;
-    margin-top: -3vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 1;         /*Colocar delante del icono*/
+    height: 8vh;
 }
 
 /*Contenedor de la imagen de la cabecera*/
@@ -313,7 +315,7 @@ body.dark #darkMode{
     grid-area: evolution; 
     margin-top: 2vh; 
     /* margin-left: -11vh; */
-    
+
 }
 
 /*Flecha de Evolución*/
@@ -343,7 +345,7 @@ footer{
     justify-content: center;
     align-items: center;
     background-color: var(--marron);
-    min-width:100vh; /*Para el ancho que se acortaba y de este modo se extiende en todas las dimensiones*/
+    /* min-width:100vh; Para el ancho que se acortaba y de este modo se extiende en todas las dimensiones */
     height: 5vh;
     color: var(--blanco);
 }
