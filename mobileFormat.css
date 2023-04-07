@@ -81,9 +81,6 @@ header{
 .button{
     grid-area: button;
     /*Centrar texto dentro del botón*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 5vh;
     background-color: white;
     border-radius: 2vh;
