@@ -1,3 +1,4 @@
+/* -----------Contenedor Pokemons----------- */
 .grid-container{ /*Ponerlo en una columna*/
     display: flex;
     flex-direction: column;
