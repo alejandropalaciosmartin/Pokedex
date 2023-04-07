@@ -177,7 +177,7 @@ function showPokemon(){
      typeName = dato.type.name; //Metemos los nombres en una variable
      const typePokemonDiv = document.createElement("div"); //Creamos un div y lo metemos en la variable
      //Creamos estilo al div creado, para que se cree un estilo de color diferente según el que toque, para que sea dinámico
-     typePokemonDiv.style.cssText = `background-color:${typeColors[typeName]}; color: white; padding: 1vh 20vh 1vh 6vh; border-radius:10px; margin-right:5px; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; border:solid black 2px`;
+     typePokemonDiv.style.cssText = `background-color:${typeColors[typeName]}; color: white; border-radius:10px; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; border:solid black 2px`;
      typePokemonDiv.innerHTML = typeTranslations[typeName]; //Metemos en el div el nombre traducido
      typePokemon.appendChild(typePokemonDiv); //Metemos el div creado en el js (div hijo) en el padre (tipo) que está en el html
   })
