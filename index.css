@@ -174,9 +174,10 @@ input[type="text"]:focus{
 /* -----------Contenedor Pokemons----------- */
 .grid-container{
   display: grid;
+  justify-items: center; 
+  align-items: center;
   grid-template-columns: repeat(3, 1fr); 
   row-gap: 20px; 
-  justify-items: center; 
   margin-top: 25px;
   margin-left: 150px;
   margin-right: 150px;
