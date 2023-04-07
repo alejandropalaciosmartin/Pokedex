@@ -71,8 +71,7 @@ header{
                          "evolution evolution";
     grid-gap: 5vh;  /*Separación entre elementos*/  
     color: var(--gris);
-    margin-left: 1vh;
-    margin-right: 1vh;
+    margin-left: 2vh;
 }
 
 
@@ -162,7 +161,8 @@ body.dark #darkMode{
     grid-area: title;
     margin-top: 2vh;
     margin-bottom: -50vh;
-    font-size: 10vh;
+    font-size: 8vh;
+    margin-left: -10vh;
     /*Efecto 3D*/
     text-shadow: 0 1px 0 hsl(170, 90%, 71%),
                  0 2px 0 hsl(174,5%,75%),
@@ -203,7 +203,7 @@ body.dark #darkMode{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 10vh;
+    /* margin-left: 10vh; */
     /*Animación*/
     animation-name: imagePokemon; 
     animation-duration: 6s; 
@@ -257,7 +257,7 @@ body.dark #darkMode{
 } 
 
 #numberPokemon, #typePokemon, .live, .attack, .defense, .attackSpecial, .defenseSpecial, .speed{
-    font-size: 4vh;
+    font-size: 3vh;
 }
 
 #numberPokemon, #weightPokemon, #heightPokemon {
