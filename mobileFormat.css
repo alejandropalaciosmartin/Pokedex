@@ -98,30 +98,6 @@ header{
     color: var(--blanco);
 }
 
-/*Modo oscuro/claro*/
-#darkMode {
-    /*Posición*/
-    grid-area: sunmoon; /*GRID*/
-    /*Cuadrar iconos dentro del div*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /*Cuadrar y formar div*/
-    margin-top: 3vh;
-    margin-bottom: -6vh;
-    width: 10vh;
-    height: 10vh;
-    padding: 1vh;
-    border-radius: 10vh; /*Redondear*/
-    box-shadow: 1vh 2vh 3vh rgb(43, 42, 42); /*Sombrear, para efecto 3D*/
-    background: linear-gradient(90deg, rgb(243, 222, 0) 0%, rgb(255, 187, 0) 35%, rgb(0, 0, 1) 100%); /*Fondo con gradiente*/
-}
-
-#darkMode:hover{
-    transform: scale(1.2, 1.2); 
-    cursor: pointer; /*Dedo índice*/
-}
-
 .separate{
     margin-left: 2vh;
 }
@@ -148,11 +124,34 @@ body.dark .button:hover {
     color: var(--blanco);
 }
 
-body.dark #darkMode{
-    box-shadow: 1vh 2vh 3vh rgba(255, 0, 0, 0.2); 
-    background: linear-gradient(90deg, rgb(0, 0, 1) 10%, rgb(255, 187, 0) 35%, rgb(243, 222, 0) 100%);
-}
-
+/* -----------Botón claro/oscuro----------- */
+#darkMode{
+    grid-area: sunmoon; /*GRID*/
+    position: fixed;
+    right: 40px;
+  }
+  #sun{
+    display:none;
+    height: 50px; 
+    width: 50px;
+  }
+  #moon{ 
+    height: 50px; 
+    width: 50px;
+  }
+  #sun:hover{
+    cursor:pointer;
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    transition: box-shadow 0.1s ease-in-out;
+    border-radius: 60%;
+  }
+  #moon:hover{
+    cursor:pointer;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    transition: box-shadow 0.1s ease-in-out;
+    border-radius: 60%;
+  }
+  
 /*Texto*/
 #textPokemon {
     grid-area: title;

@@ -1,15 +1,21 @@
 /*MODO OSCURO/CLARO*/
 function showModeDark(){
   const darkMode = document.getElementById('darkMode'); //Metemos la Id del html
+  const moonImage = document.querySelector("#moon");
+  const sunImage = document.querySelector("#sun");
 
     darkMode.addEventListener('click', () => { //Aplicamos al elemento del Id cuando hagamos click...
     document.body.classList.toggle('dark');    //Coge la clase dark del Css que esté aparte o directamente en el html, mientras esté indicado en el html
 
     //GUARDAMOS el MODO en LOCALSTORAGE
     if(document.body.classList.contains('dark')){ //Si contiene activo la clase dark
+      moonImage.style.display = "none";
+      sunImage.style.display = "block";
       localStorage.setItem('modeDark', 'true');   //Se guarda (set) de forma ('clave','valor'), ponemos true como podría ser otro valor
     }
     else{
+      moonImage.style.display = "block";
+      sunImage.style.display = "none";
       localStorage.setItem('modeDark','false');   //Si no contiene ponemos false para indicar que no está activo el efecto dark
     }
   });
@@ -17,9 +23,13 @@ function showModeDark(){
   //OBTENER el MODO actual
   if(localStorage.getItem('modeDark') === 'true'){ //Coge (get) la clave (modeDark) y comparamos si es igual al valor que marcamos arriba
     document.body.classList.add('dark');           //Metemos el efecto dark del Css
+    moonImage.style.display = "none";
+    sunImage.style.display = "block";
   }
   else{
     document.body.classList.remove('dark');      //Borramos el efecto dark del Css
+    moonImage.style.display = "block";
+    sunImage.style.display = "none";
   }
 }
 

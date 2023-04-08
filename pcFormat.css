@@ -1,4 +1,9 @@
 /*CABECERA*/
+header{ 
+    background-color: var(--marron); 
+    height: 10vh;       
+}
+
 #pokemonHead{
     margin-top: -8vh;
 }
@@ -27,18 +32,12 @@
     margin-left: 10vh;
 }
 
-/*MODOOSCURO*/
-#darkMode{
-    grid-area: sunmoon; 
-    width: 10%;
-    margin-left: 70vh;
-}
-
 /*TÍTULO*/
 #textPokemon {
     grid-area: title;
     margin: auto; /*Centrar*/
-    margin-left: 45vh;
+    margin-top: 5vh;
+    font-size: 10vh;
 }
 
 /*BARRAS + TÍTULOS*/

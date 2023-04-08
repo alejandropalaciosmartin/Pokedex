@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Para que el navegador pueda controlar las dimensiones y la escala de la página -->
     <link rel="stylesheet" href="./mobileFormat.css"><!--CSS formato movil-->
     <link rel="stylesheet" media="(min-width: 720px)" href="./pcFormat.css"><!--CSS formato pc-->
-    <script src="https://kit.fontawesome.com/e0f3b21040.js"crossorigin="anonymous"></script><!--FontAwesome-->
     <title>Pokédex</title> <!--Título de pestaña-->
 </head>
 <body>
@@ -25,12 +24,10 @@
         <a class="button" href="./index.html">Atrás</a>
         
         <!--Botón modo oscuro-->
-        <!-- <button class="darkModeSwitch ms-2" id="switch"></button> -->
-        <div id="darkMode"> 
-            <!-- Iconos de Fontawesome sol/luna (fa-1x - tamaño)-->
-            <i class="fas fa-sun fa-2x"></i>                               <!--Sol--> 
-            <i class="fa fa-moon-o separate fa-2x" aria-hidden="true"></i> <!--Luna-->
-         </div>
+        <div id="darkMode">  
+            <img id="moon" src="./img/lightDark/moon.svg" alt="moon">
+            <img id="sun" src="./img/lightDark/sun.png" alt="sun">
+        </div>
 
         <!-- INFORMACIÓN Pokemon -->
         <h1 id="textPokemon"></h1> <!--Título-->
