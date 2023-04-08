@@ -36,7 +36,7 @@ header{
 #textPokemon {
     grid-area: title;
     margin: auto; /*Centrar*/
-    margin-top: 5vh;
+    margin-top: 15vh;
     font-size: 10vh;
 }
 
@@ -46,16 +46,19 @@ header{
     margin-left: 20vh;
 }
 
+#imagePokemon{
+    width: 70vh;
+}
+
 #typePokemon, #numberPokemon, #weightPokemon, #heightPokemon{
-    width: 30%;
+    width: 20vh;
     margin: auto; 
-    margin-left: 30vh;
-   
+    margin-left: -2vh;
 } 
 
 #numberPokemon{
     grid-area: number;
-    margin-left: 35vh;
+    margin-left: 25vh;
 }
 
 #typePokemon{
@@ -64,12 +67,13 @@ header{
 
 #weightPokemon{
     grid-area: wightPokemon;
-    margin-left: 35vh;
+    margin-left: 25vh;
 
 }
 
 #heightPokemon{
     grid-area: heightPokemon;
+    margin-left: -2vh;
 }
 
 .live{
