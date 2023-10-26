@@ -2,6 +2,9 @@
 
 This repository hosts a web-based Pokédex, developed using HTML, CSS, and JavaScript, as part of a practical exercise during my studies. I collaborated on this project with my colleague Adrian (check out his GitHub [here](https://github.com/AdrianLozanoMartinez)). The project was inspired by the following assignment:
 
+## Getting Started
+To run this project, you will need a web server with PHP support, such as XAMPP or WAMP. If you don't have a web server set up, you can try the online demo available at [DEMO](https://alejandropalaciosmartin.github.io/Pokedex/)
+
 ## Practical Pokédex Assignment
 In this practice, we aimed to develop and deploy a web page resembling a Pokédex. The web page displays a list of various Pokémon and their details, specifically focusing on the first generation of Pokémon (the first 151 Pokémon). To complete this task, HTML, CSS, and JavaScript were utilized.
 
