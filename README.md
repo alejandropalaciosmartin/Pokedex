@@ -45,8 +45,5 @@ Both views include the option to switch between light and dark modes. This prefe
 
 The application is entirely in Spanish.
 
-## Deployment
-To deploy the application on GitHub, please refer to the instructions in this [video](https://www.youtube.com/watch?v=c5YVvdZ0-a0&ab_channel=SomosDevs).
-
 ## Deliverables
 The repository contains the complete source code and necessary files for local execution, along with a link to the publicly deployed version. The names of the students who worked on the project are also provided.
