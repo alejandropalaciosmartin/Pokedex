@@ -15,7 +15,7 @@ body.dark_mode label{
 }
 @font-face{ 
   font-family: Pokemon; 
-  src: url("./letterFont/Pokemon\ Hollow.ttf");
+  src: url("/letterFont/Pokemon\ Hollow.ttf");
 }
 
 
