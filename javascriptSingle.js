@@ -211,7 +211,7 @@ function showPokemon(){
               evolution1.innerHTML = name1Evolution.charAt(0).toUpperCase() + name1Evolution.slice(1); //Nombre
               showPokemonDetails(evolutionX1Img, goX, id1Evolution); //Imagen y dirección
                   if(!noEvolution.includes(id1Evolution) || id1Evolution == 133 ){ //Si tiene más evoluciones o es Eevee, mostramos la flecha
-                  document.getElementById('arrow1').src = `/img/arrow.png`; 
+                  document.getElementById('arrow1').src = `./img/arrow.png`; 
                 }
             }
 
@@ -280,7 +280,7 @@ function showPokemon(){
                 let valor = terEvolu.species.url.substr(42,3);
                 //Si no tiene 3º evolución y es menor o igual del id 151 o el número incluya / es decir /numero, que son dos o una cifra -> Para evitar coger evoluciones de otras generaciones
                 if(sencEvolu.evolves_to != 0 && valor <= 151 || valor.includes("/")){ 
-                  document.getElementById('arrow2').src = `/img/arrow.png`; 
+                  document.getElementById('arrow2').src = `./img/arrow.png`; 
                 
                 //2º a 3º
                 terEvolu.evolution_details.forEach(evoluDetail2 => {

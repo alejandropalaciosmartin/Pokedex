@@ -58,7 +58,7 @@ else{
            <img src="">
            <div class="types"></div>`;
 
-         card.addEventListener('click', () => { window.location.href = `/app/single.html?id=${p.url.split("/")[6]}`; });
+         card.addEventListener('click', () => { window.location.href = `single.html?id=${p.url.split("/")[6]}`; });
 
          fetch(p.url)
            .then(response => response.json())
