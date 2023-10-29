@@ -1,9 +1,9 @@
-window.onscroll = () => {
+window.onscroll = function() {
   const myBtn = document.getElementById("myBtn");
-  myBtn.style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? "block" : "none";
-}
-
-const topFunction = () => document.documentElement.scrollTop = 0;
+  myBtn.style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? "block" : "none"; };
+  
+function topFunction() {
+  document.documentElement.scrollTop = 0; }
 
   const toggleModeButton = document.querySelector("#lightDark");
   const moonImage = document.querySelector("#moon");
@@ -43,6 +43,17 @@ else{
    const typeColors = {
      normal: '#A8A878',  fire: '#F08030',  water: '#6890F0',
      electric: '#F8D030',  grass: '#78C850',  ice: '#98D8D8',
+     fighting: '#C03028',  poison: '#A040A0',  ground: '#E0C068',
+     flying: '#A890F0',  psychic: '#F85888',  bug: '#A8B820',
+     rock: '#B8A038',  ghost: '#705898',  dragon: '#7038F8',
+     dark: '#705848',  steel: '#B8B8D0',  fairy: '#EE99AC'
+   };
+   const typeTranslations = {
+     normal: 'normal',  fire: 'fuego',  water: 'agua',
+     electric: 'eléctrico',  grass: 'planta',  ice: 'hielo',  
+     fighting: 'lucha',  poison: 'veneno',  ground: 'tierra',
+     flying: 'volador',  psychic: 'psíquico',  bug: 'bicho',  
+     rock: 'roca',  ghost: 'fantasma',  dragon: 'dragón',
      dark: 'siniestro',  steel: 'acero',  fairy: 'hada'
    };
    const updatePokemonList = () => {
@@ -59,7 +70,7 @@ else{
            <div class="types"></div>`;
 
          card.addEventListener('click', () => { window.location.href = `single.html?id=${p.url.split("/")[6]}`; });
-
+               
          fetch(p.url)
            .then(response => response.json())
            .then(data => {
